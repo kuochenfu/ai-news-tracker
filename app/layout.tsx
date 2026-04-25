@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AI Early Signal Intelligence",
-  description: "Track AI trend signals across Hacker News, X, and GitHub."
+  description: "Track AI trend signals across Hacker News and GitHub."
 };
 
 const navItems = [

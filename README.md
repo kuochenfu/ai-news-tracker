@@ -1,31 +1,27 @@
 # ai-news-tracker
 
-A Next.js + TypeScript AI Early Signal Intelligence Engine for tracking early AI and developer adoption signals across Hacker News, X, and GitHub.
+A Next.js + TypeScript AI Early Signal Intelligence Engine for tracking early AI and developer adoption signals across Hacker News and GitHub.
 
 ## MVP Scope
 
-- Dashboard for today's ranked AI trends.
-- Entity detail pages with HN, X, GitHub source breakdowns.
+- Dashboard with a left source switcher and per-source Top 20 lists.
+- Entity detail sections with HN and GitHub source breakdowns.
 - Daily report page for top trends, new entities, and likely hype.
 - Source status page for ingestion health.
-- Typed API clients for HN Firebase, X recent search, and GitHub repository search.
+- Typed API clients for HN Firebase and GitHub repository search.
 - Prisma PostgreSQL schema matching the proposal tables.
-- Weighted trend scoring:
+- Weighted trend scoring uses only currently available sources:
 
 ```text
-0.30 * HN Discussion Score
-+ 0.30 * X Velocity Score
-+ 0.25 * GitHub Adoption Score
-+ 0.10 * Novelty Score
-+ 0.05 * Credibility Score
+0.55 * HN Discussion Score
++ 0.45 * GitHub Adoption Score
 ```
 
 ## API Notes
 
 - Hacker News uses the official Firebase API: `topstories`, `newstories`, `beststories`, and `item/<id>.json`.
-- X recent search requires `X_BEARER_TOKEN`.
 - GitHub Trending has no official API; the MVP uses GitHub Search API and optional `GITHUB_TOKEN`.
-- OpenAI extraction and summaries will use `OPENAI_API_KEY`.
+- OpenAI extraction and summaries can be added later with `OPENAI_API_KEY`.
 - PostgreSQL access uses `DATABASE_URL`.
 
 ## Scripts

@@ -9,6 +9,5 @@ export {
 export {
   parseGitHubRepo,
   parseHackerNewsStory,
-  parseXPost,
   type NormalizedSourceEvent
 } from "./sourceNormalizers";

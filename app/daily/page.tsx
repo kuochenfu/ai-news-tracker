@@ -15,7 +15,7 @@ export default function DailyPage() {
 
       <section className="grid gap-4 lg:grid-cols-[1fr_320px]">
         <div className="rounded-md border border-border bg-card p-4">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Top 10 Trends</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Top 20 Trends</h2>
           <div className="mt-4 divide-y divide-border">
             {topTrends.map((trend, index) =>
               trend ? (

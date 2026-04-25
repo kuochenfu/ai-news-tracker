@@ -1,4 +1,4 @@
-export type SourceName = "hn" | "x" | "github";
+export type SourceName = "hn" | "github";
 
 export interface NormalizedSourceEvent {
   source: SourceName;
@@ -21,26 +21,6 @@ interface HackerNewsStory {
   time?: number | string;
   score?: number;
   descendants?: number;
-}
-
-interface XPost {
-  id: string;
-  author_id?: string;
-  text?: string;
-  created_at?: string;
-  public_metrics?: {
-    like_count?: number;
-    retweet_count?: number;
-    reply_count?: number;
-    quote_count?: number;
-  };
-}
-
-interface XIncludes {
-  users?: Array<{
-    id: string;
-    username?: string;
-  }>;
 }
 
 interface GitHubRepo {
@@ -77,28 +57,6 @@ export function parseHackerNewsStory(item: HackerNewsStory): NormalizedSourceEve
   };
 }
 
-export function parseXPost(post: XPost, includes?: XIncludes): NormalizedSourceEvent {
-  const metrics = post.public_metrics ?? {};
-  const author = includes?.users?.find((user) => user.id === post.author_id)?.username ?? post.author_id;
-
-  return {
-    source: "x",
-    externalId: post.id,
-    title: null,
-    body: toNullableString(post.text),
-    url: `https://x.com/i/web/status/${post.id}`,
-    author: author ?? null,
-    publishedAt: toNullableString(post.created_at),
-    metrics: {
-      likeCount: metrics.like_count ?? 0,
-      repostCount: metrics.retweet_count ?? 0,
-      replyCount: metrics.reply_count ?? 0,
-      quoteCount: metrics.quote_count ?? 0
-    },
-    raw: post
-  };
-}
-
 export function parseGitHubRepo(repo: GitHubRepo): NormalizedSourceEvent {
   return {
     source: "github",
@@ -115,4 +73,3 @@ export function parseGitHubRepo(repo: GitHubRepo): NormalizedSourceEvent {
     raw: repo
   };
 }
-

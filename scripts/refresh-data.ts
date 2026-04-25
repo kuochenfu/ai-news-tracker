@@ -3,10 +3,9 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { aiQueries } from "../src/config";
-import type { DailyReport, SourceStatus, TrendEntity } from "../src/domain";
+import type { DailyReport, SourceName, SourceStatus, TrendEntity } from "../src/domain";
 import { fetchHackerNewsItem, fetchHackerNewsStoryIds } from "../src/clients/hackerNews";
 import { searchGitHubRepositories, type GitHubRepoSearchItem } from "../src/clients/github";
-import { searchRecentXPosts } from "../src/clients/x";
 import { computeTrendScore } from "../src/trendScoring";
 
 const rootDir = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -48,7 +47,7 @@ async function collectHackerNews() {
       fetchHackerNewsStoryIds("newstories"),
       fetchHackerNewsStoryIds("beststories")
     ]);
-    const ids = [...new Set(idGroups.flat())].slice(0, 90);
+    const ids = [...new Set(idGroups.flat())].slice(0, 180);
     const items = await Promise.all(ids.map((id) => fetchHackerNewsItem(id).catch(() => null)));
     const keywords = aiQueries.map((query) => query.toLowerCase());
 
@@ -74,8 +73,8 @@ async function collectGitHub() {
 
   for (const query of aiQueries.slice(0, 5)) {
     try {
-      const repos = await searchGitHubRepositories(`${query} pushed:>${today}`, process.env.GITHUB_TOKEN);
-      for (const repo of repos.slice(0, 6)) {
+      const repos = await searchGitHubRepositories(`${query} stars:>50`, process.env.GITHUB_TOKEN);
+      for (const repo of repos.slice(0, 10)) {
         reposById.set(repo.id, repo);
       }
     } catch (error) {
@@ -85,41 +84,16 @@ async function collectGitHub() {
 
   const repos = [...reposById.values()]
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 8);
+    .slice(0, 20);
 
   return { repos, errors };
 }
 
-async function collectX() {
-  const token = process.env.X_BEARER_TOKEN;
-  if (!token) {
-    return { count: 0, errors: ["X_BEARER_TOKEN is not configured"], enabled: false };
-  }
-
-  try {
-    const response = await searchRecentXPosts("(AI OR LLM OR agent OR OpenAI) lang:en -is:retweet", token);
-    return { count: response.data?.length ?? 0, errors: [], enabled: true };
-  } catch (error) {
-    return {
-      count: 0,
-      errors: [error instanceof Error ? error.message : "Unknown X refresh error"],
-      enabled: true
-    };
-  }
-}
-
 function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
   const githubScore = clamp01(Math.log10(repo.stargazers_count + 1) / 5);
-  const hnScore = index < 3 ? 0.28 : 0.12;
-  const xScore = 0;
-  const noveltyScore = clamp01((Date.now() - Date.parse(repo.created_at)) / (1000 * 60 * 60 * 24) < 45 ? 0.78 : 0.42);
-  const credibilityScore = clamp01((repo.stargazers_count / 5000 + repo.forks_count / 1000) / 2);
   const score = computeTrendScore({
-    hnDiscussionScore: hnScore,
-    xVelocityScore: xScore,
-    githubAdoptionScore: githubScore,
-    noveltyScore,
-    credibilityScore
+    hnDiscussionScore: 0,
+    githubAdoptionScore: githubScore
   });
 
   return {
@@ -127,7 +101,7 @@ function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
     canonicalName: repo.full_name,
     entityType: "repo",
     summary: repo.description ?? "Repository surfaced by GitHub Search API during the scheduled trend refresh.",
-    reason: "Ranked from GitHub repository activity; HN and X correlation will strengthen as entity extraction expands.",
+    reason: "Ranked from GitHub repository activity.",
     githubRepoUrl: repo.html_url,
     score,
     sources: [
@@ -137,20 +111,6 @@ function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
         mentions: 1,
         lastSeen: repo.pushed_at,
         signal: `${repo.stargazers_count} stars, ${repo.forks_count} forks, recently pushed`
-      },
-      {
-        source: "hn",
-        score: hnScore,
-        mentions: index < 3 ? 1 : 0,
-        lastSeen: now.toISOString(),
-        signal: index < 3 ? "Potential HN overlap from current AI story scan" : "No strong HN overlap yet"
-      },
-      {
-        source: "x",
-        score: xScore,
-        mentions: 0,
-        lastSeen: now.toISOString(),
-        signal: "X correlation requires configured API access"
       }
     ],
     mentions: [
@@ -172,10 +132,7 @@ function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["st
   const hnScore = clamp01(((story.score ?? 0) / 350 + (story.descendants ?? 0) / 180) / 2);
   const score = computeTrendScore({
     hnDiscussionScore: hnScore,
-    xVelocityScore: 0,
-    githubAdoptionScore: 0,
-    noveltyScore: 0.58,
-    credibilityScore: 0.45
+    githubAdoptionScore: 0
   });
 
   return {
@@ -183,7 +140,7 @@ function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["st
     canonicalName: story.title ?? `HN story ${story.id}`,
     entityType: "tool",
     summary: story.title ?? "AI-related Hacker News story from the scheduled refresh.",
-    reason: "HN discussion signal detected; GitHub/X correlation still pending.",
+    reason: "Ranked from Hacker News discussion activity.",
     officialUrl: story.url,
     score,
     sources: [
@@ -193,20 +150,6 @@ function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["st
         mentions: 1,
         lastSeen: story.time ? new Date(story.time * 1000).toISOString() : now.toISOString(),
         signal: `${story.score ?? 0} points and ${story.descendants ?? 0} comments`
-      },
-      {
-        source: "github",
-        score: 0,
-        mentions: 0,
-        lastSeen: now.toISOString(),
-        signal: "No matched repository yet"
-      },
-      {
-        source: "x",
-        score: 0,
-        mentions: 0,
-        lastSeen: now.toISOString(),
-        signal: "X correlation requires configured API access"
       }
     ],
     mentions: [
@@ -224,7 +167,7 @@ function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["st
   };
 }
 
-function buildSourceStatuses(hnErrors: string[], githubErrors: string[], x: Awaited<ReturnType<typeof collectX>>): SourceStatus[] {
+function buildSourceStatuses(hnErrors: string[], githubErrors: string[]): SourceStatus[] {
   const nextMorning = new Date(now);
   nextMorning.setUTCHours(now.getUTCHours() < 8 ? 8 : 24, 0, 0, 0);
 
@@ -239,15 +182,6 @@ function buildSourceStatuses(hnErrors: string[], githubErrors: string[], x: Awai
       notes: "Uses topstories, newstories, beststories, and item detail endpoints."
     },
     {
-      source: "x",
-      label: "X Recent Search API",
-      status: x.enabled ? (x.errors.length ? "degraded" : "healthy") : "disabled",
-      lastSync: x.enabled && !x.errors.length ? now.toISOString() : null,
-      nextSync: x.enabled ? nextMorning.toISOString() : null,
-      errors: x.errors,
-      notes: `Recent search ${x.enabled ? `returned ${x.count} posts` : "requires API access and a bearer token"}.`
-    },
-    {
       source: "github",
       label: "GitHub Search API",
       status: githubErrors.length ? "degraded" : "healthy",
@@ -260,18 +194,22 @@ function buildSourceStatuses(hnErrors: string[], githubErrors: string[], x: Awai
 }
 
 async function main() {
-  const [hn, github, x] = await Promise.all([collectHackerNews(), collectGitHub(), collectX()]);
-  const githubTrends = github.repos.map(repoToTrend);
-  const hnTrends = hn.stories.slice(0, Math.max(0, 10 - githubTrends.length)).map(hnStoryToTrend);
+  const [hn, github] = await Promise.all([collectHackerNews(), collectGitHub()]);
+  const githubTrends = github.repos.slice(0, 20).map(repoToTrend);
+  const hnTrends = hn.stories.slice(0, 20).map(hnStoryToTrend);
   const trends = [...githubTrends, ...hnTrends]
     .sort((a, b) => b.score.finalScore - a.score.finalScore)
-    .slice(0, 10);
+    .slice(0, 20);
+  const sourceTopTrends: Partial<Record<SourceName, TrendEntity[]>> = {
+    hn: hnTrends,
+    github: githubTrends
+  };
 
   const dailyReport: DailyReport = {
     date: today,
     summary:
       trends.length > 0
-        ? `Scheduled refresh found ${trends.length} AI trend candidates across HN, GitHub, and optional X recent search.`
+        ? `Scheduled refresh found ${hnTrends.length} HN topics and ${githubTrends.length} GitHub repositories.`
         : "Scheduled refresh completed, but no AI trend candidates were collected.",
     topTrendIds: trends.map((trend) => trend.id),
     newEntities: trends.slice(0, 3).map((trend) => trend.canonicalName),
@@ -282,7 +220,8 @@ async function main() {
   const snapshot = {
     generatedAt: now.toISOString(),
     trends,
-    sourceStatuses: buildSourceStatuses(hn.errors, github.errors, x),
+    sourceTopTrends,
+    sourceStatuses: buildSourceStatuses(hn.errors, github.errors),
     dailyReport
   };
 
@@ -295,4 +234,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-

@@ -1,11 +1,10 @@
-import { Github, MessageSquare, Radio } from "lucide-react";
+import { Github, MessageSquare } from "lucide-react";
 import type { ComponentType } from "react";
 
 import type { SourceName } from "@/src/domain";
 
 const sourceMeta: Record<SourceName, { label: string; icon: ComponentType<{ className?: string }> }> = {
   hn: { label: "HN", icon: MessageSquare },
-  x: { label: "X", icon: Radio },
   github: { label: "GitHub", icon: Github }
 };
 

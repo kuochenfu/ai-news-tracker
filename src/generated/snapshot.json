@@ -1,21 +1,18 @@
 {
-  "generatedAt": "2026-04-25T08:45:29.754Z",
+  "generatedAt": "2026-04-25T13:02:12.477Z",
   "trends": [
     {
       "id": "hn-47884971",
       "canonicalName": "DeepSeek v4",
       "entityType": "tool",
       "summary": "DeepSeek v4",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "reason": "Ranked from Hacker News discussion activity.",
       "officialUrl": "https://api-docs.deepseek.com/news/news260424",
       "score": {
-        "hnComponent": 0.3,
-        "xComponent": 0,
+        "hnComponent": 0.55,
         "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.3805,
-        "verdict": "emerging"
+        "finalScore": 0.55,
+        "verdict": "watchlist"
       },
       "sources": [
         {
@@ -23,21 +20,7 @@
           "score": 1,
           "mentions": 1,
           "lastSeen": "2026-04-24T03:01:21.000Z",
-          "signal": "1894 points and 1474 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "signal": "1960 points and 1503 comments"
         }
       ],
       "mentions": [
@@ -54,23 +37,23 @@
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.22
+          "score": 0.32
         },
         {
           "date": "2026-04-22",
-          "score": 0.26
+          "score": 0.38
         },
         {
           "date": "2026-04-23",
-          "score": 0.3
+          "score": 0.43
         },
         {
           "date": "2026-04-24",
-          "score": 0.34
+          "score": 0.49
         },
         {
           "date": "2026-04-25",
-          "score": 0.38
+          "score": 0.55
         }
       ]
     },
@@ -79,16 +62,13 @@
       "canonicalName": "GPT-5.5",
       "entityType": "tool",
       "summary": "GPT-5.5",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "reason": "Ranked from Hacker News discussion activity.",
       "officialUrl": "https://openai.com/index/introducing-gpt-5-5/",
       "score": {
-        "hnComponent": 0.3,
-        "xComponent": 0,
+        "hnComponent": 0.55,
         "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.3805,
-        "verdict": "emerging"
+        "finalScore": 0.55,
+        "verdict": "watchlist"
       },
       "sources": [
         {
@@ -96,21 +76,7 @@
           "score": 1,
           "mentions": 1,
           "lastSeen": "2026-04-23T18:01:39.000Z",
-          "signal": "1543 points and 1028 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "signal": "1552 points and 1029 comments"
         }
       ],
       "mentions": [
@@ -126,23 +92,636 @@
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.22
+          "score": 0.32
         },
         {
           "date": "2026-04-22",
-          "score": 0.26
+          "score": 0.38
         },
         {
           "date": "2026-04-23",
-          "score": 0.3
+          "score": 0.43
         },
         {
           "date": "2026-04-24",
-          "score": 0.34
+          "score": 0.49
         },
         {
           "date": "2026-04-25",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "id": "hn-47863217",
+      "canonicalName": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+      "entityType": "tool",
+      "summary": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://qwen.ai/blog?id=qwen3.6-27b",
+      "score": {
+        "hnComponent": 0.55,
+        "githubComponent": 0,
+        "finalScore": 0.55,
+        "verdict": "watchlist"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 1,
+          "mentions": 1,
+          "lastSeen": "2026-04-22T13:19:58.000Z",
+          "signal": "978 points and 443 comments"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47863217",
+          "source": "hn",
+          "title": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+          "url": "https://qwen.ai/blog?id=qwen3.6-27b",
+          "author": "mfiguiere",
+          "publishedAt": "2026-04-22T13:19:58.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.32
+        },
+        {
+          "date": "2026-04-22",
           "score": 0.38
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.43
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.49
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "id": "hn-47852835",
+      "canonicalName": "ChatGPT Images 2.0",
+      "entityType": "tool",
+      "summary": "ChatGPT Images 2.0",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+      "score": {
+        "hnComponent": 0.55,
+        "githubComponent": 0,
+        "finalScore": 0.55,
+        "verdict": "watchlist"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 1,
+          "mentions": 1,
+          "lastSeen": "2026-04-21T18:50:00.000Z",
+          "signal": "1043 points and 970 comments"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47852835",
+          "source": "hn",
+          "title": "ChatGPT Images 2.0",
+          "body": "Livestream: <a href=\"https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;</a><p>System card: <a href=\"https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatgpt-images-2-0.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatg...</a>",
+          "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+          "author": "wahnfrieden",
+          "publishedAt": "2026-04-21T18:50:00.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.32
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.38
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.43
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.49
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "id": "hn-47878117",
+      "canonicalName": "MeshCore development team splits over trademark dispute and AI-generated code",
+      "entityType": "tool",
+      "summary": "MeshCore development team splits over trademark dispute and AI-generated code",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://blog.meshcore.io/2026/04/23/the-split",
+      "score": {
+        "hnComponent": 0.48343253968253974,
+        "githubComponent": 0,
+        "finalScore": 0.48343253968253974,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.878968253968254,
+          "mentions": 1,
+          "lastSeen": "2026-04-23T16:55:13.000Z",
+          "signal": "275 points and 175 comments"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47878117",
+          "source": "hn",
+          "title": "MeshCore development team splits over trademark dispute and AI-generated code",
+          "url": "https://blog.meshcore.io/2026/04/23/the-split",
+          "author": "wielebny",
+          "publishedAt": "2026-04-23T16:55:13.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.28
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.33
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.38
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.43
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.48
+        }
+      ]
+    },
+    {
+      "id": "nousresearch-hermes-agent",
+      "canonicalName": "NousResearch/hermes-agent",
+      "entityType": "repo",
+      "summary": "The agent that grows with you",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/NousResearch/hermes-agent",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.45,
+        "finalScore": 0.45,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 1,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:56:58Z",
+          "signal": "116058 stars, 17081 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-1024554267",
+          "source": "github",
+          "title": "NousResearch/hermes-agent",
+          "body": "The agent that grows with you",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "author": "NousResearch",
+          "publishedAt": "2025-07-22T22:22:28Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.26
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.31
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.36
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.4
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.45
+        }
+      ]
+    },
+    {
+      "id": "lobehub-lobehub",
+      "canonicalName": "lobehub/lobehub",
+      "entityType": "repo",
+      "summary": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/lobehub/lobehub",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.4390804017323557,
+        "finalScore": 0.4390804017323557,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.9757342260719015,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T13:00:38Z",
+          "signal": "75625 stars, 14988 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-643445235",
+          "source": "github",
+          "title": "lobehub/lobehub",
+          "body": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+          "url": "https://github.com/lobehub/lobehub",
+          "author": "lobehub",
+          "publishedAt": "2023-05-21T07:19:12Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.25
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.3
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.35
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.39
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.44
+        }
+      ]
+    },
+    {
+      "id": "hn-47882697",
+      "canonicalName": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+      "entityType": "tool",
+      "summary": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://github.com/refactoringhq/tolaria",
+      "score": {
+        "hnComponent": 0.4310952380952381,
+        "githubComponent": 0,
+        "finalScore": 0.4310952380952381,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.7838095238095237,
+          "mentions": 1,
+          "lastSeen": "2026-04-23T22:01:59.000Z",
+          "signal": "292 points and 132 comments"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47882697",
+          "source": "hn",
+          "title": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+          "body": "Hey there! I am Luca, I write <a href=\"https:&#x2F;&#x2F;refactoring.fm&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;refactoring.fm&#x2F;</a> and I built Tolaria for myself to manage my own knowledge base (10K notes, 300+ articles written in over 6 years of newslettering) and work well with AI.<p>Tolaria is offline-first, file-based, has first-class support for git, and has strong opinions about how you should organize notes (types, relationships, etc).<p>Let me know your thoughts!",
+          "url": "https://github.com/refactoringhq/tolaria",
+          "author": "lucaronin",
+          "publishedAt": "2026-04-23T22:01:59.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.25
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.3
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.34
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.39
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.43
+        }
+      ]
+    },
+    {
+      "id": "mudler-localai",
+      "canonicalName": "mudler/LocalAI",
+      "entityType": "repo",
+      "summary": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/mudler/LocalAI",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.4194881326842162,
+        "finalScore": 0.4194881326842162,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.9321958504093694,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:04:58Z",
+          "signal": "45811 stars, 4015 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-615869301",
+          "source": "github",
+          "title": "mudler/LocalAI",
+          "body": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
+          "url": "https://github.com/mudler/LocalAI",
+          "author": "mudler",
+          "publishedAt": "2023-03-18T22:58:02Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.24
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.29
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.33
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.38
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "milvus-io-milvus",
+      "canonicalName": "milvus-io/milvus",
+      "entityType": "repo",
+      "summary": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/milvus-io/milvus",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.41789030396051513,
+        "finalScore": 0.41789030396051513,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.9286451199122558,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:05:45Z",
+          "signal": "43976 stars, 3974 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-208728772",
+          "source": "github",
+          "title": "milvus-io/milvus",
+          "body": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+          "url": "https://github.com/milvus-io/milvus",
+          "author": "milvus-io",
+          "publishedAt": "2019-09-16T06:43:43Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.24
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.29
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.33
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.37
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "pingcap-tidb",
+      "canonicalName": "pingcap/tidb",
+      "entityType": "repo",
+      "summary": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/pingcap/tidb",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.41421372666700146,
+        "finalScore": 0.41421372666700146,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.9204749481488921,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T04:03:50Z",
+          "signal": "40028 stars, 6179 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-41986369",
+          "source": "github",
+          "title": "pingcap/tidb",
+          "body": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+          "url": "https://github.com/pingcap/tidb",
+          "author": "pingcap",
+          "publishedAt": "2015-09-06T04:01:52Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.24
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.28
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.33
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.37
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.41
+        }
+      ]
+    },
+    {
+      "id": "posthog-posthog",
+      "canonicalName": "PostHog/posthog",
+      "entityType": "repo",
+      "summary": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/PostHog/posthog",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.4070540054994825,
+        "finalScore": 0.4070540054994825,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.9045644566655167,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:59:46Z",
+          "signal": "33328 stars, 2594 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-235901813",
+          "source": "github",
+          "title": "PostHog/posthog",
+          "body": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
+          "url": "https://github.com/PostHog/posthog",
+          "author": "PostHog",
+          "publishedAt": "2020-01-23T22:46:58Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.24
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.28
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.32
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.36
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.41
+        }
+      ]
+    },
+    {
+      "id": "hn-47887683",
+      "canonicalName": "South Korea police arrest man for posting AI photo of runaway wolf",
+      "entityType": "tool",
+      "summary": "South Korea police arrest man for posting AI photo of runaway wolf",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://www.bbc.com/news/articles/c4gx1n0dl9no",
+      "score": {
+        "hnComponent": 0.405952380952381,
+        "githubComponent": 0,
+        "finalScore": 0.405952380952381,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.7380952380952381,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T09:17:57.000Z",
+          "signal": "225 points and 150 comments"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47887683",
+          "source": "hn",
+          "title": "South Korea police arrest man for posting AI photo of runaway wolf",
+          "url": "https://www.bbc.com/news/articles/c4gx1n0dl9no",
+          "author": "giuliomagnifico",
+          "publishedAt": "2026-04-24T09:17:57.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.24
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.28
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.32
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.36
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.41
         }
       ]
     },
@@ -151,38 +730,21 @@
       "canonicalName": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
       "entityType": "tool",
       "summary": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "reason": "Ranked from Hacker News discussion activity.",
       "officialUrl": "https://developers.openai.com/api/docs/changelog",
       "score": {
-        "hnComponent": 0.2077857142857143,
-        "xComponent": 0,
+        "hnComponent": 0.404904761904762,
         "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.2882857142857143,
-        "verdict": "likely-hype"
+        "finalScore": 0.404904761904762,
+        "verdict": "emerging"
       },
       "sources": [
         {
           "source": "hn",
-          "score": 0.6926190476190477,
+          "score": 0.7361904761904763,
           "mentions": 1,
           "lastSeen": "2026-04-24T18:23:32.000Z",
-          "signal": "234 points and 129 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "signal": "247 points and 138 comments"
         }
       ],
       "mentions": [
@@ -199,560 +761,2612 @@
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.17
-        },
-        {
-          "date": "2026-04-22",
-          "score": 0.2
-        },
-        {
-          "date": "2026-04-23",
           "score": 0.23
         },
         {
+          "date": "2026-04-22",
+          "score": 0.28
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.32
+        },
+        {
           "date": "2026-04-24",
+          "score": 0.36
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.4
+        }
+      ]
+    },
+    {
+      "id": "mlflow-mlflow",
+      "canonicalName": "mlflow/mlflow",
+      "entityType": "repo",
+      "summary": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/mlflow/mlflow",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.39667741792226585,
+        "finalScore": 0.39667741792226585,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.8815053731605907,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:22:15Z",
+          "signal": "25557 stars, 5631 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-136202695",
+          "source": "github",
+          "title": "mlflow/mlflow",
+          "body": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+          "url": "https://github.com/mlflow/mlflow",
+          "author": "mlflow",
+          "publishedAt": "2018-06-05T16:05:58Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.23
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.27
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.31
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.36
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.4
+        }
+      ]
+    },
+    {
+      "id": "weaviate-weaviate",
+      "canonicalName": "weaviate/weaviate",
+      "entityType": "repo",
+      "summary": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/weaviate/weaviate",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.37856331316883546,
+        "finalScore": 0.37856331316883546,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.8412518070418565,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T11:15:27Z",
+          "signal": "16078 stars, 1266 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-55072677",
+          "source": "github",
+          "title": "weaviate/weaviate",
+          "body": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
+          "url": "https://github.com/weaviate/weaviate",
+          "author": "weaviate",
+          "publishedAt": "2016-03-30T15:03:17Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.22
+        },
+        {
+          "date": "2026-04-22",
           "score": 0.26
         },
         {
+          "date": "2026-04-23",
+          "score": 0.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.34
+        },
+        {
           "date": "2026-04-25",
-          "score": 0.29
+          "score": 0.38
         }
       ]
     },
     {
-      "id": "hn-47888465",
-      "canonicalName": "Hear your agent suffer through your code",
-      "entityType": "tool",
-      "summary": "Hear your agent suffer through your code",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://github.com/AndrewVos/endless-toil",
+      "id": "microsoft-mcp-for-beginners",
+      "canonicalName": "microsoft/mcp-for-beginners",
+      "entityType": "repo",
+      "summary": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/microsoft/mcp-for-beginners",
       "score": {
-        "hnComponent": 0.15057142857142855,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.23107142857142854,
-        "verdict": "likely-hype"
+        "hnComponent": 0,
+        "githubComponent": 0.37821659153754417,
+        "finalScore": 0.37821659153754417,
+        "verdict": "emerging"
       },
       "sources": [
         {
-          "source": "hn",
-          "score": 0.5019047619047619,
-          "mentions": 1,
-          "lastSeen": "2026-04-24T10:58:45.000Z",
-          "signal": "188 points and 84 comments"
-        },
-        {
           "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "score": 0.8404813145278759,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:02:48Z",
+          "signal": "15936 stars, 5204 forks, recently pushed"
         }
       ],
       "mentions": [
         {
-          "id": "hn-47888465",
-          "source": "hn",
-          "title": "Hear your agent suffer through your code",
-          "url": "https://github.com/AndrewVos/endless-toil",
-          "author": "AndrewVos",
-          "publishedAt": "2026-04-24T10:58:45.000Z"
+          "id": "github-960665821",
+          "source": "github",
+          "title": "microsoft/mcp-for-beginners",
+          "body": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.",
+          "url": "https://github.com/microsoft/mcp-for-beginners",
+          "author": "microsoft",
+          "publishedAt": "2025-04-04T20:46:17Z"
         }
       ],
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.13
+          "score": 0.22
         },
         {
           "date": "2026-04-22",
-          "score": 0.16
+          "score": 0.26
         },
         {
           "date": "2026-04-23",
-          "score": 0.18
+          "score": 0.3
         },
         {
           "date": "2026-04-24",
+          "score": 0.34
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.38
+        }
+      ]
+    },
+    {
+      "id": "seerge-g-helper",
+      "canonicalName": "seerge/g-helper",
+      "entityType": "repo",
+      "summary": "Lightweight, open-source control tool for ASUS laptops and ROG Ally. Manage performance modes, fans, GPU, battery, and RGB lighting across Zephyrus, Flow, TUF, Strix, Scar, and other models.",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/seerge/g-helper",
+      "score": {
+        "hnComponent": 0,
+        "githubComponent": 0.3699682207991899,
+        "finalScore": 0.3699682207991899,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "github",
+          "score": 0.8221516017759776,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:25:51Z",
+          "signal": "12904 stars, 476 forks, recently pushed"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "github-600246354",
+          "source": "github",
+          "title": "seerge/g-helper",
+          "body": "Lightweight, open-source control tool for ASUS laptops and ROG Ally. Manage performance modes, fans, GPU, battery, and RGB lighting across Zephyrus, Flow, TUF, Strix, Scar, and other models.",
+          "url": "https://github.com/seerge/g-helper",
+          "author": "seerge",
+          "publishedAt": "2023-02-10T23:11:28Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
           "score": 0.21
         },
         {
+          "date": "2026-04-22",
+          "score": 0.25
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.29
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.33
+        },
+        {
           "date": "2026-04-25",
-          "score": 0.23
+          "score": 0.37
         }
       ]
     },
     {
-      "id": "hn-47890841",
-      "canonicalName": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
-      "entityType": "tool",
-      "summary": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://github.com/browser-use/browser-harness",
+      "id": "leonxlnx-taste-skill",
+      "canonicalName": "Leonxlnx/taste-skill",
+      "entityType": "repo",
+      "summary": "Taste-Skill (High-Agency Frontend) - gives your AI good taste. stops the AI from generating boring, generic, \"slop\" ",
+      "reason": "Ranked from GitHub repository activity.",
+      "githubRepoUrl": "https://github.com/Leonxlnx/taste-skill",
       "score": {
-        "hnComponent": 0.08533333333333333,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.1658333333333333,
-        "verdict": "likely-hype"
+        "hnComponent": 0,
+        "githubComponent": 0.3697343056130763,
+        "finalScore": 0.3697343056130763,
+        "verdict": "emerging"
       },
       "sources": [
         {
-          "source": "hn",
-          "score": 0.28444444444444444,
-          "mentions": 1,
-          "lastSeen": "2026-04-24T14:31:38.000Z",
-          "signal": "98 points and 52 comments"
-        },
-        {
           "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "score": 0.8216317902512806,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T12:59:54Z",
+          "signal": "12827 stars, 1145 forks, recently pushed"
         }
       ],
       "mentions": [
         {
-          "id": "hn-47890841",
-          "source": "hn",
-          "title": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
-          "body": "Hey HN,<p>We got tired of browser frameworks restricting the LLM, so we removed the framework and gave the LLM maximum freedom to do whatever it&#x27;s trained on. We gave the harness the ability to self correct and add new tools if the LLM wants (is pre-trained on) that.<p>Our Browser Use library is tens of thousands of lines of deterministic heuristics wrapping Chrome (CDP websocket). Element extractors, click helpers, target managemenet (SUPER painful), watchdogs (crash handling, file downloads, alerts), cross origin iframes (if you want to click on an element you have to switch the target first, very anoying), etc.<p>Watchdogs specifically are extremely painful but required. If Chrome triggers for example a native file popup the agent is just completely stuck. So the two solutions are to:\n1. code those heuristics and edge cases away 1 by 1 and prevent them\n2. give LLM a tool to handle the edge case<p>As you can imagine - there are crazy amounts of heuristics like this so you eventually end up with A LOT of tools if you try to go for #2. So you have to make compromises and just code those heuristics away.<p>BUT if the LLM just &quot;knows&quot; CDP well enough to switch the targets when it encounters a cross origin iframe, dismiss the alert when it appears, write its own click helpers, or upload function, you suddenly don&#x27;t have to worry about any of those edge cases.<p>Turns out LLMs know CDP pretty well these days. So we bitter pilled the harness. The concepts that should survive are:\n- something that holds and keeps CDP websocket alive (deamon)\n- extremely basic tools (helpers.py)\n- skill.md that explains how to use it<p>The new paradigm? SKILL.md + a few python helpers that need to have the ability to change on the fly.<p>One cool example:\nWe forgot to implement upload_file function. Then mid-task the agent wants to upload a file so it grepped helpers.py, saw nothing, wrote the function itself using raw DOM.setFileInputFiles (which we only noticed that later in a git diff). This was a relly magical moment of how powerful LLMs have become.<p>Compared to other approaches (Playwright MCP, browser use CLI, agent-browser, chrome devtools MCP): all of them wrap Chrome in a set of predefined functions for the LLM. The worst failure mode is silent. The LLM&#x27;s click() returns fine so the LLM thinks it clicked, but on this particular site nothing actually happened. It moves on with a broken model of the world. Browser Harness gives the LLM maximum freedom and perfect context for HOW the tools actually work.<p>Here are a few crazy examples of what browser harness can do:\n- plays stockfish <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347</a>\n- sets a world record in tetris <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442</a>\n- figures out how to draw a heart with js <a href=\"https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20</a><p>You can super easily install it by telling claude code:\n`Set up <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a> for me.`<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a><p>What would you call this new paradigm? A dialect?",
-          "url": "https://github.com/browser-use/browser-harness",
-          "author": "gregpr07",
-          "publishedAt": "2026-04-24T14:31:38.000Z"
+          "id": "github-1162099055",
+          "source": "github",
+          "title": "Leonxlnx/taste-skill",
+          "body": "Taste-Skill (High-Agency Frontend) - gives your AI good taste. stops the AI from generating boring, generic, \"slop\" ",
+          "url": "https://github.com/Leonxlnx/taste-skill",
+          "author": "Leonxlnx",
+          "publishedAt": "2026-02-19T21:44:05Z"
         }
       ],
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.1
+          "score": 0.21
         },
         {
           "date": "2026-04-22",
-          "score": 0.11
+          "score": 0.25
         },
         {
           "date": "2026-04-23",
-          "score": 0.13
+          "score": 0.29
         },
         {
           "date": "2026-04-24",
-          "score": 0.15
+          "score": 0.33
         },
         {
           "date": "2026-04-25",
-          "score": 0.17
+          "score": 0.37
         }
       ]
     },
     {
-      "id": "hn-47897790",
-      "canonicalName": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+      "id": "hn-47872452",
+      "canonicalName": "Our newsroom AI policy",
       "entityType": "tool",
-      "summary": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://alash3al.github.io/stash?_v01",
+      "summary": "Our newsroom AI policy",
+      "reason": "Ranked from Hacker News discussion activity.",
+      "officialUrl": "https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/",
       "score": {
-        "hnComponent": 0.016142857142857143,
-        "xComponent": 0,
+        "hnComponent": 0.360468253968254,
         "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.09664285714285714,
-        "verdict": "likely-hype"
+        "finalScore": 0.360468253968254,
+        "verdict": "emerging"
       },
       "sources": [
         {
           "source": "hn",
-          "score": 0.05380952380952381,
+          "score": 0.6553968253968254,
           "mentions": 1,
-          "lastSeen": "2026-04-25T01:24:40.000Z",
-          "signal": "26 points and 6 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
+          "lastSeen": "2026-04-23T05:14:05.000Z",
+          "signal": "206 points and 130 comments"
         }
       ],
       "mentions": [
         {
-          "id": "hn-47897790",
+          "id": "hn-47872452",
           "source": "hn",
-          "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
-          "url": "https://alash3al.github.io/stash?_v01",
-          "author": "alash3al",
-          "publishedAt": "2026-04-25T01:24:40.000Z"
+          "title": "Our newsroom AI policy",
+          "url": "https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/",
+          "author": "zdw",
+          "publishedAt": "2026-04-23T05:14:05.000Z"
         }
       ],
       "history": [
         {
           "date": "2026-04-21",
-          "score": 0.06
+          "score": 0.21
         },
         {
           "date": "2026-04-22",
-          "score": 0.07
+          "score": 0.25
         },
         {
           "date": "2026-04-23",
-          "score": 0.08
+          "score": 0.28
         },
         {
           "date": "2026-04-24",
-          "score": 0.09
+          "score": 0.32
         },
         {
           "date": "2026-04-25",
-          "score": 0.1
-        }
-      ]
-    },
-    {
-      "id": "hn-47894985",
-      "canonicalName": "MenteDB – open-source memory database for AI agents (Rust)",
-      "entityType": "tool",
-      "summary": "MenteDB – open-source memory database for AI agents (Rust)",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://github.com/nambok/mentedb",
-      "score": {
-        "hnComponent": 0.00769047619047619,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.0881904761904762,
-        "verdict": "likely-hype"
-      },
-      "sources": [
-        {
-          "source": "hn",
-          "score": 0.025634920634920635,
-          "mentions": 1,
-          "lastSeen": "2026-04-24T19:51:09.000Z",
-          "signal": "16 points and 1 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
-        }
-      ],
-      "mentions": [
-        {
-          "id": "hn-47894985",
-          "source": "hn",
-          "title": "MenteDB – open-source memory database for AI agents (Rust)",
-          "url": "https://github.com/nambok/mentedb",
-          "author": "mentedb",
-          "publishedAt": "2026-04-24T19:51:09.000Z"
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-04-21",
-          "score": 0.05
-        },
-        {
-          "date": "2026-04-22",
-          "score": 0.06
-        },
-        {
-          "date": "2026-04-23",
-          "score": 0.07
-        },
-        {
-          "date": "2026-04-24",
-          "score": 0.08
-        },
-        {
-          "date": "2026-04-25",
-          "score": 0.09
-        }
-      ]
-    },
-    {
-      "id": "hn-47895093",
-      "canonicalName": "Show HN: Nimbus – Browser with Claude Code UX",
-      "entityType": "tool",
-      "summary": "Show HN: Nimbus – Browser with Claude Code UX",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://usenimbus.app/",
-      "score": {
-        "hnComponent": 0.0051190476190476186,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.08561904761904762,
-        "verdict": "likely-hype"
-      },
-      "sources": [
-        {
-          "source": "hn",
-          "score": 0.017063492063492062,
-          "mentions": 1,
-          "lastSeen": "2026-04-24T20:01:39.000Z",
-          "signal": "10 points and 1 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
-        }
-      ],
-      "mentions": [
-        {
-          "id": "hn-47895093",
-          "source": "hn",
-          "title": "Show HN: Nimbus – Browser with Claude Code UX",
-          "body": "Hi HN, I&#x27;m Anil. Nimbus is a desktop browser with an AI agent built into it. The UX is shamelessly inspired by Claude Code: a chat bar at the bottom, an agent log above it, and the webpage itself when its needed.<p>This is mainly a UX experiment for me. And also the reason it isn&#x27;t a Chrome extension: once you have a chat bar that understands intent, the URL field is redundant. You shouldn&#x27;t have two places to tell the browser what you want. I didn&#x27;t want to bolt an agent onto an existing browser&#x27;s chrome and end up with duplicated controls everywhere — I wanted full freedom to redesign the shell from scratch, decide what stays, what goes, and what a browser even looks like when the agent is the primary interface.<p><pre><code>  Download for macOS: https:&#x2F;&#x2F;usenimbus.app\n  Launch video: https:&#x2F;&#x2F;youtu.be&#x2F;dj23-XIiB1o</code></pre>",
-          "url": "https://usenimbus.app/",
-          "author": "pycassa",
-          "publishedAt": "2026-04-24T20:01:39.000Z"
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-04-21",
-          "score": 0.05
-        },
-        {
-          "date": "2026-04-22",
-          "score": 0.06
-        },
-        {
-          "date": "2026-04-23",
-          "score": 0.07
-        },
-        {
-          "date": "2026-04-24",
-          "score": 0.08
-        },
-        {
-          "date": "2026-04-25",
-          "score": 0.09
-        }
-      ]
-    },
-    {
-      "id": "hn-47898308",
-      "canonicalName": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
-      "entityType": "tool",
-      "summary": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://github.com/vinhnx/VTCode",
-      "score": {
-        "hnComponent": 0.004238095238095238,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.08473809523809524,
-        "verdict": "likely-hype"
-      },
-      "sources": [
-        {
-          "source": "hn",
-          "score": 0.014126984126984127,
-          "mentions": 1,
-          "lastSeen": "2026-04-25T03:17:19.000Z",
-          "signal": "6 points and 2 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
-        }
-      ],
-      "mentions": [
-        {
-          "id": "hn-47898308",
-          "source": "hn",
-          "title": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
-          "body": "Hi HN, I built VT Code, a semantic coding agent. Supports all SOTA and open sources model. Anthropic, OpenAI, Gemini, Codex. Agent Skills, Model Context Protocol and Agent Client Protocol (ACP) ready. All open source models are support. Local inference via LM Studio and Ollama (experiment). Semantic context understanding is supported by ast-grep for structured code search and ripgrep for powered grep.<p>I built VT Code in Rust on Ratatui. Architecture and agent loop documented in the README and DeepWiki.<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode</a><p>DeepWiki: <a href=\"https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode</a><p>Happy to answer questions!<p>I believe coding harnesses should be open, and everyone should have a choice of their preferred way to work in this agentic engineering era.",
-          "url": "https://github.com/vinhnx/VTCode",
-          "author": "vinhnx",
-          "publishedAt": "2026-04-25T03:17:19.000Z"
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-04-21",
-          "score": 0.05
-        },
-        {
-          "date": "2026-04-22",
-          "score": 0.06
-        },
-        {
-          "date": "2026-04-23",
-          "score": 0.07
-        },
-        {
-          "date": "2026-04-24",
-          "score": 0.08
-        },
-        {
-          "date": "2026-04-25",
-          "score": 0.08
-        }
-      ]
-    },
-    {
-      "id": "hn-47897953",
-      "canonicalName": "Devin for Terminal",
-      "entityType": "tool",
-      "summary": "Devin for Terminal",
-      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
-      "officialUrl": "https://devin.ai/terminal",
-      "score": {
-        "hnComponent": 0.0021428571428571425,
-        "xComponent": 0,
-        "githubComponent": 0,
-        "noveltyComponent": 0.057999999999999996,
-        "credibilityComponent": 0.022500000000000003,
-        "finalScore": 0.08264285714285714,
-        "verdict": "likely-hype"
-      },
-      "sources": [
-        {
-          "source": "hn",
-          "score": 0.007142857142857143,
-          "mentions": 1,
-          "lastSeen": "2026-04-25T02:00:04.000Z",
-          "signal": "5 points and 0 comments"
-        },
-        {
-          "source": "github",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "No matched repository yet"
-        },
-        {
-          "source": "x",
-          "score": 0,
-          "mentions": 0,
-          "lastSeen": "2026-04-25T08:45:29.754Z",
-          "signal": "X correlation requires configured API access"
-        }
-      ],
-      "mentions": [
-        {
-          "id": "hn-47897953",
-          "source": "hn",
-          "title": "Devin for Terminal",
-          "url": "https://devin.ai/terminal",
-          "author": "nickzana",
-          "publishedAt": "2026-04-25T02:00:04.000Z"
-        }
-      ],
-      "history": [
-        {
-          "date": "2026-04-21",
-          "score": 0.05
-        },
-        {
-          "date": "2026-04-22",
-          "score": 0.06
-        },
-        {
-          "date": "2026-04-23",
-          "score": 0.07
-        },
-        {
-          "date": "2026-04-24",
-          "score": 0.07
-        },
-        {
-          "date": "2026-04-25",
-          "score": 0.08
+          "score": 0.36
         }
       ]
     }
   ],
+  "sourceTopTrends": {
+    "hn": [
+      {
+        "id": "hn-47900506",
+        "canonicalName": "Lambda Calculus Benchmark for AI",
+        "entityType": "tool",
+        "summary": "Lambda Calculus Benchmark for AI",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://victortaelin.github.io/lambench/",
+        "score": {
+          "hnComponent": 0.014841269841269843,
+          "githubComponent": 0,
+          "finalScore": 0.014841269841269843,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.026984126984126985,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T11:16:23.000Z",
+            "signal": "15 points and 2 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47900506",
+            "source": "hn",
+            "title": "Lambda Calculus Benchmark for AI",
+            "url": "https://victortaelin.github.io/lambench/",
+            "author": "marvinborner",
+            "publishedAt": "2026-04-25T11:16:23.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hn-47899844",
+        "canonicalName": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
+        "entityType": "tool",
+        "summary": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/nex-crm/wuphf",
+        "score": {
+          "hnComponent": 0.16744444444444442,
+          "githubComponent": 0,
+          "finalScore": 0.16744444444444442,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.3044444444444444,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T08:53:53.000Z",
+            "signal": "112 points and 52 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47899844",
+            "source": "hn",
+            "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
+            "body": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet.<p>It runs locally in ~&#x2F;.wuphf&#x2F;wiki&#x2F; and you can git clone it out if you want to take your knowledge with you.<p>The shape is the one Karpathy has been circling for a while: an LLM-native knowledge substrate that agents both read from and write into, so context compounds across sessions rather than getting re-pasted every morning. Most implementations of that idea land on Postgres, pgvector, Neo4j, Kafka, and a dashboard.<p>I wanted to go back to the basics and see how far markdown + git could go before I added anything heavier.<p>What it does:\n-&gt; Each agent gets a private notebook at agents&#x2F;{slug}&#x2F;notebook&#x2F;.md, plus access to a shared team wiki at team&#x2F;.<p>-&gt; Draft-to-wiki promotion flow. Notebook entries are reviewed (agent or human) and promoted to the canonical wiki with a back-link. A small state machine drives expiry and auto-archive.<p>-&gt; Per-entity fact log: append-only JSONL at team&#x2F;entities&#x2F;{kind}-{slug}.facts.jsonl. A synthesis worker rebuilds the entity brief every N facts. Commits land under a distinct &quot;Pam the Archivist&quot; git identity so provenance is visible in git log.<p>-&gt; [[Wikilinks]] with broken-link detection rendered in red.<p>-&gt; Daily lint cron for contradictions, stale entries, and broken wikilinks.<p>-&gt; &#x2F;lookup slash command plus an MCP tool for cited retrieval. A heuristic classifier routes short lookups to BM25 and narrative queries to a cited-answer loop.<p>Substrate choices:\nMarkdown for durability. The wiki outlives the runtime, and a user can walk away with every byte. Bleve for BM25. SQLite for structured metadata (facts, entities, edges, redirects, and supersedes). No vectors yet. The current benchmark (500 artifacts, 50 queries) clears 85% recall@20 on BM25 alone, which is the internal ship gate. sqlite-vec is the pre-committed fallback if a query class drops below that.<p>Canonical IDs are first-class. Fact IDs are deterministic and include sentence offset. Canonical slugs are assigned once, merged via redirect stubs, and never renamed. A rebuild is logically identical, not byte-identical.<p>Known limits:\n-&gt; Recall tuning is ongoing. 85% on the benchmark is not a universal guarantee.<p>-&gt; Synthesis quality is bounded by agent observation quality. Garbage facts in, garbage briefs out. The lint pass helps. It is not a judgment engine.<p>-&gt; Single-office scope today. No cross-office federation.<p>Demo. 5-minute terminal walkthrough that records five facts, fires synthesis, shells out to the user&#x27;s LLM CLI, and commits the result under Pam&#x27;s identity: <a href=\"https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;vUvjJsB5vtUQQ4Eb\" rel=\"nofollow\">https:&#x2F;&#x2F;asciinema.org&#x2F;a&#x2F;vUvjJsB5vtUQQ4Eb</a><p>Script lives at .&#x2F;scripts&#x2F;demo-entity-synthesis.sh.<p>Context. The wiki ships as part of WUPHF, an open source collaborative office for AI agents like Claude Code, Codex, OpenClaw, and local LLMs via OpenCode. MIT, self-hosted, bring-your-own keys. You do not have to use the full office to use the wiki layer. If you already have an agent setup, point WUPHF at it and the wiki attaches.<p>Source: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;nex-crm&#x2F;wuphf\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;nex-crm&#x2F;wuphf</a><p>Install: npx wuphf@latest<p>Happy to go deep on the substrate tradeoffs, the promotion-flow state machine, the BM25-first retrieval bet, or the canonical-ID stability rules. Also happy to take &quot;why not an Obsidian vault with a plugin&quot; as a fair question.",
+            "url": "https://github.com/nex-crm/wuphf",
+            "author": "najmuzzaman",
+            "publishedAt": "2026-04-25T08:53:53.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.1
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.11
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.13
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.15
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "id": "hn-47897790",
+        "canonicalName": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+        "entityType": "tool",
+        "summary": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://alash3al.github.io/stash?_v01",
+        "score": {
+          "hnComponent": 0.12479761904761906,
+          "githubComponent": 0,
+          "finalScore": 0.12479761904761906,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.22690476190476191,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T01:24:40.000Z",
+            "signal": "83 points and 39 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47897790",
+            "source": "hn",
+            "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+            "url": "https://alash3al.github.io/stash?_v01",
+            "author": "alash3al",
+            "publishedAt": "2026-04-25T01:24:40.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.07
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.09
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.1
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.11
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.12
+          }
+        ]
+      },
+      {
+        "id": "hn-47884971",
+        "canonicalName": "DeepSeek v4",
+        "entityType": "tool",
+        "summary": "DeepSeek v4",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://api-docs.deepseek.com/news/news260424",
+        "score": {
+          "hnComponent": 0.55,
+          "githubComponent": 0,
+          "finalScore": 0.55,
+          "verdict": "watchlist"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 1,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T03:01:21.000Z",
+            "signal": "1960 points and 1503 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47884971",
+            "source": "hn",
+            "title": "DeepSeek v4",
+            "body": "<a href=\"https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;</a><p><a href=\"https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-V4-Pro&#x2F;blob&#x2F;main&#x2F;DeepSeek_V4.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-V4-Pro&#x2F;blob&#x2F;main...</a>",
+            "url": "https://api-docs.deepseek.com/news/news260424",
+            "author": "impact_sy",
+            "publishedAt": "2026-04-24T03:01:21.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.43
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.49
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.55
+          }
+        ]
+      },
+      {
+        "id": "hn-47879092",
+        "canonicalName": "GPT-5.5",
+        "entityType": "tool",
+        "summary": "GPT-5.5",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://openai.com/index/introducing-gpt-5-5/",
+        "score": {
+          "hnComponent": 0.55,
+          "githubComponent": 0,
+          "finalScore": 0.55,
+          "verdict": "watchlist"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 1,
+            "mentions": 1,
+            "lastSeen": "2026-04-23T18:01:39.000Z",
+            "signal": "1552 points and 1029 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47879092",
+            "source": "hn",
+            "title": "GPT-5.5",
+            "url": "https://openai.com/index/introducing-gpt-5-5/",
+            "author": "rd",
+            "publishedAt": "2026-04-23T18:01:39.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.43
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.49
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.55
+          }
+        ]
+      },
+      {
+        "id": "hn-47890841",
+        "canonicalName": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+        "entityType": "tool",
+        "summary": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/browser-use/browser-harness",
+        "score": {
+          "hnComponent": 0.16892857142857146,
+          "githubComponent": 0,
+          "finalScore": 0.16892857142857146,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.30714285714285716,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T14:31:38.000Z",
+            "signal": "110 points and 54 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47890841",
+            "source": "hn",
+            "title": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+            "body": "Hey HN,<p>We got tired of browser frameworks restricting the LLM, so we removed the framework and gave the LLM maximum freedom to do whatever it&#x27;s trained on. We gave the harness the ability to self correct and add new tools if the LLM wants (is pre-trained on) that.<p>Our Browser Use library is tens of thousands of lines of deterministic heuristics wrapping Chrome (CDP websocket). Element extractors, click helpers, target managemenet (SUPER painful), watchdogs (crash handling, file downloads, alerts), cross origin iframes (if you want to click on an element you have to switch the target first, very anoying), etc.<p>Watchdogs specifically are extremely painful but required. If Chrome triggers for example a native file popup the agent is just completely stuck. So the two solutions are to:\n1. code those heuristics and edge cases away 1 by 1 and prevent them\n2. give LLM a tool to handle the edge case<p>As you can imagine - there are crazy amounts of heuristics like this so you eventually end up with A LOT of tools if you try to go for #2. So you have to make compromises and just code those heuristics away.<p>BUT if the LLM just &quot;knows&quot; CDP well enough to switch the targets when it encounters a cross origin iframe, dismiss the alert when it appears, write its own click helpers, or upload function, you suddenly don&#x27;t have to worry about any of those edge cases.<p>Turns out LLMs know CDP pretty well these days. So we bitter pilled the harness. The concepts that should survive are:\n- something that holds and keeps CDP websocket alive (deamon)\n- extremely basic tools (helpers.py)\n- skill.md that explains how to use it<p>The new paradigm? SKILL.md + a few python helpers that need to have the ability to change on the fly.<p>One cool example:\nWe forgot to implement upload_file function. Then mid-task the agent wants to upload a file so it grepped helpers.py, saw nothing, wrote the function itself using raw DOM.setFileInputFiles (which we only noticed that later in a git diff). This was a relly magical moment of how powerful LLMs have become.<p>Compared to other approaches (Playwright MCP, browser use CLI, agent-browser, chrome devtools MCP): all of them wrap Chrome in a set of predefined functions for the LLM. The worst failure mode is silent. The LLM&#x27;s click() returns fine so the LLM thinks it clicked, but on this particular site nothing actually happened. It moves on with a broken model of the world. Browser Harness gives the LLM maximum freedom and perfect context for HOW the tools actually work.<p>Here are a few crazy examples of what browser harness can do:\n- plays stockfish <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347</a>\n- sets a world record in tetris <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442</a>\n- figures out how to draw a heart with js <a href=\"https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20</a><p>You can super easily install it by telling claude code:\n`Set up <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a> for me.`<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a><p>What would you call this new paradigm? A dialect?",
+            "url": "https://github.com/browser-use/browser-harness",
+            "author": "gregpr07",
+            "publishedAt": "2026-04-24T14:31:38.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.1
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.12
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.13
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.15
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.17
+          }
+        ]
+      },
+      {
+        "id": "hn-47888465",
+        "canonicalName": "Hear your agent suffer through your code",
+        "entityType": "tool",
+        "summary": "Hear your agent suffer through your code",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/AndrewVos/endless-toil",
+        "score": {
+          "hnComponent": 0.2861746031746032,
+          "githubComponent": 0,
+          "finalScore": 0.2861746031746032,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.5203174603174603,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T10:58:45.000Z",
+            "signal": "197 points and 86 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47888465",
+            "source": "hn",
+            "title": "Hear your agent suffer through your code",
+            "url": "https://github.com/AndrewVos/endless-toil",
+            "author": "AndrewVos",
+            "publishedAt": "2026-04-24T10:58:45.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.17
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.2
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.23
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.26
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "id": "hn-47900270",
+        "canonicalName": "You probably wouldn't notice if an AI chatbot slipped ads into its responses",
+        "entityType": "tool",
+        "summary": "You probably wouldn't notice if an AI chatbot slipped ads into its responses",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://theconversation.com/you-probably-wouldnt-notice-if-an-ai-chatbot-slipped-ads-into-its-responses-276010",
+        "score": {
+          "hnComponent": 0.009384920634920635,
+          "githubComponent": 0,
+          "finalScore": 0.009384920634920635,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.017063492063492062,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T10:25:02.000Z",
+            "signal": "10 points and 1 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47900270",
+            "source": "hn",
+            "title": "You probably wouldn't notice if an AI chatbot slipped ads into its responses",
+            "url": "https://theconversation.com/you-probably-wouldnt-notice-if-an-ai-chatbot-slipped-ads-into-its-responses-276010",
+            "author": "geox",
+            "publishedAt": "2026-04-25T10:25:02.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hn-47894000",
+        "canonicalName": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+        "entityType": "tool",
+        "summary": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://developers.openai.com/api/docs/changelog",
+        "score": {
+          "hnComponent": 0.404904761904762,
+          "githubComponent": 0,
+          "finalScore": 0.404904761904762,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.7361904761904763,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T18:23:32.000Z",
+            "signal": "247 points and 138 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47894000",
+            "source": "hn",
+            "title": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+            "body": "<i>GPT-5.5</i> - <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47879092\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47879092</a> - April 2026 (1010 comments)",
+            "url": "https://developers.openai.com/api/docs/changelog",
+            "author": "arabicalories",
+            "publishedAt": "2026-04-24T18:23:32.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.23
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.36
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.4
+          }
+        ]
+      },
+      {
+        "id": "hn-47898308",
+        "canonicalName": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+        "entityType": "tool",
+        "summary": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/vinhnx/VTCode",
+        "score": {
+          "hnComponent": 0.010126984126984127,
+          "githubComponent": 0,
+          "finalScore": 0.010126984126984127,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.018412698412698412,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T03:17:19.000Z",
+            "signal": "9 points and 2 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47898308",
+            "source": "hn",
+            "title": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+            "body": "Hi HN, I built VT Code, a semantic coding agent. Supports all SOTA and open sources model. Anthropic, OpenAI, Gemini, Codex. Agent Skills, Model Context Protocol and Agent Client Protocol (ACP) ready. All open source models are support. Local inference via LM Studio and Ollama (experiment). Semantic context understanding is supported by ast-grep for structured code search and ripgrep for powered grep.<p>I built VT Code in Rust on Ratatui. Architecture and agent loop documented in the README and DeepWiki.<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode</a><p>DeepWiki: <a href=\"https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode</a><p>Happy to answer questions!<p>I believe coding harnesses should be open, and everyone should have a choice of their preferred way to work in this agentic engineering era.",
+            "url": "https://github.com/vinhnx/VTCode",
+            "author": "vinhnx",
+            "publishedAt": "2026-04-25T03:17:19.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hn-47894985",
+        "canonicalName": "MenteDB – open-source memory database for AI agents (Rust)",
+        "entityType": "tool",
+        "summary": "MenteDB – open-source memory database for AI agents (Rust)",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/nambok/mentedb",
+        "score": {
+          "hnComponent": 0.015626984126984128,
+          "githubComponent": 0,
+          "finalScore": 0.015626984126984128,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.028412698412698414,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T19:51:09.000Z",
+            "signal": "16 points and 2 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47894985",
+            "source": "hn",
+            "title": "MenteDB – open-source memory database for AI agents (Rust)",
+            "url": "https://github.com/nambok/mentedb",
+            "author": "mentedb",
+            "publishedAt": "2026-04-24T19:51:09.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.02
+          }
+        ]
+      },
+      {
+        "id": "hn-47865822",
+        "canonicalName": "Show HN: Agent Vault – Open-source credential proxy and vault for agents",
+        "entityType": "tool",
+        "summary": "Show HN: Agent Vault – Open-source credential proxy and vault for agents",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/Infisical/agent-vault",
+        "score": {
+          "hnComponent": 0.19564285714285715,
+          "githubComponent": 0,
+          "finalScore": 0.19564285714285715,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.3557142857142857,
+            "mentions": 1,
+            "lastSeen": "2026-04-22T16:25:28.000Z",
+            "signal": "144 points and 54 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47865822",
+            "source": "hn",
+            "title": "Show HN: Agent Vault – Open-source credential proxy and vault for agents",
+            "body": "Hey HN! Today we&#x27;re launching Agent Vault - an open source HTTP credential proxy and vault for AI agents. Repo is at <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Infisical&#x2F;agent-vault\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Infisical&#x2F;agent-vault</a>, and there&#x27;s an in-depth description at <a href=\"https:&#x2F;&#x2F;infisical.com&#x2F;blog&#x2F;agent-vault-the-open-source-credential-proxy-and-vault-for-agents\">https:&#x2F;&#x2F;infisical.com&#x2F;blog&#x2F;agent-vault-the-open-source-crede...</a>.<p>We built Agent Vault in response to a question that been plaguing the industry: How do we give agents secure access to services without them reading any secrets?<p>Most teams building agents have run into this exact problem: They build an agent or agentic system and come to realize at some point that it needs credentials in order to access any services. The issue is that agents, unlike traditional workloads, are non-deterministic, highly-prone to prompt injection, and thus can easily be manipulated to leaking the credentials that they need to operate. This is the problem of credential exfiltration (not to be confused with data exfiltration).<p>In response to this, some teams we&#x27;ve seen have implemented basic guardrails and security controls to mitigate this risk in their agentic environments including using short-lived access tokens. The more advanced teams have started to converge toward a pattern: credential brokering, the idea being to separate agents from their credentials through some form of egress proxy. In this model, the agent makes a request to a proxy that attaches a credential onto it and brokers it through to the target service. This proxy approach is actually used in Anthropic&#x27;s Managed Agents architecture blog with it being that &quot;the harness is never made aware of the credentials.&quot; We&#x27;ve seen similar credential brokering schemes come out from Vercel and in Cloudflare&#x27;s latest Outbound Workers.<p>Seeing all this made us think: What if we could create a portable credential brokering service plugged seamlessly into agents&#x27; existing workflows in an interface agnostic way, meaning that agents could continue to work with APIs, CLIs, SDKs, MCPs without interference and get the security of credential brokering.<p>This led to Agent Vault - an open source HTTP credential proxy and vault that we&#x27;re building for AI agents. You can deploy this as a dedicated service and set up your agent&#x27;s environment to proxy requests through it. Note that in a full deployment, you do need to lock down the network so that all outbound traffic is forced through Agent Vault<p>The Agent Vault (AV) implementation has a few interesting design decisions:<p>- Local Forward Proxy: AV chooses an interface agnostic approach to credential brokering by following a MITM architecture using HTTPS_PROXY as an environment variable set in the agent&#x27;s environment to redirect traffic through it; this also means that it runs its own CA whose certificate must be configured on the client&#x27;s trust store.<p>- MITM architecture: Since AV terminates TLS in order to do credential brokering its able to inspect traffic and apply rules to it before establishing a new TLS connection upstream. This makes it a great to be able to extend AV to incorporate firewall-like features to be applied at this proxy layer.<p>- Portable: AV itself is a single Go binary that bundles a server and the CLI; it can be deployed as a Docker container as well. In practice, this means that you can self-host AV on your own infrastructure and it should work more universally than provider specific approaches like that of Vercel and Cloudflare.<p>While the preliminary design of Agent Vault is a bit clunky to work with and we’d wished to have more time to smoothen the developer experience around it, particularly around the configuration setup for agents to start proxying requests through it, we figured it would be best to open source the technology and work with the community to make gradual improvements for it to work seamlessly across all agentic use cases since each has its own nuances.<p>All in all, we believe credential brokering is the right next step for how secrets management should be done for agents and would love to hear your views, questions, feedback!",
+            "url": "https://github.com/Infisical/agent-vault",
+            "author": "dangtony98",
+            "publishedAt": "2026-04-22T16:25:28.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.11
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.13
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.15
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.18
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.2
+          }
+        ]
+      },
+      {
+        "id": "hn-47882697",
+        "canonicalName": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+        "entityType": "tool",
+        "summary": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://github.com/refactoringhq/tolaria",
+        "score": {
+          "hnComponent": 0.4310952380952381,
+          "githubComponent": 0,
+          "finalScore": 0.4310952380952381,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.7838095238095237,
+            "mentions": 1,
+            "lastSeen": "2026-04-23T22:01:59.000Z",
+            "signal": "292 points and 132 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47882697",
+            "source": "hn",
+            "title": "Show HN: Tolaria – Open-source macOS app to manage Markdown knowledge bases",
+            "body": "Hey there! I am Luca, I write <a href=\"https:&#x2F;&#x2F;refactoring.fm&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;refactoring.fm&#x2F;</a> and I built Tolaria for myself to manage my own knowledge base (10K notes, 300+ articles written in over 6 years of newslettering) and work well with AI.<p>Tolaria is offline-first, file-based, has first-class support for git, and has strong opinions about how you should organize notes (types, relationships, etc).<p>Let me know your thoughts!",
+            "url": "https://github.com/refactoringhq/tolaria",
+            "author": "lucaronin",
+            "publishedAt": "2026-04-23T22:01:59.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.3
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.34
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.39
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.43
+          }
+        ]
+      },
+      {
+        "id": "hn-47897953",
+        "canonicalName": "Devin for Terminal",
+        "entityType": "tool",
+        "summary": "Devin for Terminal",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://devin.ai/terminal",
+        "score": {
+          "hnComponent": 0.003928571428571429,
+          "githubComponent": 0,
+          "finalScore": 0.003928571428571429,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.007142857142857143,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T02:00:04.000Z",
+            "signal": "5 points and 0 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47897953",
+            "source": "hn",
+            "title": "Devin for Terminal",
+            "url": "https://devin.ai/terminal",
+            "author": "nickzana",
+            "publishedAt": "2026-04-25T02:00:04.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "hn-47872452",
+        "canonicalName": "Our newsroom AI policy",
+        "entityType": "tool",
+        "summary": "Our newsroom AI policy",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/",
+        "score": {
+          "hnComponent": 0.360468253968254,
+          "githubComponent": 0,
+          "finalScore": 0.360468253968254,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.6553968253968254,
+            "mentions": 1,
+            "lastSeen": "2026-04-23T05:14:05.000Z",
+            "signal": "206 points and 130 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47872452",
+            "source": "hn",
+            "title": "Our newsroom AI policy",
+            "url": "https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/",
+            "author": "zdw",
+            "publishedAt": "2026-04-23T05:14:05.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.36
+          }
+        ]
+      },
+      {
+        "id": "hn-47895093",
+        "canonicalName": "Show HN: Nimbus – Browser with Claude Code UX",
+        "entityType": "tool",
+        "summary": "Show HN: Nimbus – Browser with Claude Code UX",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://usenimbus.app/",
+        "score": {
+          "hnComponent": 0.009384920634920635,
+          "githubComponent": 0,
+          "finalScore": 0.009384920634920635,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.017063492063492062,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T20:01:39.000Z",
+            "signal": "10 points and 1 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47895093",
+            "source": "hn",
+            "title": "Show HN: Nimbus – Browser with Claude Code UX",
+            "body": "Hi HN, I&#x27;m Anil. Nimbus is a desktop browser with an AI agent built into it. The UX is shamelessly inspired by Claude Code: a chat bar at the bottom, an agent log above it, and the webpage itself when its needed.<p>This is mainly a UX experiment for me. And also the reason it isn&#x27;t a Chrome extension: once you have a chat bar that understands intent, the URL field is redundant. You shouldn&#x27;t have two places to tell the browser what you want. I didn&#x27;t want to bolt an agent onto an existing browser&#x27;s chrome and end up with duplicated controls everywhere — I wanted full freedom to redesign the shell from scratch, decide what stays, what goes, and what a browser even looks like when the agent is the primary interface.<p><pre><code>  Download for macOS: https:&#x2F;&#x2F;usenimbus.app\n  Launch video: https:&#x2F;&#x2F;youtu.be&#x2F;dj23-XIiB1o</code></pre>",
+            "url": "https://usenimbus.app/",
+            "author": "pycassa",
+            "publishedAt": "2026-04-24T20:01:39.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.01
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.01
+          }
+        ]
+      },
+      {
+        "id": "hn-47863217",
+        "canonicalName": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+        "entityType": "tool",
+        "summary": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://qwen.ai/blog?id=qwen3.6-27b",
+        "score": {
+          "hnComponent": 0.55,
+          "githubComponent": 0,
+          "finalScore": 0.55,
+          "verdict": "watchlist"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 1,
+            "mentions": 1,
+            "lastSeen": "2026-04-22T13:19:58.000Z",
+            "signal": "978 points and 443 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47863217",
+            "source": "hn",
+            "title": "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model",
+            "url": "https://qwen.ai/blog?id=qwen3.6-27b",
+            "author": "mfiguiere",
+            "publishedAt": "2026-04-22T13:19:58.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.43
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.49
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.55
+          }
+        ]
+      },
+      {
+        "id": "hn-47878117",
+        "canonicalName": "MeshCore development team splits over trademark dispute and AI-generated code",
+        "entityType": "tool",
+        "summary": "MeshCore development team splits over trademark dispute and AI-generated code",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://blog.meshcore.io/2026/04/23/the-split",
+        "score": {
+          "hnComponent": 0.48343253968253974,
+          "githubComponent": 0,
+          "finalScore": 0.48343253968253974,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.878968253968254,
+            "mentions": 1,
+            "lastSeen": "2026-04-23T16:55:13.000Z",
+            "signal": "275 points and 175 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47878117",
+            "source": "hn",
+            "title": "MeshCore development team splits over trademark dispute and AI-generated code",
+            "url": "https://blog.meshcore.io/2026/04/23/the-split",
+            "author": "wielebny",
+            "publishedAt": "2026-04-23T16:55:13.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.43
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.48
+          }
+        ]
+      },
+      {
+        "id": "hn-47852835",
+        "canonicalName": "ChatGPT Images 2.0",
+        "entityType": "tool",
+        "summary": "ChatGPT Images 2.0",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+        "score": {
+          "hnComponent": 0.55,
+          "githubComponent": 0,
+          "finalScore": 0.55,
+          "verdict": "watchlist"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 1,
+            "mentions": 1,
+            "lastSeen": "2026-04-21T18:50:00.000Z",
+            "signal": "1043 points and 970 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47852835",
+            "source": "hn",
+            "title": "ChatGPT Images 2.0",
+            "body": "Livestream: <a href=\"https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;</a><p>System card: <a href=\"https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatgpt-images-2-0.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatg...</a>",
+            "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+            "author": "wahnfrieden",
+            "publishedAt": "2026-04-21T18:50:00.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.43
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.49
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.55
+          }
+        ]
+      },
+      {
+        "id": "hn-47887683",
+        "canonicalName": "South Korea police arrest man for posting AI photo of runaway wolf",
+        "entityType": "tool",
+        "summary": "South Korea police arrest man for posting AI photo of runaway wolf",
+        "reason": "Ranked from Hacker News discussion activity.",
+        "officialUrl": "https://www.bbc.com/news/articles/c4gx1n0dl9no",
+        "score": {
+          "hnComponent": 0.405952380952381,
+          "githubComponent": 0,
+          "finalScore": 0.405952380952381,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "hn",
+            "score": 0.7380952380952381,
+            "mentions": 1,
+            "lastSeen": "2026-04-24T09:17:57.000Z",
+            "signal": "225 points and 150 comments"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "hn-47887683",
+            "source": "hn",
+            "title": "South Korea police arrest man for posting AI photo of runaway wolf",
+            "url": "https://www.bbc.com/news/articles/c4gx1n0dl9no",
+            "author": "giuliomagnifico",
+            "publishedAt": "2026-04-24T09:17:57.000Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.36
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.41
+          }
+        ]
+      }
+    ],
+    "github": [
+      {
+        "id": "nousresearch-hermes-agent",
+        "canonicalName": "NousResearch/hermes-agent",
+        "entityType": "repo",
+        "summary": "The agent that grows with you",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/NousResearch/hermes-agent",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.45,
+          "finalScore": 0.45,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 1,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:56:58Z",
+            "signal": "116058 stars, 17081 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1024554267",
+            "source": "github",
+            "title": "NousResearch/hermes-agent",
+            "body": "The agent that grows with you",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "author": "NousResearch",
+            "publishedAt": "2025-07-22T22:22:28Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.26
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.31
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.36
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.4
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.45
+          }
+        ]
+      },
+      {
+        "id": "lobehub-lobehub",
+        "canonicalName": "lobehub/lobehub",
+        "entityType": "repo",
+        "summary": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/lobehub/lobehub",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.4390804017323557,
+          "finalScore": 0.4390804017323557,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.9757342260719015,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T13:00:38Z",
+            "signal": "75625 stars, 14988 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-643445235",
+            "source": "github",
+            "title": "lobehub/lobehub",
+            "body": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+            "url": "https://github.com/lobehub/lobehub",
+            "author": "lobehub",
+            "publishedAt": "2023-05-21T07:19:12Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.3
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.35
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.39
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.44
+          }
+        ]
+      },
+      {
+        "id": "mudler-localai",
+        "canonicalName": "mudler/LocalAI",
+        "entityType": "repo",
+        "summary": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/mudler/LocalAI",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.4194881326842162,
+          "finalScore": 0.4194881326842162,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.9321958504093694,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:04:58Z",
+            "signal": "45811 stars, 4015 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-615869301",
+            "source": "github",
+            "title": "mudler/LocalAI",
+            "body": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
+            "url": "https://github.com/mudler/LocalAI",
+            "author": "mudler",
+            "publishedAt": "2023-03-18T22:58:02Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.29
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.38
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.42
+          }
+        ]
+      },
+      {
+        "id": "milvus-io-milvus",
+        "canonicalName": "milvus-io/milvus",
+        "entityType": "repo",
+        "summary": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/milvus-io/milvus",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.41789030396051513,
+          "finalScore": 0.41789030396051513,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.9286451199122558,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:05:45Z",
+            "signal": "43976 stars, 3974 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-208728772",
+            "source": "github",
+            "title": "milvus-io/milvus",
+            "body": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+            "url": "https://github.com/milvus-io/milvus",
+            "author": "milvus-io",
+            "publishedAt": "2019-09-16T06:43:43Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.29
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.37
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.42
+          }
+        ]
+      },
+      {
+        "id": "pingcap-tidb",
+        "canonicalName": "pingcap/tidb",
+        "entityType": "repo",
+        "summary": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/pingcap/tidb",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.41421372666700146,
+          "finalScore": 0.41421372666700146,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.9204749481488921,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T04:03:50Z",
+            "signal": "40028 stars, 6179 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-41986369",
+            "source": "github",
+            "title": "pingcap/tidb",
+            "body": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+            "url": "https://github.com/pingcap/tidb",
+            "author": "pingcap",
+            "publishedAt": "2015-09-06T04:01:52Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.37
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.41
+          }
+        ]
+      },
+      {
+        "id": "posthog-posthog",
+        "canonicalName": "PostHog/posthog",
+        "entityType": "repo",
+        "summary": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/PostHog/posthog",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.4070540054994825,
+          "finalScore": 0.4070540054994825,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.9045644566655167,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:59:46Z",
+            "signal": "33328 stars, 2594 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-235901813",
+            "source": "github",
+            "title": "PostHog/posthog",
+            "body": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
+            "url": "https://github.com/PostHog/posthog",
+            "author": "PostHog",
+            "publishedAt": "2020-01-23T22:46:58Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.36
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.41
+          }
+        ]
+      },
+      {
+        "id": "mlflow-mlflow",
+        "canonicalName": "mlflow/mlflow",
+        "entityType": "repo",
+        "summary": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/mlflow/mlflow",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.39667741792226585,
+          "finalScore": 0.39667741792226585,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.8815053731605907,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:22:15Z",
+            "signal": "25557 stars, 5631 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-136202695",
+            "source": "github",
+            "title": "mlflow/mlflow",
+            "body": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+            "url": "https://github.com/mlflow/mlflow",
+            "author": "mlflow",
+            "publishedAt": "2018-06-05T16:05:58Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.23
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.27
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.31
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.36
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.4
+          }
+        ]
+      },
+      {
+        "id": "weaviate-weaviate",
+        "canonicalName": "weaviate/weaviate",
+        "entityType": "repo",
+        "summary": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/weaviate/weaviate",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.37856331316883546,
+          "finalScore": 0.37856331316883546,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.8412518070418565,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T11:15:27Z",
+            "signal": "16078 stars, 1266 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-55072677",
+            "source": "github",
+            "title": "weaviate/weaviate",
+            "body": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
+            "url": "https://github.com/weaviate/weaviate",
+            "author": "weaviate",
+            "publishedAt": "2016-03-30T15:03:17Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.22
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.26
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.3
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.34
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "id": "microsoft-mcp-for-beginners",
+        "canonicalName": "microsoft/mcp-for-beginners",
+        "entityType": "repo",
+        "summary": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/microsoft/mcp-for-beginners",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.37821659153754417,
+          "finalScore": 0.37821659153754417,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.8404813145278759,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:02:48Z",
+            "signal": "15936 stars, 5204 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-960665821",
+            "source": "github",
+            "title": "microsoft/mcp-for-beginners",
+            "body": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.",
+            "url": "https://github.com/microsoft/mcp-for-beginners",
+            "author": "microsoft",
+            "publishedAt": "2025-04-04T20:46:17Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.22
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.26
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.3
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.34
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.38
+          }
+        ]
+      },
+      {
+        "id": "seerge-g-helper",
+        "canonicalName": "seerge/g-helper",
+        "entityType": "repo",
+        "summary": "Lightweight, open-source control tool for ASUS laptops and ROG Ally. Manage performance modes, fans, GPU, battery, and RGB lighting across Zephyrus, Flow, TUF, Strix, Scar, and other models.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/seerge/g-helper",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.3699682207991899,
+          "finalScore": 0.3699682207991899,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.8221516017759776,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:25:51Z",
+            "signal": "12904 stars, 476 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-600246354",
+            "source": "github",
+            "title": "seerge/g-helper",
+            "body": "Lightweight, open-source control tool for ASUS laptops and ROG Ally. Manage performance modes, fans, GPU, battery, and RGB lighting across Zephyrus, Flow, TUF, Strix, Scar, and other models.",
+            "url": "https://github.com/seerge/g-helper",
+            "author": "seerge",
+            "publishedAt": "2023-02-10T23:11:28Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.29
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.37
+          }
+        ]
+      },
+      {
+        "id": "leonxlnx-taste-skill",
+        "canonicalName": "Leonxlnx/taste-skill",
+        "entityType": "repo",
+        "summary": "Taste-Skill (High-Agency Frontend) - gives your AI good taste. stops the AI from generating boring, generic, \"slop\" ",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/Leonxlnx/taste-skill",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.3697343056130763,
+          "finalScore": 0.3697343056130763,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.8216317902512806,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:59:54Z",
+            "signal": "12827 stars, 1145 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1162099055",
+            "source": "github",
+            "title": "Leonxlnx/taste-skill",
+            "body": "Taste-Skill (High-Agency Frontend) - gives your AI good taste. stops the AI from generating boring, generic, \"slop\" ",
+            "url": "https://github.com/Leonxlnx/taste-skill",
+            "author": "Leonxlnx",
+            "publishedAt": "2026-02-19T21:44:05Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.29
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.33
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.37
+          }
+        ]
+      },
+      {
+        "id": "lum1104-understand-anything",
+        "canonicalName": "Lum1104/Understand-Anything",
+        "entityType": "repo",
+        "summary": "Graphs that teach > graphs that impress. Turn any code, or knowledge base (Karpathy LLM wiki), into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/Lum1104/Understand-Anything",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.355238141779766,
+          "finalScore": 0.355238141779766,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.7894180928439244,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T13:00:57Z",
+            "signal": "8852 stars, 749 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1182081931",
+            "source": "github",
+            "title": "Lum1104/Understand-Anything",
+            "body": "Graphs that teach > graphs that impress. Turn any code, or knowledge base (Karpathy LLM wiki), into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+            "url": "https://github.com/Lum1104/Understand-Anything",
+            "author": "Lum1104",
+            "publishedAt": "2026-03-15T02:30:51Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.36
+          }
+        ]
+      },
+      {
+        "id": "voltagent-voltagent",
+        "canonicalName": "VoltAgent/voltagent",
+        "entityType": "repo",
+        "summary": "AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/VoltAgent/voltagent",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.35348180892219994,
+          "finalScore": 0.35348180892219994,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.7855151309382221,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:57:05Z",
+            "signal": "8463 stars, 844 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-967530387",
+            "source": "github",
+            "title": "VoltAgent/voltagent",
+            "body": "AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework",
+            "url": "https://github.com/VoltAgent/voltagent",
+            "author": "VoltAgent",
+            "publishedAt": "2025-04-16T15:41:18Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.32
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.35
+          }
+        ]
+      },
+      {
+        "id": "alvinreal-awesome-opensource-ai",
+        "canonicalName": "alvinreal/awesome-opensource-ai",
+        "entityType": "repo",
+        "summary": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/alvinreal/awesome-opensource-ai",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.31253491778364406,
+          "finalScore": 0.31253491778364406,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.694522039519209,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:16:12Z",
+            "signal": "2968 stars, 285 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1190778303",
+            "source": "github",
+            "title": "alvinreal/awesome-opensource-ai",
+            "body": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure.",
+            "url": "https://github.com/alvinreal/awesome-opensource-ai",
+            "author": "alvinreal",
+            "publishedAt": "2026-03-24T15:58:22Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.18
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.28
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.31
+          }
+        ]
+      },
+      {
+        "id": "youmind-openlab-awesome-gpt-image-2",
+        "canonicalName": "YouMind-OpenLab/awesome-gpt-image-2",
+        "entityType": "repo",
+        "summary": "🚀 World's largest GPT Image 2 prompt library, updated daily — 1500+ curated prompts with preview images, 16 languages. OpenAI's next-gen image model with pixel-perfect text rendering, cross-image consistency, and commercial-grade illustration. Free & open source.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/YouMind-OpenLab/awesome-gpt-image-2",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.3037932643156715,
+          "finalScore": 0.3037932643156715,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6750961429237144,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:39:13Z",
+            "signal": "2373 stars, 230 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1212562200",
+            "source": "github",
+            "title": "YouMind-OpenLab/awesome-gpt-image-2",
+            "body": "🚀 World's largest GPT Image 2 prompt library, updated daily — 1500+ curated prompts with preview images, 16 languages. OpenAI's next-gen image model with pixel-perfect text rendering, cross-image consistency, and commercial-grade illustration. Free & open source.",
+            "url": "https://github.com/YouMind-OpenLab/awesome-gpt-image-2",
+            "author": "YouMind-OpenLab",
+            "publishedAt": "2026-04-16T13:57:42Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.18
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.27
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "id": "issus-altium-library",
+        "canonicalName": "issus/altium-library",
+        "entityType": "repo",
+        "summary": "Open source Altium Database Library with over 200,000 high quality components and full 3d models.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/issus/altium-library",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.3029612511346464,
+          "finalScore": 0.3029612511346464,
+          "verdict": "emerging"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6732472247436586,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T12:11:17Z",
+            "signal": "2323 stars, 1012 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-49041784",
+            "source": "github",
+            "title": "issus/altium-library",
+            "body": "Open source Altium Database Library with over 200,000 high quality components and full 3d models.",
+            "url": "https://github.com/issus/altium-library",
+            "author": "issus",
+            "publishedAt": "2016-01-05T04:23:53Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.18
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.21
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.24
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.27
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.3
+          }
+        ]
+      },
+      {
+        "id": "rocketride-org-rocketride-server",
+        "canonicalName": "rocketride-org/rocketride-server",
+        "entityType": "repo",
+        "summary": "High-performance AI pipeline engine with a C++ core and 50+ Python-extensible nodes. Build, debug, and scale LLM workflows with 13+ model providers, 8+ vector databases, and agent orchestration, all from your IDE. Includes VS Code extension, TypeScript/Python SDKs, and Docker deployment.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/rocketride-org/rocketride-server",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.29446574458828495,
+          "finalScore": 0.29446574458828495,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6543683213072998,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T07:17:03Z",
+            "signal": "1869 stars, 49 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1155576139",
+            "source": "github",
+            "title": "rocketride-org/rocketride-server",
+            "body": "High-performance AI pipeline engine with a C++ core and 50+ Python-extensible nodes. Build, debug, and scale LLM workflows with 13+ model providers, 8+ vector databases, and agent orchestration, all from your IDE. Includes VS Code extension, TypeScript/Python SDKs, and Docker deployment.",
+            "url": "https://github.com/rocketride-org/rocketride-server",
+            "author": "rocketride-org",
+            "publishedAt": "2026-02-11T17:02:53Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.17
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.2
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.23
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.26
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.29
+          }
+        ]
+      },
+      {
+        "id": "hyperspaceai-agi",
+        "canonicalName": "hyperspaceai/agi",
+        "entityType": "repo",
+        "summary": "The first distributed AGI system. Thousands of autonomous AI agents collaboratively train models, share experiments via P2P gossip, and push breakthroughs here. Fully peer-to-peer. Join from your browser or CLI.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/hyperspaceai/agi",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.28489869690501357,
+          "finalScore": 0.28489869690501357,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6331082153444746,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T13:02:00Z",
+            "signal": "1463 stars, 161 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1176335208",
+            "source": "github",
+            "title": "hyperspaceai/agi",
+            "body": "The first distributed AGI system. Thousands of autonomous AI agents collaboratively train models, share experiments via P2P gossip, and push breakthroughs here. Fully peer-to-peer. Join from your browser or CLI.",
+            "url": "https://github.com/hyperspaceai/agi",
+            "author": "hyperspaceai",
+            "publishedAt": "2026-03-08T23:08:37Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.17
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.2
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.23
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.28
+          }
+        ]
+      },
+      {
+        "id": "endee-io-endee",
+        "canonicalName": "endee-io/endee",
+        "entityType": "repo",
+        "summary": "Endee.io – A high-performance vector database, designed to handle up to 1B vectors on a single node, delivering significant performance gains through optimized indexing and execution. Also available in cloud https://endee.io/",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/endee-io/endee",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.2810289171661879,
+          "finalScore": 0.2810289171661879,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6245087048137509,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T09:41:05Z",
+            "signal": "1325 stars, 1752 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1141278752",
+            "source": "github",
+            "title": "endee-io/endee",
+            "body": "Endee.io – A high-performance vector database, designed to handle up to 1B vectors on a single node, delivering significant performance gains through optimized indexing and execution. Also available in cloud https://endee.io/",
+            "url": "https://github.com/endee-io/endee",
+            "author": "endee-io",
+            "publishedAt": "2026-01-24T15:25:20Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.16
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.19
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.22
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.28
+          }
+        ]
+      },
+      {
+        "id": "rhyssullivan-executor",
+        "canonicalName": "RhysSullivan/executor",
+        "entityType": "repo",
+        "summary": "The missing integration layer for AI agents. Let them call any OpenAPI / MCP / GraphQL / custom js functions in secure environment.",
+        "reason": "Ranked from GitHub repository activity.",
+        "githubRepoUrl": "https://github.com/RhysSullivan/executor",
+        "score": {
+          "hnComponent": 0,
+          "githubComponent": 0.2768976399303308,
+          "finalScore": 0.2768976399303308,
+          "verdict": "likely-hype"
+        },
+        "sources": [
+          {
+            "source": "github",
+            "score": 0.6153280887340684,
+            "mentions": 1,
+            "lastSeen": "2026-04-25T13:00:33Z",
+            "signal": "1192 stars, 64 forks, recently pushed"
+          }
+        ],
+        "mentions": [
+          {
+            "id": "github-1152424189",
+            "source": "github",
+            "title": "RhysSullivan/executor",
+            "body": "The missing integration layer for AI agents. Let them call any OpenAPI / MCP / GraphQL / custom js functions in secure environment.",
+            "url": "https://github.com/RhysSullivan/executor",
+            "author": "RhysSullivan",
+            "publishedAt": "2026-02-07T21:19:33Z"
+          }
+        ],
+        "history": [
+          {
+            "date": "2026-04-21",
+            "score": 0.16
+          },
+          {
+            "date": "2026-04-22",
+            "score": 0.19
+          },
+          {
+            "date": "2026-04-23",
+            "score": 0.22
+          },
+          {
+            "date": "2026-04-24",
+            "score": 0.25
+          },
+          {
+            "date": "2026-04-25",
+            "score": 0.28
+          }
+        ]
+      }
+    ]
+  },
   "sourceStatuses": [
     {
       "source": "hn",
       "label": "Hacker News Firebase API",
       "status": "healthy",
-      "lastSync": "2026-04-25T08:45:29.754Z",
+      "lastSync": "2026-04-25T13:02:12.477Z",
       "nextSync": "2026-04-26T00:00:00.000Z",
       "errors": [],
       "notes": "Uses topstories, newstories, beststories, and item detail endpoints."
     },
     {
-      "source": "x",
-      "label": "X Recent Search API",
-      "status": "disabled",
-      "lastSync": null,
-      "nextSync": null,
-      "errors": [
-        "X_BEARER_TOKEN is not configured"
-      ],
-      "notes": "Recent search requires API access and a bearer token."
-    },
-    {
       "source": "github",
       "label": "GitHub Search API",
       "status": "healthy",
-      "lastSync": "2026-04-25T08:45:29.754Z",
+      "lastSync": "2026-04-25T13:02:12.477Z",
       "nextSync": "2026-04-26T00:00:00.000Z",
       "errors": [],
       "notes": "MVP uses repository search sorted by recently updated repositories; star growth comes from snapshots."
@@ -760,34 +3374,35 @@
   ],
   "dailyReport": {
     "date": "2026-04-25",
-    "summary": "Scheduled refresh found 10 AI trend candidates across HN, GitHub, and optional X recent search.",
+    "summary": "Scheduled refresh found 20 HN topics and 20 GitHub repositories.",
     "topTrendIds": [
       "hn-47884971",
       "hn-47879092",
+      "hn-47863217",
+      "hn-47852835",
+      "hn-47878117",
+      "nousresearch-hermes-agent",
+      "lobehub-lobehub",
+      "hn-47882697",
+      "mudler-localai",
+      "milvus-io-milvus",
+      "pingcap-tidb",
+      "posthog-posthog",
+      "hn-47887683",
       "hn-47894000",
-      "hn-47888465",
-      "hn-47890841",
-      "hn-47897790",
-      "hn-47894985",
-      "hn-47895093",
-      "hn-47898308",
-      "hn-47897953"
+      "mlflow-mlflow",
+      "weaviate-weaviate",
+      "microsoft-mcp-for-beginners",
+      "seerge-g-helper",
+      "leonxlnx-taste-skill",
+      "hn-47872452"
     ],
     "newEntities": [
       "DeepSeek v4",
       "GPT-5.5",
-      "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API"
+      "Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model"
     ],
     "highConfidence": [],
-    "likelyHype": [
-      "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
-      "Hear your agent suffer through your code",
-      "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
-      "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
-      "MenteDB – open-source memory database for AI agents (Rust)",
-      "Show HN: Nimbus – Browser with Claude Code UX",
-      "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
-      "Devin for Terminal"
-    ]
+    "likelyHype": []
   }
 }

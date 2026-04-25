@@ -2,28 +2,19 @@ export type TrendVerdict = "high-confidence" | "watchlist" | "emerging" | "likel
 
 export interface TrendScoreInput {
   hnDiscussionScore: number;
-  xVelocityScore: number;
   githubAdoptionScore: number;
-  noveltyScore: number;
-  credibilityScore: number;
 }
 
 export interface TrendScoreBreakdown {
   hnComponent: number;
-  xComponent: number;
   githubComponent: number;
-  noveltyComponent: number;
-  credibilityComponent: number;
   finalScore: number;
   verdict: TrendVerdict;
 }
 
 const WEIGHTS = {
-  hn: 0.3,
-  x: 0.3,
-  github: 0.25,
-  novelty: 0.1,
-  credibility: 0.05
+  hn: 0.55,
+  github: 0.45
 } as const;
 
 function clamp01(value: number): number {
@@ -45,27 +36,16 @@ export function classifyVerdict(score: number): TrendVerdict {
 
 export function computeTrendScore(input: TrendScoreInput): TrendScoreBreakdown {
   const hn = clamp01(input.hnDiscussionScore);
-  const x = clamp01(input.xVelocityScore);
   const github = clamp01(input.githubAdoptionScore);
-  const novelty = clamp01(input.noveltyScore);
-  const credibility = clamp01(input.credibilityScore);
 
   const hnComponent = WEIGHTS.hn * hn;
-  const xComponent = WEIGHTS.x * x;
   const githubComponent = WEIGHTS.github * github;
-  const noveltyComponent = WEIGHTS.novelty * novelty;
-  const credibilityComponent = WEIGHTS.credibility * credibility;
-  const finalScore =
-    hnComponent + xComponent + githubComponent + noveltyComponent + credibilityComponent;
+  const finalScore = hnComponent + githubComponent;
 
   return {
     hnComponent,
-    xComponent,
     githubComponent,
-    noveltyComponent,
-    credibilityComponent,
     finalScore,
     verdict: classifyVerdict(finalScore)
   };
 }
-

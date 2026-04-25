@@ -1,6 +1,6 @@
 import type { TrendScoreBreakdown } from "./trendScoring";
 
-export type SourceName = "hn" | "x" | "github";
+export type SourceName = "hn" | "github";
 export type EntityType = "tool" | "repo" | "paper" | "model" | "startup";
 
 export interface SourceBreakdown {
@@ -54,3 +54,10 @@ export interface DailyReport {
   likelyHype: string[];
 }
 
+export interface TrendSnapshot {
+  generatedAt?: string;
+  trends: TrendEntity[];
+  sourceTopTrends: Partial<Record<SourceName, TrendEntity[]>>;
+  sourceStatuses: SourceStatus[];
+  dailyReport: DailyReport;
+}
