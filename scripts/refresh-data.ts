@@ -11,6 +11,7 @@ import { rssSourceOrder, sourceMetadata } from "../src/sources";
 
 const rootDir = dirname(dirname(fileURLToPath(import.meta.url)));
 const outputPath = join(rootDir, "src/generated/snapshot.json");
+const TOP_LIMIT = 10;
 
 const now = new Date();
 const today = now.toISOString().slice(0, 10);
@@ -169,7 +170,7 @@ async function collectRssSource(source: SourceName) {
     }
 
     const xml = await response.text();
-    const articles = parseFeed(xml, source).slice(0, 20);
+    const articles = parseFeed(xml, source).slice(0, TOP_LIMIT);
     if (articles.length === 0) {
       throw new Error(`${sourceMetadata[source].label} feed returned no articles`);
     }
@@ -346,12 +347,12 @@ async function main() {
     collectGitHub(),
     Promise.all(rssSourceOrder.map((source) => collectRssSource(source)))
   ]);
-  const githubTrends = github.repos.slice(0, 20).map(repoToTrend);
-  const hnTrends = hn.stories.slice(0, 20).map(hnStoryToTrend);
+  const githubTrends = github.repos.slice(0, TOP_LIMIT).map(repoToTrend);
+  const hnTrends = hn.stories.slice(0, TOP_LIMIT).map(hnStoryToTrend);
   const rssTrends = Object.fromEntries(
     rssCollections.map((collection) => [
       collection.source,
-      collection.articles.slice(0, 20).map((article, index) => rssArticleToTrend(article, index))
+      collection.articles.slice(0, TOP_LIMIT).map((article, index) => rssArticleToTrend(article, index))
     ])
   ) as Partial<Record<SourceName, TrendEntity[]>>;
   const rssErrors = Object.fromEntries(
@@ -359,7 +360,7 @@ async function main() {
   ) as Partial<Record<SourceName, string[]>>;
   const trends = [...githubTrends, ...hnTrends, ...Object.values(rssTrends).flat()]
     .sort((a, b) => b.score.finalScore - a.score.finalScore)
-    .slice(0, 20);
+    .slice(0, TOP_LIMIT);
   const sourceTopTrends: Partial<Record<SourceName, TrendEntity[]>> = {
     hn: hnTrends,
     github: githubTrends,
@@ -373,7 +374,7 @@ async function main() {
     date: today,
     summary:
       trends.length > 0
-        ? `Scheduled refresh found Top 20 candidates by source (${sourceCounts}).`
+        ? `Scheduled refresh found Top 10 candidates by source (${sourceCounts}).`
         : "Scheduled refresh completed, but no AI trend candidates were collected.",
     topTrendIds: trends.map((trend) => trend.id),
     newEntities: trends.slice(0, 3).map((trend) => trend.canonicalName),
