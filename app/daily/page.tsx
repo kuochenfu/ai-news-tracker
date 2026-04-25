@@ -21,7 +21,7 @@ export default function DailyPage() {
               trend ? (
                 <a
                   key={trend.id}
-                  href={sitePath(`/trends/${trend.id}/`)}
+                  href={sitePath(`/trends/#${trend.id}`)}
                   className="flex items-center justify-between gap-4 py-3"
                 >
                   <div>

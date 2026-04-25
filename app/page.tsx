@@ -49,7 +49,7 @@ export default function DashboardPage() {
               <div className="rounded-md bg-muted p-3">
                 <TrendHistory points={trend.history} />
                 <a
-                  href={sitePath(`/trends/${trend.id}/`)}
+                  href={sitePath(`/trends/#${trend.id}`)}
                   className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary"
                 >
                   Inspect entity
