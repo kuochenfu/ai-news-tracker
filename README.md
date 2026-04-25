@@ -32,13 +32,25 @@ A Next.js + TypeScript AI Early Signal Intelligence Engine for tracking early AI
 
 ```bash
 npm install
+npm run refresh
 npm run dev
 npm test
 ```
 
+## GitHub Pages
+
+The repository includes a GitHub Actions workflow at `.github/workflows/pages.yml`.
+
+- Deploys on pushes to `main` and `codex-restart-typescript-baseline`.
+- Can be run manually with `workflow_dispatch`.
+- Refreshes trend data and deploys every day at 08:00 and 16:00 Asia/Taipei.
+- Uses `GITHUB_PAGES=true` to export the app under `/ai-news-tracker`.
+
+In the GitHub repository settings, set Pages source to **GitHub Actions**.
+
 ## Project Layout
 
-- `app/`: Next.js App Router pages and API routes.
+- `app/`: Next.js App Router pages for the static dashboard.
 - `components/`: reusable dashboard UI.
 - `src/`: domain logic, source clients, scoring, and mock data.
 - `prisma/`: PostgreSQL schema.

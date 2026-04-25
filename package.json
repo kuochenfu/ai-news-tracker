@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "refresh": "tsx scripts/refresh-data.ts",
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "test": "npm run typecheck && node --import tsx --test test/trendScoring.test.ts"

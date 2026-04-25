@@ -1,0 +1,793 @@
+{
+  "generatedAt": "2026-04-25T08:45:29.754Z",
+  "trends": [
+    {
+      "id": "hn-47884971",
+      "canonicalName": "DeepSeek v4",
+      "entityType": "tool",
+      "summary": "DeepSeek v4",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://api-docs.deepseek.com/news/news260424",
+      "score": {
+        "hnComponent": 0.3,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.3805,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 1,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T03:01:21.000Z",
+          "signal": "1894 points and 1474 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47884971",
+          "source": "hn",
+          "title": "DeepSeek v4",
+          "body": "<a href=\"https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;</a><p><a href=\"https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-V4-Pro&#x2F;blob&#x2F;main&#x2F;DeepSeek_V4.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;huggingface.co&#x2F;deepseek-ai&#x2F;DeepSeek-V4-Pro&#x2F;blob&#x2F;main...</a>",
+          "url": "https://api-docs.deepseek.com/news/news260424",
+          "author": "impact_sy",
+          "publishedAt": "2026-04-24T03:01:21.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.22
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.26
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.34
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.38
+        }
+      ]
+    },
+    {
+      "id": "hn-47879092",
+      "canonicalName": "GPT-5.5",
+      "entityType": "tool",
+      "summary": "GPT-5.5",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://openai.com/index/introducing-gpt-5-5/",
+      "score": {
+        "hnComponent": 0.3,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.3805,
+        "verdict": "emerging"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 1,
+          "mentions": 1,
+          "lastSeen": "2026-04-23T18:01:39.000Z",
+          "signal": "1543 points and 1028 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47879092",
+          "source": "hn",
+          "title": "GPT-5.5",
+          "url": "https://openai.com/index/introducing-gpt-5-5/",
+          "author": "rd",
+          "publishedAt": "2026-04-23T18:01:39.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.22
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.26
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.3
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.34
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.38
+        }
+      ]
+    },
+    {
+      "id": "hn-47894000",
+      "canonicalName": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+      "entityType": "tool",
+      "summary": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://developers.openai.com/api/docs/changelog",
+      "score": {
+        "hnComponent": 0.2077857142857143,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.2882857142857143,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.6926190476190477,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T18:23:32.000Z",
+          "signal": "234 points and 129 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47894000",
+          "source": "hn",
+          "title": "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+          "body": "<i>GPT-5.5</i> - <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47879092\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47879092</a> - April 2026 (1010 comments)",
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "author": "arabicalories",
+          "publishedAt": "2026-04-24T18:23:32.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.17
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.2
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.23
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.26
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.29
+        }
+      ]
+    },
+    {
+      "id": "hn-47888465",
+      "canonicalName": "Hear your agent suffer through your code",
+      "entityType": "tool",
+      "summary": "Hear your agent suffer through your code",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://github.com/AndrewVos/endless-toil",
+      "score": {
+        "hnComponent": 0.15057142857142855,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.23107142857142854,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.5019047619047619,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T10:58:45.000Z",
+          "signal": "188 points and 84 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47888465",
+          "source": "hn",
+          "title": "Hear your agent suffer through your code",
+          "url": "https://github.com/AndrewVos/endless-toil",
+          "author": "AndrewVos",
+          "publishedAt": "2026-04-24T10:58:45.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.13
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.16
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.18
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.21
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.23
+        }
+      ]
+    },
+    {
+      "id": "hn-47890841",
+      "canonicalName": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+      "entityType": "tool",
+      "summary": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://github.com/browser-use/browser-harness",
+      "score": {
+        "hnComponent": 0.08533333333333333,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.1658333333333333,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.28444444444444444,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T14:31:38.000Z",
+          "signal": "98 points and 52 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47890841",
+          "source": "hn",
+          "title": "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+          "body": "Hey HN,<p>We got tired of browser frameworks restricting the LLM, so we removed the framework and gave the LLM maximum freedom to do whatever it&#x27;s trained on. We gave the harness the ability to self correct and add new tools if the LLM wants (is pre-trained on) that.<p>Our Browser Use library is tens of thousands of lines of deterministic heuristics wrapping Chrome (CDP websocket). Element extractors, click helpers, target managemenet (SUPER painful), watchdogs (crash handling, file downloads, alerts), cross origin iframes (if you want to click on an element you have to switch the target first, very anoying), etc.<p>Watchdogs specifically are extremely painful but required. If Chrome triggers for example a native file popup the agent is just completely stuck. So the two solutions are to:\n1. code those heuristics and edge cases away 1 by 1 and prevent them\n2. give LLM a tool to handle the edge case<p>As you can imagine - there are crazy amounts of heuristics like this so you eventually end up with A LOT of tools if you try to go for #2. So you have to make compromises and just code those heuristics away.<p>BUT if the LLM just &quot;knows&quot; CDP well enough to switch the targets when it encounters a cross origin iframe, dismiss the alert when it appears, write its own click helpers, or upload function, you suddenly don&#x27;t have to worry about any of those edge cases.<p>Turns out LLMs know CDP pretty well these days. So we bitter pilled the harness. The concepts that should survive are:\n- something that holds and keeps CDP websocket alive (deamon)\n- extremely basic tools (helpers.py)\n- skill.md that explains how to use it<p>The new paradigm? SKILL.md + a few python helpers that need to have the ability to change on the fly.<p>One cool example:\nWe forgot to implement upload_file function. Then mid-task the agent wants to upload a file so it grepped helpers.py, saw nothing, wrote the function itself using raw DOM.setFileInputFiles (which we only noticed that later in a git diff). This was a relly magical moment of how powerful LLMs have become.<p>Compared to other approaches (Playwright MCP, browser use CLI, agent-browser, chrome devtools MCP): all of them wrap Chrome in a set of predefined functions for the LLM. The worst failure mode is silent. The LLM&#x27;s click() returns fine so the LLM thinks it clicked, but on this particular site nothing actually happened. It moves on with a broken model of the world. Browser Harness gives the LLM maximum freedom and perfect context for HOW the tools actually work.<p>Here are a few crazy examples of what browser harness can do:\n- plays stockfish <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2046457374467379347</a>\n- sets a world record in tetris <a href=\"https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;shawn_pana&#x2F;status&#x2F;2047120626994012442</a>\n- figures out how to draw a heart with js <a href=\"https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;mamagnus00&#x2F;status&#x2F;2046486159992480198?s=20</a><p>You can super easily install it by telling claude code:\n`Set up <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a> for me.`<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;browser-use&#x2F;browser-harness</a><p>What would you call this new paradigm? A dialect?",
+          "url": "https://github.com/browser-use/browser-harness",
+          "author": "gregpr07",
+          "publishedAt": "2026-04-24T14:31:38.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.1
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.11
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.13
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.15
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.17
+        }
+      ]
+    },
+    {
+      "id": "hn-47897790",
+      "canonicalName": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+      "entityType": "tool",
+      "summary": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://alash3al.github.io/stash?_v01",
+      "score": {
+        "hnComponent": 0.016142857142857143,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.09664285714285714,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.05380952380952381,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T01:24:40.000Z",
+          "signal": "26 points and 6 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47897790",
+          "source": "hn",
+          "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+          "url": "https://alash3al.github.io/stash?_v01",
+          "author": "alash3al",
+          "publishedAt": "2026-04-25T01:24:40.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.06
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.08
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.09
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.1
+        }
+      ]
+    },
+    {
+      "id": "hn-47894985",
+      "canonicalName": "MenteDB – open-source memory database for AI agents (Rust)",
+      "entityType": "tool",
+      "summary": "MenteDB – open-source memory database for AI agents (Rust)",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://github.com/nambok/mentedb",
+      "score": {
+        "hnComponent": 0.00769047619047619,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.0881904761904762,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.025634920634920635,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T19:51:09.000Z",
+          "signal": "16 points and 1 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47894985",
+          "source": "hn",
+          "title": "MenteDB – open-source memory database for AI agents (Rust)",
+          "url": "https://github.com/nambok/mentedb",
+          "author": "mentedb",
+          "publishedAt": "2026-04-24T19:51:09.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.05
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.06
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.08
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.09
+        }
+      ]
+    },
+    {
+      "id": "hn-47895093",
+      "canonicalName": "Show HN: Nimbus – Browser with Claude Code UX",
+      "entityType": "tool",
+      "summary": "Show HN: Nimbus – Browser with Claude Code UX",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://usenimbus.app/",
+      "score": {
+        "hnComponent": 0.0051190476190476186,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.08561904761904762,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.017063492063492062,
+          "mentions": 1,
+          "lastSeen": "2026-04-24T20:01:39.000Z",
+          "signal": "10 points and 1 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47895093",
+          "source": "hn",
+          "title": "Show HN: Nimbus – Browser with Claude Code UX",
+          "body": "Hi HN, I&#x27;m Anil. Nimbus is a desktop browser with an AI agent built into it. The UX is shamelessly inspired by Claude Code: a chat bar at the bottom, an agent log above it, and the webpage itself when its needed.<p>This is mainly a UX experiment for me. And also the reason it isn&#x27;t a Chrome extension: once you have a chat bar that understands intent, the URL field is redundant. You shouldn&#x27;t have two places to tell the browser what you want. I didn&#x27;t want to bolt an agent onto an existing browser&#x27;s chrome and end up with duplicated controls everywhere — I wanted full freedom to redesign the shell from scratch, decide what stays, what goes, and what a browser even looks like when the agent is the primary interface.<p><pre><code>  Download for macOS: https:&#x2F;&#x2F;usenimbus.app\n  Launch video: https:&#x2F;&#x2F;youtu.be&#x2F;dj23-XIiB1o</code></pre>",
+          "url": "https://usenimbus.app/",
+          "author": "pycassa",
+          "publishedAt": "2026-04-24T20:01:39.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.05
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.06
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.08
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.09
+        }
+      ]
+    },
+    {
+      "id": "hn-47898308",
+      "canonicalName": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+      "entityType": "tool",
+      "summary": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://github.com/vinhnx/VTCode",
+      "score": {
+        "hnComponent": 0.004238095238095238,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.08473809523809524,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.014126984126984127,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T03:17:19.000Z",
+          "signal": "6 points and 2 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47898308",
+          "source": "hn",
+          "title": "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+          "body": "Hi HN, I built VT Code, a semantic coding agent. Supports all SOTA and open sources model. Anthropic, OpenAI, Gemini, Codex. Agent Skills, Model Context Protocol and Agent Client Protocol (ACP) ready. All open source models are support. Local inference via LM Studio and Ollama (experiment). Semantic context understanding is supported by ast-grep for structured code search and ripgrep for powered grep.<p>I built VT Code in Rust on Ratatui. Architecture and agent loop documented in the README and DeepWiki.<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;vinhnx&#x2F;VTCode</a><p>DeepWiki: <a href=\"https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode\" rel=\"nofollow\">https:&#x2F;&#x2F;deepwiki.com&#x2F;vinhnx&#x2F;VTCode</a><p>Happy to answer questions!<p>I believe coding harnesses should be open, and everyone should have a choice of their preferred way to work in this agentic engineering era.",
+          "url": "https://github.com/vinhnx/VTCode",
+          "author": "vinhnx",
+          "publishedAt": "2026-04-25T03:17:19.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.05
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.06
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.08
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.08
+        }
+      ]
+    },
+    {
+      "id": "hn-47897953",
+      "canonicalName": "Devin for Terminal",
+      "entityType": "tool",
+      "summary": "Devin for Terminal",
+      "reason": "HN discussion signal detected; GitHub/X correlation still pending.",
+      "officialUrl": "https://devin.ai/terminal",
+      "score": {
+        "hnComponent": 0.0021428571428571425,
+        "xComponent": 0,
+        "githubComponent": 0,
+        "noveltyComponent": 0.057999999999999996,
+        "credibilityComponent": 0.022500000000000003,
+        "finalScore": 0.08264285714285714,
+        "verdict": "likely-hype"
+      },
+      "sources": [
+        {
+          "source": "hn",
+          "score": 0.007142857142857143,
+          "mentions": 1,
+          "lastSeen": "2026-04-25T02:00:04.000Z",
+          "signal": "5 points and 0 comments"
+        },
+        {
+          "source": "github",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "No matched repository yet"
+        },
+        {
+          "source": "x",
+          "score": 0,
+          "mentions": 0,
+          "lastSeen": "2026-04-25T08:45:29.754Z",
+          "signal": "X correlation requires configured API access"
+        }
+      ],
+      "mentions": [
+        {
+          "id": "hn-47897953",
+          "source": "hn",
+          "title": "Devin for Terminal",
+          "url": "https://devin.ai/terminal",
+          "author": "nickzana",
+          "publishedAt": "2026-04-25T02:00:04.000Z"
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-04-21",
+          "score": 0.05
+        },
+        {
+          "date": "2026-04-22",
+          "score": 0.06
+        },
+        {
+          "date": "2026-04-23",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-24",
+          "score": 0.07
+        },
+        {
+          "date": "2026-04-25",
+          "score": 0.08
+        }
+      ]
+    }
+  ],
+  "sourceStatuses": [
+    {
+      "source": "hn",
+      "label": "Hacker News Firebase API",
+      "status": "healthy",
+      "lastSync": "2026-04-25T08:45:29.754Z",
+      "nextSync": "2026-04-26T00:00:00.000Z",
+      "errors": [],
+      "notes": "Uses topstories, newstories, beststories, and item detail endpoints."
+    },
+    {
+      "source": "x",
+      "label": "X Recent Search API",
+      "status": "disabled",
+      "lastSync": null,
+      "nextSync": null,
+      "errors": [
+        "X_BEARER_TOKEN is not configured"
+      ],
+      "notes": "Recent search requires API access and a bearer token."
+    },
+    {
+      "source": "github",
+      "label": "GitHub Search API",
+      "status": "healthy",
+      "lastSync": "2026-04-25T08:45:29.754Z",
+      "nextSync": "2026-04-26T00:00:00.000Z",
+      "errors": [],
+      "notes": "MVP uses repository search sorted by recently updated repositories; star growth comes from snapshots."
+    }
+  ],
+  "dailyReport": {
+    "date": "2026-04-25",
+    "summary": "Scheduled refresh found 10 AI trend candidates across HN, GitHub, and optional X recent search.",
+    "topTrendIds": [
+      "hn-47884971",
+      "hn-47879092",
+      "hn-47894000",
+      "hn-47888465",
+      "hn-47890841",
+      "hn-47897790",
+      "hn-47894985",
+      "hn-47895093",
+      "hn-47898308",
+      "hn-47897953"
+    ],
+    "newEntities": [
+      "DeepSeek v4",
+      "GPT-5.5",
+      "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API"
+    ],
+    "highConfidence": [],
+    "likelyHype": [
+      "OpenAI releases GPT-5.5 and GPT-5.5 Pro in the API",
+      "Hear your agent suffer through your code",
+      "Show HN: Browser Harness – Gives LLM freedom to complete any browser task",
+      "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+      "MenteDB – open-source memory database for AI agents (Rust)",
+      "Show HN: Nimbus – Browser with Claude Code UX",
+      "Show HN: VT Code – Rust TUI coding agent with multi-provider support",
+      "Devin for Terminal"
+    ]
+  }
+}
