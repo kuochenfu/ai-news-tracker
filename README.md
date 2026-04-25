@@ -1,17 +1,45 @@
 # ai-news-tracker
 
-A clean TypeScript baseline for an AI news and trend tracking engine.
+A Next.js + TypeScript AI Early Signal Intelligence Engine for tracking early AI and developer adoption signals across Hacker News, X, and GitHub.
+
+## MVP Scope
+
+- Dashboard for today's ranked AI trends.
+- Entity detail pages with HN, X, GitHub source breakdowns.
+- Daily report page for top trends, new entities, and likely hype.
+- Source status page for ingestion health.
+- Typed API clients for HN Firebase, X recent search, and GitHub repository search.
+- Prisma PostgreSQL schema matching the proposal tables.
+- Weighted trend scoring:
+
+```text
+0.30 * HN Discussion Score
++ 0.30 * X Velocity Score
++ 0.25 * GitHub Adoption Score
++ 0.10 * Novelty Score
++ 0.05 * Credibility Score
+```
+
+## API Notes
+
+- Hacker News uses the official Firebase API: `topstories`, `newstories`, `beststories`, and `item/<id>.json`.
+- X recent search requires `X_BEARER_TOKEN`.
+- GitHub Trending has no official API; the MVP uses GitHub Search API and optional `GITHUB_TOKEN`.
+- OpenAI extraction and summaries will use `OPENAI_API_KEY`.
+- PostgreSQL access uses `DATABASE_URL`.
 
 ## Scripts
 
 ```bash
 npm install
+npm run dev
 npm test
 ```
 
 ## Project Layout
 
-- `src/`: TypeScript source code.
-- `test/`: TypeScript tests compiled and run with Node's test runner.
-- `dist/`: build output, ignored by git.
-
+- `app/`: Next.js App Router pages and API routes.
+- `components/`: reusable dashboard UI.
+- `src/`: domain logic, source clients, scoring, and mock data.
+- `prisma/`: PostgreSQL schema.
+- `test/`: Node test runner tests.

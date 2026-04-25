@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RawEvent {
+  id          String   @id @default(cuid())
+  source      String
+  externalId  String
+  title       String?
+  body        String?
+  url         String?
+  author      String?
+  publishedAt DateTime?
+  rawJson     Json
+  createdAt   DateTime @default(now())
+
+  mentions EntityMention[]
+
+  @@unique([source, externalId])
+  @@map("raw_events")
+}
+
+model Entity {
+  id            String   @id @default(cuid())
+  canonicalName String   @unique
+  entityType    String
+  aliases       String[]
+  officialUrl   String?
+  githubRepoUrl String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  mentions EntityMention[]
+  metrics  SourceMetric[]
+  scores   TrendScore[]
+
+  @@map("entities")
+}
+
+model EntityMention {
+  id         String   @id @default(cuid())
+  entityId   String
+  rawEventId String
+  source     String
+  confidence Float
+  createdAt  DateTime @default(now())
+
+  entity   Entity   @relation(fields: [entityId], references: [id])
+  rawEvent RawEvent @relation(fields: [rawEventId], references: [id])
+
+  @@unique([entityId, rawEventId])
+  @@map("entity_mentions")
+}
+
+model SourceMetric {
+  id           String   @id @default(cuid())
+  entityId     String
+  source       String
+  date         DateTime
+  mentionCount Int      @default(0)
+  score        Float?
+  commentCount Int      @default(0)
+  repostCount  Int      @default(0)
+  likeCount    Int      @default(0)
+  starCount    Int      @default(0)
+  forkCount    Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  entity Entity @relation(fields: [entityId], references: [id])
+
+  @@unique([entityId, source, date])
+  @@map("source_metrics")
+}
+
+model TrendScore {
+  id               String   @id @default(cuid())
+  entityId          String
+  date              DateTime
+  hnScore           Float
+  xScore            Float
+  githubScore       Float
+  noveltyScore      Float
+  credibilityScore  Float
+  finalScore        Float
+  verdict           String
+  createdAt         DateTime @default(now())
+
+  entity Entity @relation(fields: [entityId], references: [id])
+
+  @@unique([entityId, date])
+  @@map("trend_scores")
+}
+
+model DailyReport {
+  id              String   @id @default(cuid())
+  date            DateTime @unique
+  markdownSummary String
+  jsonSummary     Json
+  createdAt       DateTime @default(now())
+
+  @@map("daily_reports")
+}
+

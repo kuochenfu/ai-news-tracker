@@ -4,12 +4,11 @@ export {
   type TrendScoreBreakdown,
   type TrendScoreInput,
   type TrendVerdict
-} from "./trendScoring.js";
+} from "./trendScoring";
 
 export {
   parseGitHubRepo,
   parseHackerNewsStory,
   parseXPost,
   type NormalizedSourceEvent
-} from "./sourceNormalizers.js";
-
+} from "./sourceNormalizers";

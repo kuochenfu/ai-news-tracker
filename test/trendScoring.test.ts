@@ -7,7 +7,7 @@ import {
   parseGitHubRepo,
   parseHackerNewsStory,
   parseXPost
-} from "../src/index.js";
+} from "../src/index";
 
 test("computes the weighted trend score", () => {
   const result = computeTrendScore({
@@ -81,4 +81,3 @@ test("normalizes supported source payloads", () => {
   assert.equal(gh.source, "github");
   assert.equal(gh.metrics.stars, 100);
 });
-
