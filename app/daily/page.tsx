@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import { ScoreBadge } from "@/components/ScoreBadge";
 import { dailyReport, getTrendById } from "@/src/mockData";
+import { sitePath } from "@/src/paths";
 
 export default function DailyPage() {
   const topTrends = dailyReport.topTrendIds.map((id) => getTrendById(id)).filter(Boolean);
@@ -20,7 +19,11 @@ export default function DailyPage() {
           <div className="mt-4 divide-y divide-border">
             {topTrends.map((trend, index) =>
               trend ? (
-                <Link key={trend.id} href={`/trends/${trend.id}`} className="flex items-center justify-between gap-4 py-3">
+                <a
+                  key={trend.id}
+                  href={sitePath(`/trends/${trend.id}/`)}
+                  className="flex items-center justify-between gap-4 py-3"
+                >
                   <div>
                     <p className="text-sm font-medium">
                       #{index + 1} {trend.canonicalName}
@@ -28,7 +31,7 @@ export default function DailyPage() {
                     <p className="text-xs text-muted-foreground">{trend.reason}</p>
                   </div>
                   <ScoreBadge score={trend.score.finalScore} verdict={trend.score.verdict} />
-                </Link>
+                </a>
               ) : null
             )}
           </div>
@@ -56,4 +59,3 @@ export default function DailyPage() {
     </div>
   );
 }
-

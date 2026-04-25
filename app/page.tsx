@@ -1,10 +1,10 @@
-import Link from "next/link";
 import { ArrowUpRight, Gauge } from "lucide-react";
 
 import { ScoreBadge } from "@/components/ScoreBadge";
 import { SourcePill } from "@/components/SourcePill";
 import { TrendHistory } from "@/components/TrendHistory";
 import { trends } from "@/src/mockData";
+import { sitePath } from "@/src/paths";
 
 export default function DashboardPage() {
   const ranked = [...trends].sort((a, b) => b.score.finalScore - a.score.finalScore);
@@ -48,13 +48,13 @@ export default function DashboardPage() {
               </div>
               <div className="rounded-md bg-muted p-3">
                 <TrendHistory points={trend.history} />
-                <Link
-                  href={`/trends/${trend.id}`}
+                <a
+                  href={sitePath(`/trends/${trend.id}/`)}
                   className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary"
                 >
                   Inspect entity
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                </a>
               </div>
             </div>
           </article>
@@ -63,4 +63,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
