@@ -16,6 +16,41 @@ const TOP_LIMIT = 10;
 const now = new Date();
 const today = now.toISOString().slice(0, 10);
 
+const rankingKeywords = [
+  "ai",
+  "人工智慧",
+  "生成式",
+  "agent",
+  "agentic",
+  "llm",
+  "大模型",
+  "模型",
+  "openai",
+  "anthropic",
+  "claude",
+  "gemini",
+  "deepseek",
+  "inference",
+  "推論",
+  "multimodal",
+  "多模態",
+  "vector",
+  "向量",
+  "mcp",
+  "coding",
+  "code",
+  "developer",
+  "開發",
+  "robot",
+  "機器人",
+  "chip",
+  "semiconductor",
+  "gpu",
+  "nvidia",
+  "晶片",
+  "半導體"
+];
+
 interface RssArticle {
   source: SourceName;
   title: string;
@@ -23,6 +58,7 @@ interface RssArticle {
   url?: string;
   author?: string;
   publishedAt: string;
+  feedIndex: number;
 }
 
 function slugify(value: string): string {
@@ -35,6 +71,28 @@ function slugify(value: string): string {
 
 function clamp01(value: number): number {
   return Math.max(0, Math.min(1, value));
+}
+
+function daysSince(value?: string | number | null): number {
+  if (value === undefined || value === null) {
+    return 30;
+  }
+  const date = typeof value === "number" ? new Date(value * 1000) : new Date(value);
+  const time = date.getTime();
+  if (Number.isNaN(time)) {
+    return 30;
+  }
+  return Math.max(0, (now.getTime() - time) / 86_400_000);
+}
+
+function recencyScore(value?: string | number | null, halfLifeDays = 3): number {
+  return Math.exp(-daysSince(value) / halfLifeDays);
+}
+
+function keywordScore(text: string): number {
+  const normalized = text.toLowerCase();
+  const matches = rankingKeywords.filter((keyword) => normalized.includes(keyword.toLowerCase())).length;
+  return clamp01(matches / 4);
 }
 
 function historyFor(score: number) {
@@ -94,8 +152,8 @@ async function collectGitHub() {
   }
 
   const repos = [...reposById.values()]
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 20);
+    .sort((a, b) => scoreGitHubRepo(b) - scoreGitHubRepo(a))
+    .slice(0, TOP_LIMIT);
 
   return { repos, errors };
 }
@@ -143,9 +201,11 @@ function parseFeed(xml: string, source: SourceName): RssArticle[] {
         body: tagValue(block, "description") ?? tagValue(block, "summary") ?? tagValue(block, "content:encoded"),
         url: linkValue(block),
         author: tagValue(block, "dc:creator") ?? tagValue(block, "author"),
-        publishedAt: tagValue(block, "pubDate") ?? tagValue(block, "published") ?? tagValue(block, "updated") ?? now.toISOString()
+        publishedAt: tagValue(block, "pubDate") ?? tagValue(block, "published") ?? tagValue(block, "updated") ?? now.toISOString(),
+        feedIndex: 0
       };
     })
+    .map((article, index) => ({ ...article, feedIndex: index }))
     .filter((article): article is RssArticle => Boolean(article));
 }
 
@@ -170,7 +230,9 @@ async function collectRssSource(source: SourceName) {
     }
 
     const xml = await response.text();
-    const articles = parseFeed(xml, source).slice(0, TOP_LIMIT);
+    const articles = parseFeed(xml, source)
+      .sort((a, b) => scoreRssArticle(b) - scoreRssArticle(a))
+      .slice(0, TOP_LIMIT)
     if (articles.length === 0) {
       throw new Error(`${sourceMetadata[source].label} feed returned no articles`);
     }
@@ -181,8 +243,16 @@ async function collectRssSource(source: SourceName) {
   }
 }
 
+function scoreRssArticle(article: RssArticle): number {
+  const text = `${article.title} ${article.body ?? ""}`;
+  const aiSignal = keywordScore(text);
+  const freshness = recencyScore(article.publishedAt, 5);
+  const feedRank = clamp01(1 - article.feedIndex / 30);
+  return clamp01(0.5 * aiSignal + 0.3 * freshness + 0.2 * feedRank);
+}
+
 function rssArticleToTrend(article: RssArticle, index: number): TrendEntity {
-  const signalScore = clamp01(1 - index / 24);
+  const signalScore = scoreRssArticle(article);
   const score = scoreFromSignal(signalScore);
   const source = article.source;
   const label = sourceMetadata[source].label;
@@ -195,7 +265,7 @@ function rssArticleToTrend(article: RssArticle, index: number): TrendEntity {
     canonicalName: article.title,
     entityType: "tool",
     summary: article.body ?? article.title,
-    reason: `Ranked from ${label} RSS publication order.`,
+    reason: `Ranked from ${label} RSS using AI keyword match, recency, and feed position.`,
     officialUrl: article.url,
     score,
     sources: [
@@ -204,7 +274,7 @@ function rssArticleToTrend(article: RssArticle, index: number): TrendEntity {
         score: signalScore,
         mentions: 1,
         lastSeen: publishedAt,
-        signal: `#${index + 1} latest article from ${label}`
+        signal: `${Math.round(signalScore * 100)} relevance score from AI keywords, recency, and feed position`
       }
     ],
     mentions: [
@@ -222,8 +292,18 @@ function rssArticleToTrend(article: RssArticle, index: number): TrendEntity {
   };
 }
 
+function scoreGitHubRepo(repo: GitHubRepoSearchItem): number {
+  const adoption = clamp01(Math.log10(repo.stargazers_count + 1) / 5);
+  const forkSignal = clamp01(Math.log10(repo.forks_count + 1) / 4);
+  const updateSignal = recencyScore(repo.pushed_at, 21);
+  const createdSignal = recencyScore(repo.created_at, 180);
+  const aiSignal = keywordScore(`${repo.full_name} ${repo.description ?? ""} ${repo.topics?.join(" ") ?? ""}`);
+
+  return clamp01(0.35 * adoption + 0.2 * forkSignal + 0.2 * updateSignal + 0.15 * aiSignal + 0.1 * createdSignal);
+}
+
 function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
-  const githubScore = clamp01(Math.log10(repo.stargazers_count + 1) / 5);
+  const githubScore = scoreGitHubRepo(repo);
   const score = computeTrendScore({
     hnDiscussionScore: 0,
     githubAdoptionScore: githubScore
@@ -234,7 +314,7 @@ function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
     canonicalName: repo.full_name,
     entityType: "repo",
     summary: repo.description ?? "Repository surfaced by GitHub Search API during the scheduled trend refresh.",
-    reason: "Ranked from GitHub repository activity.",
+    reason: "Ranked from GitHub stars, forks, update recency, repository novelty, and AI keyword match.",
     githubRepoUrl: repo.html_url,
     score,
     sources: [
@@ -243,7 +323,7 @@ function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
         score: githubScore,
         mentions: 1,
         lastSeen: repo.pushed_at,
-        signal: `${repo.stargazers_count} stars, ${repo.forks_count} forks, recently pushed`
+        signal: `${repo.stargazers_count} stars, ${repo.forks_count} forks, pushed ${repo.pushed_at}`
       }
     ],
     mentions: [
@@ -261,8 +341,17 @@ function repoToTrend(repo: GitHubRepoSearchItem, index: number): TrendEntity {
   };
 }
 
+function scoreHackerNewsStory(story: Awaited<ReturnType<typeof collectHackerNews>>["stories"][number]): number {
+  const discussion = clamp01(Math.log10((story.score ?? 0) + 1) / Math.log10(501));
+  const comments = clamp01(Math.log10((story.descendants ?? 0) + 1) / Math.log10(201));
+  const freshness = recencyScore(story.time, 3);
+  const aiSignal = keywordScore(`${story.title ?? ""} ${story.text ?? ""} ${story.url ?? ""}`);
+
+  return clamp01(0.35 * discussion + 0.3 * comments + 0.2 * freshness + 0.15 * aiSignal);
+}
+
 function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["stories"][number]): TrendEntity {
-  const hnScore = clamp01(((story.score ?? 0) / 350 + (story.descendants ?? 0) / 180) / 2);
+  const hnScore = scoreHackerNewsStory(story);
   const score = computeTrendScore({
     hnDiscussionScore: hnScore,
     githubAdoptionScore: 0
@@ -273,7 +362,7 @@ function hnStoryToTrend(story: Awaited<ReturnType<typeof collectHackerNews>>["st
     canonicalName: story.title ?? `HN story ${story.id}`,
     entityType: "tool",
     summary: story.title ?? "AI-related Hacker News story from the scheduled refresh.",
-    reason: "Ranked from Hacker News discussion activity.",
+    reason: "Ranked from Hacker News points, comments, recency, and AI keyword match.",
     officialUrl: story.url,
     score,
     sources: [
@@ -348,7 +437,10 @@ async function main() {
     Promise.all(rssSourceOrder.map((source) => collectRssSource(source)))
   ]);
   const githubTrends = github.repos.slice(0, TOP_LIMIT).map(repoToTrend);
-  const hnTrends = hn.stories.slice(0, TOP_LIMIT).map(hnStoryToTrend);
+  const hnTrends = hn.stories
+    .sort((a, b) => scoreHackerNewsStory(b) - scoreHackerNewsStory(a))
+    .slice(0, TOP_LIMIT)
+    .map(hnStoryToTrend);
   const rssTrends = Object.fromEntries(
     rssCollections.map((collection) => [
       collection.source,

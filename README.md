@@ -23,6 +23,7 @@ A Next.js + TypeScript AI Early Signal Intelligence Engine for tracking early AI
 - GitHub Trending has no official API; the MVP uses GitHub Search API and optional `GITHUB_TOKEN`.
 - Reachable RSS feeds currently included: The Verge, TechCrunch, MIT Technology Review, 36Kr, iThome, TechNews, and The Next Web.
 - Sources that returned anti-bot challenges, missing feeds, or blocked crawler responses were not added to the scheduled refresh.
+- Per-source Top 10 ranking metrics are documented in `docs/ranking-metrics.md`.
 - OpenAI extraction and summaries can be added later with `OPENAI_API_KEY`.
 - PostgreSQL access uses `DATABASE_URL`.
 
