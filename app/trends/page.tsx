@@ -2,16 +2,11 @@ import { ScoreBadge } from "@/components/ScoreBadge";
 import { SourceSidebar } from "@/components/SourceSidebar";
 import { SourcePill } from "@/components/SourcePill";
 import { TrendHistory } from "@/components/TrendHistory";
-import type { SourceName } from "@/src/domain";
 import { sourceTopTrends } from "@/src/mockData";
-
-const sourceLabels: Record<SourceName, string> = {
-  hn: "Hacker News Top 20",
-  github: "GitHub Top 20"
-};
+import { activeSourceOrder, sourceMetadata } from "@/src/sources";
 
 export default function TrendsPage() {
-  const sources = (["hn", "github"] as SourceName[]).filter((source) => (sourceTopTrends[source]?.length ?? 0) > 0);
+  const sources = activeSourceOrder.filter((source) => (sourceTopTrends[source]?.length ?? 0) > 0);
 
   return (
     <div className="space-y-6">
@@ -28,18 +23,16 @@ export default function TrendsPage() {
           {sources.map((source) => (
             <div key={source} id={source} className="scroll-mt-6 space-y-4">
               <div>
-                <h2 className="text-2xl font-semibold">{sourceLabels[source]}</h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Ranked independently using only available {source === "hn" ? "Hacker News" : "GitHub"} metrics.
-                </p>
+                <h2 className="text-2xl font-semibold">{sourceMetadata[source].label} Top 20</h2>
+                <p className="mt-1 text-sm text-muted-foreground">{sourceMetadata[source].description}</p>
               </div>
 
               <div className="space-y-6">
                 {(sourceTopTrends[source] ?? []).slice(0, 20).map((trend, index) => {
-                  const components = [
-                    ["HN", trend.score.hnComponent],
-                    ["GitHub", trend.score.githubComponent]
-                  ] as const;
+                  const components = trend.sources.map((sourceItem) => [
+                    sourceMetadata[sourceItem.source].shortLabel,
+                    sourceItem.score
+                  ] as const);
 
                   return (
                     <article key={trend.id} id={trend.id} className="scroll-mt-6 space-y-4 rounded-md border border-border bg-card p-4">

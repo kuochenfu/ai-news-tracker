@@ -1,4 +1,4 @@
-export type SourceName = "hn" | "github";
+import type { SourceName } from "./domain";
 
 export interface NormalizedSourceEvent {
   source: SourceName;

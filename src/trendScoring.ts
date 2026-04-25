@@ -49,3 +49,14 @@ export function computeTrendScore(input: TrendScoreInput): TrendScoreBreakdown {
     verdict: classifyVerdict(finalScore)
   };
 }
+
+export function scoreFromSignal(signalScore: number): TrendScoreBreakdown {
+  const finalScore = clamp01(signalScore);
+
+  return {
+    hnComponent: 0,
+    githubComponent: 0,
+    finalScore,
+    verdict: classifyVerdict(finalScore)
+  };
+}

@@ -1,6 +1,15 @@
 import type { TrendScoreBreakdown } from "./trendScoring";
 
-export type SourceName = "hn" | "github";
+export type SourceName =
+  | "hn"
+  | "github"
+  | "the_verge"
+  | "techcrunch"
+  | "mit_tech_review"
+  | "thirtysixkr"
+  | "ithome_tw"
+  | "technews_tw"
+  | "tnw";
 export type EntityType = "tool" | "repo" | "paper" | "model" | "startup";
 
 export interface SourceBreakdown {

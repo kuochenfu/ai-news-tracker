@@ -1,9 +1,5 @@
 import type { SourceName } from "@/src/domain";
-
-const labels: Record<SourceName, string> = {
-  hn: "Hacker News",
-  github: "GitHub"
-};
+import { sourceMetadata } from "@/src/sources";
 
 export function SourceSidebar({ sources }: { sources: SourceName[] }) {
   return (
@@ -16,11 +12,10 @@ export function SourceSidebar({ sources }: { sources: SourceName[] }) {
             href={`#${source}`}
             className="rounded-md px-2 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
           >
-            {labels[source]}
+            {sourceMetadata[source].label}
           </a>
         ))}
       </nav>
     </aside>
   );
 }
-

@@ -14,7 +14,7 @@ export default function SourcesPage() {
       <section className="border-b border-border pb-5">
         <h1 className="text-3xl font-semibold tracking-normal">Ingestion sources</h1>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Operational status for Hacker News and GitHub ingestion jobs.
+          Operational status for public APIs and reachable RSS feeds included in the scheduled refresh.
         </p>
       </section>
 

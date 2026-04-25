@@ -7,15 +7,11 @@ import { TrendHistory } from "@/components/TrendHistory";
 import type { SourceName } from "@/src/domain";
 import { sourceTopTrends, trends } from "@/src/mockData";
 import { sitePath } from "@/src/paths";
-
-const sourceLabels: Record<SourceName, string> = {
-  hn: "Hacker News Top 20",
-  github: "GitHub Top 20"
-};
+import { activeSourceOrder, sourceMetadata } from "@/src/sources";
 
 export default function DashboardPage() {
   const ranked = [...trends].sort((a, b) => b.score.finalScore - a.score.finalScore);
-  const sources = (["hn", "github"] as SourceName[]).filter((source) => (sourceTopTrends[source]?.length ?? 0) > 0);
+  const sources = activeSourceOrder.filter((source) => (sourceTopTrends[source]?.length ?? 0) > 0);
 
   return (
     <div className="space-y-6">
@@ -24,7 +20,7 @@ export default function DashboardPage() {
           <p className="text-sm font-medium text-primary">Today</p>
           <h1 className="mt-1 text-3xl font-semibold tracking-normal">AI trend signals by source</h1>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Each source has its own Top 20 list. Only available HN and GitHub signals are shown.
+            Each source has its own Top 20 list. Sources are included only when their public API or RSS feed is reachable.
           </p>
         </div>
         <div className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
@@ -39,8 +35,8 @@ export default function DashboardPage() {
           {sources.map((source) => (
             <div key={source} id={source} className="scroll-mt-6 space-y-4">
               <div>
-                <h2 className="text-2xl font-semibold">{sourceLabels[source]}</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Ranked independently from this source only.</p>
+                <h2 className="text-2xl font-semibold">{sourceMetadata[source].label} Top 20</h2>
+                <p className="mt-1 text-sm text-muted-foreground">{sourceMetadata[source].description}</p>
               </div>
               <div className="grid gap-4">
                 {(sourceTopTrends[source] ?? []).slice(0, 20).map((trend, index) => (
