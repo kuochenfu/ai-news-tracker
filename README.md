@@ -1,12 +1,12 @@
-# ai-news-tracker
+# ai-news-tracker (TypeScript Edition)
 
 AI Early Signal Intelligence Engine for spotting emerging AI/tech trends across Hacker News, X, and GitHub.
 
 ## What this repository now provides
 
-- Idempotent ingestion primitives and run metadata tracking.
+- A complete TypeScript rewrite of ingestion helpers and trend scoring logic.
 - Source-specific external ID normalization for HN, X, and GitHub.
-- Cross-source payload normalizers for HN stories, X posts, and GitHub repo search results.
+- Cross-source payload normalizers for HN stories, X posts, and GitHub repository search results.
 - Trend scoring engine implementing:
 
   ```text
@@ -17,31 +17,41 @@ AI Early Signal Intelligence Engine for spotting emerging AI/tech trends across 
 + 0.05 * Credibility Score
   ```
 
-- Expanded SQL schema for:
-  - `raw_events`
-  - `entities`
-  - `entity_mentions`
-  - `source_metrics`
-  - `trend_scores`
-  - `daily_reports`
+- A minimal TypeScript web app (Vite) that renders a trend-score demo.
+- GitHub Pages deployment workflow via GitHub Actions.
 
-## Data model
+## Project layout
 
-Migrations:
+- `src/core/keys.ts`: external ID normalization helpers.
+- `src/core/dedup.ts`: content hash dedup (`title + url + source`).
+- `src/core/sources.ts`: payload normalization from HN, X, GitHub into a common shape.
+- `src/core/trendScoring.ts`: weighted scoring and verdict classification.
+- `src/core/writer.ts`: idempotent SQL writer wrapper.
+- `src/main.ts`: small UI demo for score display.
+- `.github/workflows/deploy-pages.yml`: CI build + Pages deployment.
 
-- `sql/001_ingestion_idempotency.sql`: foundational idempotent ingestion tables.
-- `sql/002_trend_engine_schema.sql`: trend-engine expansion and analytical tables.
+## Local development
 
-## Python modules
-
-- `ingestion/writer.py`: replay-safe upsert writer for raw events, source metrics, and trend scores.
-- `ingestion/keys.py`: external ID normalization helpers.
-- `ingestion/dedup.py`: content hash dedup (`title + url + source`).
-- `ingestion/sources.py`: payload normalization from HN, X, GitHub into a common shape.
-- `ingestion/trend_scoring.py`: weighted scoring and verdict classification.
+```bash
+npm install
+npm run dev
+```
 
 ## Test
 
 ```bash
-pytest -q
+npm test
 ```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy to GitHub Pages
+
+1. Push this repo to GitHub.
+2. In repository settings, enable **Pages** and set source to **GitHub Actions**.
+3. Ensure your default branch is `main` (workflow triggers on pushes to `main`).
+4. Push commits; the `Deploy to GitHub Pages` workflow builds `dist/` and deploys automatically.
