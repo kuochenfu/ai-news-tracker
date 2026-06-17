@@ -3,8 +3,10 @@ import { previewText, trendUrl } from "@/src/display";
 import { dailyReport, getTrendById, sourceStatuses, sourceTopTrends } from "@/src/mockData";
 import { activeSourceOrder } from "@/src/sources";
 
+const DAILY_TREND_LIMIT = 15;
+
 export default function DailyPage() {
-  const topTrends = dailyReport.topTrendIds.map((id) => getTrendById(id)).filter(Boolean).slice(0, 10);
+  const topTrends = dailyReport.topTrendIds.map((id) => getTrendById(id)).filter(Boolean).slice(0, DAILY_TREND_LIMIT);
 
   return (
     <div className="space-y-6">
@@ -15,7 +17,7 @@ export default function DailyPage() {
       </section>
 
       <section className="rounded-md border border-border bg-card p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Top 10 Trends</h2>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Top 15 Trends</h2>
         <ol className="mt-4 divide-y divide-border">
           {topTrends.map((trend, index) =>
             trend ? (
