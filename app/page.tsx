@@ -1,5 +1,6 @@
 import { Gauge } from "lucide-react";
 
+import { EmptySourceState } from "@/components/SourceCoverage";
 import { SourceSidebar } from "@/components/SourceSidebar";
 import { previewText, trendUrl } from "@/src/display";
 import { sourceTopTrends, trends } from "@/src/mockData";
@@ -7,7 +8,7 @@ import { activeSourceOrder, sourceMetadata } from "@/src/sources";
 
 export default function DashboardPage() {
   const ranked = [...trends].sort((a, b) => b.score.finalScore - a.score.finalScore);
-  const sources = activeSourceOrder.filter((source) => (sourceTopTrends[source]?.length ?? 0) > 0);
+  const sources = activeSourceOrder;
 
   return (
     <div className="space-y-6">
@@ -34,19 +35,23 @@ export default function DashboardPage() {
                 <h2 className="text-2xl font-semibold">{sourceMetadata[source].label} Top 10</h2>
                 <p className="mt-1 text-sm text-muted-foreground">{sourceMetadata[source].description}</p>
               </div>
-              <ol className="divide-y divide-border rounded-md border border-border bg-card">
-                {(sourceTopTrends[source] ?? []).map((trend, index) => (
-                  <li key={trend.id} className="grid gap-1 p-4 sm:grid-cols-[3rem_1fr]">
-                    <span className="text-sm font-semibold text-muted-foreground">#{index + 1}</span>
-                    <div className="min-w-0">
-                      <a href={trendUrl(trend)} className="text-base font-semibold text-primary hover:underline">
-                        {trend.canonicalName}
-                      </a>
-                      <p className="mt-1 text-sm text-muted-foreground">{previewText(trend.summary)}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              {(sourceTopTrends[source]?.length ?? 0) > 0 ? (
+                <ol className="divide-y divide-border rounded-md border border-border bg-card">
+                  {(sourceTopTrends[source] ?? []).map((trend, index) => (
+                    <li key={trend.id} className="grid gap-1 p-4 sm:grid-cols-[3rem_1fr]">
+                      <span className="text-sm font-semibold text-muted-foreground">#{index + 1}</span>
+                      <div className="min-w-0">
+                        <a href={trendUrl(trend)} className="text-base font-semibold text-primary hover:underline">
+                          {trend.canonicalName}
+                        </a>
+                        <p className="mt-1 text-sm text-muted-foreground">{previewText(trend.summary)}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              ) : (
+                <EmptySourceState source={source} />
+              )}
             </div>
           ))}
         </section>
