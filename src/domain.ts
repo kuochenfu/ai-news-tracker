@@ -3,6 +3,12 @@ import type { TrendScoreBreakdown } from "./trendScoring";
 export type SourceName =
   | "hn"
   | "github"
+  | "official_blog"
+  | "arxiv"
+  | "github_releases"
+  | "hugging_face"
+  | "npm"
+  | "pypi"
   | "the_verge"
   | "techcrunch"
   | "mit_tech_review"
