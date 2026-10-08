@@ -20,6 +20,8 @@ export interface Candidate {
   repoFullName?: string;
   releaseTag?: string;
   packageName?: string;
+  /** Organisation the item comes from, when the collector knows it (lab feeds, government sites). */
+  origin?: string;
 }
 
 export interface CollectorResult {
@@ -29,4 +31,6 @@ export interface CollectorResult {
   /** Requests attempted and failed, for partial-failure reporting. */
   attempted?: number;
   failed?: number;
+  /** Per-feed health for sources that aggregate several publishers. */
+  feeds?: Array<{ origin: string; url: string; ok: boolean }>;
 }

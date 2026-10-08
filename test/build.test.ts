@@ -72,8 +72,8 @@ test("the same entity in two sources is linked, not counted twice", () => {
     result("github", [candidate("github", { title: "vercel/ai", repoFullName: "vercel/ai", body: "AI SDK", url: "https://github.com/vercel/ai" })])
   ];
   const { snapshot } = buildSnapshot({ results, previous: null, store: emptyStore(), now: NOW });
-  assert.deepEqual(snapshot.sourceTopTrends.hn?.[0].alsoSeenIn, ["github"]);
-  assert.deepEqual(snapshot.sourceTopTrends.github?.[0].alsoSeenIn, ["hn"]);
+  assert.deepEqual(snapshot.sourceTopTrends.hn?.[0].corroboration, { independent: ["github"], sameOrigin: [] });
+  assert.deepEqual(snapshot.sourceTopTrends.github?.[0].corroboration, { independent: ["hn"], sameOrigin: [] });
   assert.equal(snapshot.sourceTopTrends.hn?.[0].entityKey, snapshot.sourceTopTrends.github?.[0].entityKey);
 });
 
@@ -105,4 +105,16 @@ test("history: first issue knows nothing; the next one knows what is new and how
 test("next issue time follows the 00:00 and 08:00 UTC schedule", () => {
   assert.equal(nextScheduledRun(new Date("2026-10-09T00:20:00Z")).toISOString(), "2026-10-09T08:00:00.000Z");
   assert.equal(nextScheduledRun(new Date("2026-10-09T08:15:00Z")).toISOString(), "2026-10-10T00:00:00.000Z");
+});
+
+test("government sources are judged on the title alone", () => {
+  const results = [
+    result("nstc_tw", [
+      candidate("nstc_tw", { title: "2026臺德半導體合作成果交流研討會", body: "會中討論 AI 與人工智慧晶片應用。" }),
+      candidate("nstc_tw", { title: "國科會第23次委員會議討論AI人才關鍵戰略" })
+    ])
+  ];
+  const { snapshot } = buildSnapshot({ results, previous: null, store: emptyStore(), now: NOW });
+  assert.deepEqual(snapshot.sourceTopTrends.nstc_tw?.map((trend) => trend.canonicalName), ["國科會第23次委員會議討論AI人才關鍵戰略"]);
+  assert.equal(snapshot.sourceTopTrends.nstc_tw?.[0].publisher, "國科會");
 });

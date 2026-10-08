@@ -1,10 +1,11 @@
 import { AlertTriangle, CheckCircle2, CircleOff, History } from "lucide-react";
 
+import { RegionCoverage } from "@/components/RegionCoverage";
 import { StationStrip } from "@/components/StationStrip";
 import { TierTag } from "@/components/TierTag";
 import { formatTaipei, roleLabel, stationsByTier, statusLabel, tierLabel, typeLabel } from "@/src/bulletin";
 import type { SourceStatus } from "@/src/domain";
-import { sourceStatuses, sourceTopTrends } from "@/src/snapshot";
+import { coverage, sourceStatuses, sourceTopTrends } from "@/src/snapshot";
 import { sourceMetadata } from "@/src/sources";
 
 const statusDisplay: Record<SourceStatus["status"], { icon: typeof CheckCircle2; tone: string }> = {
@@ -34,6 +35,8 @@ export default function SourcesPage() {
             .join(" · ")}
         </p>
       </div>
+
+      <RegionCoverage coverage={coverage} />
 
       {stationsByTier().map(({ tier, sources }) => (
         <section key={tier} aria-labelledby={`tier-${tier}`}>
@@ -90,6 +93,16 @@ export default function SourcesPage() {
                         <StationStrip trends={sourceTopTrends[source] ?? []} label={metadata.label} />
                       </span>
                     </div>
+                    {status?.feeds ? (
+                      <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-meta text-ink-2">
+                        {status.feeds.map((feed, index) => (
+                          <span key={`${feed.publisher}-${index}`} className={feed.ok ? "" : "font-bold text-ink line-through"}>
+                            {feed.publisher}
+                            {feed.ok ? "" : "（失敗）"}
+                          </span>
+                        ))}
+                      </p>
+                    ) : null}
                     {status && status.errors.length > 0 ? (
                       <ul className="mt-2 space-y-0.5 rounded-[3px] border border-rule-strong bg-surface-2 px-3 py-2 text-meta text-ink">
                         {status.errors.map((error) => (

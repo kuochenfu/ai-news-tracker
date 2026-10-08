@@ -3,7 +3,7 @@ import { TierTag } from "@/components/TierTag";
 import { formatMetric, formatTaipei } from "@/src/bulletin";
 import { decodeNumericEntities, previewText, trendUrl } from "@/src/display";
 import type { TrendEntity } from "@/src/domain";
-import { sourceMetadata } from "@/src/sources";
+import { regionLabel, sourceMetadata } from "@/src/sources";
 
 interface SignalRowProps {
   trend: TrendEntity;
@@ -41,9 +41,16 @@ export function SignalRow({ trend, rank, showSource = true, showPreview = false 
         <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-meta text-ink-3">
           {showSource ? (
             <>
-              <span className="font-medium text-ink-2">{metadata.label}</span>
+              <span className="font-medium text-ink-2">
+                {trend.publisher !== metadata.label ? `${trend.publisher} · ${metadata.shortLabel}` : metadata.label}
+              </span>
               <TierTag tier={metadata.tier} />
             </>
+          ) : trend.publisher !== metadata.label ? (
+            <span className="font-medium text-ink-2">{trend.publisher}</span>
+          ) : null}
+          {trend.eventRegions.length > 0 ? (
+            <span title="依內文提到的組織與地名推斷">{trend.eventRegions.map((region) => regionLabel[region]).join("、")}</span>
           ) : null}
           {metric ? (
             <span className="num">
@@ -59,8 +66,11 @@ export function SignalRow({ trend, rank, showSource = true, showPreview = false 
             <span>日期不明</span>
           )}
           {trend.seenBefore === false ? <Flag strong>首次觀測</Flag> : null}
-          {trend.alsoSeenIn.length > 0 ? (
-            <Flag>另見 {trend.alsoSeenIn.map((source) => sourceMetadata[source].shortLabel).join("、")}</Flag>
+          {trend.corroboration.independent.length > 0 ? (
+            <Flag>另見 {trend.corroboration.independent.map((source) => sourceMetadata[source].shortLabel).join("、")}</Flag>
+          ) : null}
+          {trend.corroboration.sameOrigin.length > 0 ? (
+            <span title="同一組織的其他發布管道，不算獨立佐證">同源 {trend.corroboration.sameOrigin.map((source) => sourceMetadata[source].shortLabel).join("、")}</span>
           ) : null}
           {trend.stale ? <Flag>舊資料</Flag> : null}
         </p>

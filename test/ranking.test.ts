@@ -44,7 +44,7 @@ test("Daily: a source with low raw scores is not shut out by one with high raw s
 test("Daily picks one item per entity and skips stale carry-overs", () => {
   const { snapshot } = buildSnapshot({ results: fullResults(activeSourceOrder), previous: null, store: emptyStore(), now: NOW });
   const all = Object.values(snapshot.sourceTopTrends).flat();
-  const twin = { ...all[0], id: "twin", source: "hn" as const };
+  const twin = { ...all[0], id: "twin", source: "hn" as const, entityKey: "other-key" };
   const stale = { ...all[1], id: "stale", entityKey: "stale", stale: true, scores: { ...all[1].scores, percentile: 1 } };
   const picked = selectDaily([all[0], twin, stale, ...all.slice(2)], NOW).map((trend) => trend.id);
   assert.ok(!(picked.includes(all[0].id) && picked.includes("twin")));

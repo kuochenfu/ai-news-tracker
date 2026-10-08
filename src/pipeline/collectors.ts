@@ -1,13 +1,24 @@
 import type { SourceName } from "../domain";
 import { aiQueries } from "../config";
 import { sourceMetadata } from "../sources";
-import { parseDate, parseFeed } from "./feed";
+import { decodeEntities, parseDate, parseFeed } from "./feed";
+import { extractGithubRepo } from "./entity";
 import { fetchJson, fetchText, mapLimit } from "./http";
 import type { Candidate, CollectorResult } from "./types";
 
 const FEED_ACCEPT = "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8";
 
-const officialBlogFeeds = ["https://openai.com/news/rss.xml", "https://huggingface.co/blog/feed.xml"];
+/** Lab announcement feeds; each item is published under its lab's origin. */
+const labFeeds: Array<{ origin: string; url: string }> = [
+  { origin: "openai", url: "https://openai.com/news/rss.xml" },
+  { origin: "google", url: "https://deepmind.google/blog/rss.xml" },
+  { origin: "google", url: "https://blog.google/technology/ai/rss/" },
+  { origin: "mistral", url: "https://mistral.ai/news/rss" },
+  { origin: "qwen", url: "https://qwenlm.github.io/blog/index.xml" },
+  { origin: "huggingface", url: "https://huggingface.co/blog/feed.xml" }
+];
+
+const ANTHROPIC_NEWS = "https://www.anthropic.com/news";
 
 const releaseRepos = [
   "openai/openai-python",
@@ -181,14 +192,55 @@ export async function collectRss(source: SourceName): Promise<CollectorResult> {
   }
 }
 
+/**
+ * Anthropic publishes no feed, so its news index page is parsed. Class names are
+ * build hashes, so the parser keys on stable structure: /news/ links, <time>, and a
+ * title-classed element. A layout change yields zero items, which the build treats
+ * as a failed fetch (stale fallback) rather than an empty success.
+ */
+export function parseAnthropicNews(html: string): Candidate[] {
+  const seen = new Set<string>();
+  const items: Candidate[] = [];
+  const linkPattern = /<a[^>]+href="(\/news\/[a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  for (const match of html.matchAll(linkPattern)) {
+    const [, path, inner] = match;
+    if (seen.has(path)) continue;
+    const title =
+      inner.match(/class="[^"]*title[^"]*"[^>]*>([^<]+)</i)?.[1] ??
+      inner.match(/<h[1-4][^>]*>([^<]+)<\/h[1-4]>/i)?.[1];
+    if (!title) continue;
+    seen.add(path);
+    items.push({
+      source: "official_blog",
+      externalId: path,
+      title: decodeEntities(title),
+      url: `https://www.anthropic.com${path}`,
+      publishedAt: parseDate(inner.match(/<time[^>]*>([^<]+)<\/time>/i)?.[1]),
+      feedIndex: items.length,
+      entityType: "article",
+      origin: "anthropic"
+    });
+  }
+  return items;
+}
+
 export async function collectOfficialBlogs(): Promise<CollectorResult> {
   const failures: string[] = [];
+  const fetchers = [
+    ...labFeeds.map(({ origin, url }) => async () =>
+      parseFeed(await fetchText(url, FEED_ACCEPT), "official_blog").map((item) => ({ ...item, origin }))
+    ),
+    async () => parseAnthropicNews(await fetchText(ANTHROPIC_NEWS, "text/html"))
+  ];
+  const urls = [...labFeeds.map((feed) => feed.url), ANTHROPIC_NEWS];
   const lists = await Promise.all(
-    officialBlogFeeds.map(async (feedUrl) => {
+    fetchers.map(async (fetcher, index) => {
       try {
-        return parseFeed(await fetchText(feedUrl, FEED_ACCEPT), "official_blog");
+        const items = await fetcher();
+        if (items.length === 0) throw new Error(`${new URL(urls[index]).hostname} returned no items`);
+        return items;
       } catch (error) {
-        failures.push(message(error, feedUrl));
+        failures.push(message(error, urls[index]));
         return [];
       }
     })
@@ -196,9 +248,10 @@ export async function collectOfficialBlogs(): Promise<CollectorResult> {
   return {
     source: "official_blog",
     candidates: lists.flat(),
-    errors: partialError(failures, officialBlogFeeds.length),
-    attempted: officialBlogFeeds.length,
-    failed: failures.length
+    errors: partialError(failures, fetchers.length),
+    attempted: fetchers.length,
+    failed: failures.length,
+    feeds: urls.map((url, index) => ({ origin: index < labFeeds.length ? labFeeds[index].origin : "anthropic", url, ok: lists[index].length > 0 }))
   };
 }
 
@@ -297,6 +350,7 @@ export async function collectHuggingFace(): Promise<CollectorResult> {
 
 interface NpmMetadata {
   name: string;
+  repository?: string | { url?: string };
   description?: string;
   "dist-tags"?: { latest?: string };
   time?: Record<string, string>;
@@ -323,6 +377,7 @@ export async function collectNpm(): Promise<CollectorResult> {
         publishedAt: parseDate(latest ? metadata.time?.[latest] : undefined),
         entityType: "package",
         packageName: metadata.name,
+        repoFullName: extractGithubRepo(typeof metadata.repository === "string" ? metadata.repository : metadata.repository?.url) ?? undefined,
         metric: { name: "weekly_downloads", label: `${downloads.downloads} weekly downloads`, value: downloads.downloads }
       };
     } catch (error) {
@@ -340,7 +395,7 @@ export async function collectNpm(): Promise<CollectorResult> {
 }
 
 interface PypiMetadata {
-  info: { name: string; summary?: string; package_url?: string; author?: string; version?: string };
+  info: { name: string; summary?: string; package_url?: string; author?: string; version?: string; project_urls?: Record<string, string> | null };
   urls?: Array<{ upload_time_iso_8601?: string }>;
 }
 
@@ -363,6 +418,7 @@ export async function collectPypi(): Promise<CollectorResult> {
         publishedAt: parseDate(metadata.urls?.[0]?.upload_time_iso_8601),
         entityType: "package",
         packageName: info.name,
+        repoFullName: Object.values(info.project_urls ?? {}).map(extractGithubRepo).find(Boolean) ?? undefined,
         metric: { name: "weekly_downloads", label: `${stats.data.last_week} weekly downloads`, value: stats.data.last_week }
       };
     } catch (error) {

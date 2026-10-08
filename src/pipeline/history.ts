@@ -29,6 +29,10 @@ export interface EntityHistory {
   lastSeen: string;
   title: string;
   points: ObservationPoint[];
+  /** Event regions inferred at the latest observation. */
+  regions?: string[];
+  /** Cross-source cluster at the latest observation; coverage counts clusters, not items. */
+  cluster?: string;
 }
 
 export interface ObservationStore {
@@ -108,7 +112,9 @@ export function recordObservations(
       firstSeen: existing?.firstSeen ?? at,
       lastSeen: at,
       title: trend.canonicalName,
-      points: [...(existing?.points ?? []), point].slice(-MAX_POINTS_PER_ENTITY)
+      points: [...(existing?.points ?? []), point].slice(-MAX_POINTS_PER_ENTITY),
+      regions: trend.eventRegions,
+      cluster: trend.cluster
     };
   }
 
@@ -141,7 +147,7 @@ export async function loadHistory(dataDir: string): Promise<{ store: Observation
   const previous = await readJson<TrendSnapshot>(join(dataDir, LATEST_FILE));
   return {
     store: store?.version === 1 ? store : emptyStore(),
-    previous: previous?.schemaVersion === 2 ? previous : null
+    previous: previous?.schemaVersion === 3 ? previous : null
   };
 }
 

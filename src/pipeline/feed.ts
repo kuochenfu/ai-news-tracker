@@ -41,7 +41,8 @@ export function parseFeed(xml: string, source: SourceName, entityType: Candidate
   const blocks = xml.match(/<item[\s\S]*?<\/item>/gi) ?? xml.match(/<entry[\s\S]*?<\/entry>/gi) ?? [];
 
   return blocks.flatMap((block, index): Candidate[] => {
-    const title = tagValue(block, "title");
+    // Taiwanese government feeds append an ROC-calendar date to every title (e.g. "… 115年10月03日").
+    const title = tagValue(block, "title")?.replace(/\s*\d{2,3}年\d{1,2}月\d{1,2}日$/, "");
     if (!title) return [];
     const url = linkValue(block);
     return [

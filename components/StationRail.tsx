@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 import { StationStrip } from "@/components/StationStrip";
@@ -12,13 +13,14 @@ export function StationRail({ inPage = false }: { inPage?: boolean }) {
   return (
     <nav aria-label="觀測站" className="space-y-4">
       {stationsByTier().map(({ tier, sources }) => (
-        <section key={tier}>
-          <h2 className="flex items-baseline justify-between border-b border-rule pb-1 text-meta font-semibold text-ink-2">
+        <details key={tier} open className="group">
+          <summary className="flex cursor-pointer list-none items-baseline justify-between border-b border-rule pb-1 text-meta font-semibold text-ink-2 [&::-webkit-details-marker]:hidden">
             <span>
+              <ChevronRight aria-hidden="true" className="-mt-0.5 mr-0.5 inline h-3.5 w-3.5 transition-transform duration-150 group-open:rotate-90" />
               Tier {tier} · {tierLabel[tier]}
             </span>
             <span className="num font-normal text-ink-3">{sources.length} 站</span>
-          </h2>
+          </summary>
           <ul className="mt-1">
             {sources.map((source) => {
               const trends = sourceTopTrends[source] ?? [];
@@ -37,7 +39,7 @@ export function StationRail({ inPage = false }: { inPage?: boolean }) {
               );
             })}
           </ul>
-        </section>
+        </details>
       ))}
     </nav>
   );

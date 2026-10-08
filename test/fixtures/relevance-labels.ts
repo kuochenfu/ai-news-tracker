@@ -57,3 +57,38 @@ export const relevanceLabels: Array<{ title: string; ai: boolean }> = [
   { title: "Qwen-Robot Suite: A Foundation Model Suite for Physical World Intelligence", ai: true },
   { title: "Openrouter Fusion API", ai: true }
 ];
+
+/** Japanese, Korean, simplified-Chinese, and government titles from the 2026-10-09 refresh. */
+export const multilingualRelevanceLabels: Array<{ title: string; ai: boolean }> = [
+  { title: "AIと協調する「スーパーヒューマン」を目指せ――キナクシスCEOが語るSCM変革の鍵", ai: true },
+  { title: "立ち話が“宝の山”に 8人の声を聞き分けられたAI文字起こし「Klang」の実力", ai: true },
+  { title: "Google、AI生成物の判定ツールを一般公開 OpenAIやNVIDIA製サービスも対象に", ai: true },
+  { title: "富士通では「Copilot」10万ライセンスの利用率が“9割超え”", ai: true },
+  { title: "Anthropic、「Claude Haiku 5.5」公開 「Haiku 4.5」から大幅性能向上", ai: true },
+  { title: "Google、プロンプトでゲームを作って遊べる「Playground」を米国で公開", ai: true },
+  { title: "「日本の勝ち筋は計測にある」 東北大がノーベル賞・田中耕一氏と挑む「精度1000倍」の限界突破", ai: false },
+  { title: "ArmのCSS for Mobile 2はPC向けの伏線!? Neoverse CSS N4はAGI CPUと競合せず", ai: false },
+  { title: "大規模言語モデルの推論コストを半減する新手法", ai: true },
+  { title: "新型スマートフォンの発売日が決定", ai: false },
+  { title: "카카오, 국제 AI 학회서 MoE 학습 최적화·모델 경량화 성과 공개", ai: true },
+  { title: "오픈AI \"10대 챗GPT 평균 15분 사용\" 주장에 안전성 논란 불붙어", ai: true },
+  { title: "구글, AI 생성물 구분하는 '신스ID 감지기' 일반에 전면 공개", ai: true },
+  { title: "구글, 텍스트 입력으로 생성형 게임 만드는 플랫폼 공개", ai: true },
+  { title: "나주영산강축제 개막 첫날 9만명…11일까지 공연·체험 이어져", ai: false },
+  { title: "머스크 \"테라팹 직접 운영한다\"…TSMC 위탁운영설 일축", ai: false },
+  { title: "인공지능 기본법 시행령 입법예고", ai: true },
+  { title: "삼성전자 3분기 영업이익 발표", ai: false },
+  { title: "ChatGPT踢到铁板了！能破解千禧数学难题，但论文复现率低至13.98%？", ai: true },
+  { title: "大模型原生智能体手机STEPX Neo将于10月13日正式发布", ai: true },
+  { title: "Claude新模型发布！跑分暴击GPT-6 Luna", ai: true },
+  { title: "真香！做这个邪恶老奶版「GTA 6」，我只花了5元！", ai: false },
+  { title: "吉利智充技术正式发布，重塑全球补能新标杆", ai: false },
+  { title: "打不过就投降，保时捷裁员9000人，回归燃油车主线", ai: false },
+  { title: "European AI Innovation Month", ai: true },
+  { title: "Establishing the European AI Observatory: Call for tenders", ai: true },
+  { title: "Consultation on EU KIDS ACT", ai: false },
+  { title: "Call for tenders: Study on how online marketplace design influences user behaviour", ai: false },
+  { title: "國科會第23次委員會議討論攸關臺灣競爭力與社會韌性之AI人才及防疫科技關鍵戰略", ai: true },
+  { title: "「2026臺灣科普環島列車」啟航 攜手產官學研 開啟學童科學之門", ai: false },
+  { title: "帛琉副總統訪問災防科技中心 深化臺帛防災科技合作與韌性交流", ai: false }
+];

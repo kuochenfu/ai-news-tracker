@@ -10,6 +10,7 @@ export const historyDays = snapshot.historyDays;
 export const sourceTopTrends: Partial<Record<SourceName, TrendEntity[]>> = snapshot.sourceTopTrends;
 export const sourceStatuses = snapshot.sourceStatuses;
 export const dailyReport = snapshot.dailyReport;
+export const coverage = snapshot.coverage;
 
 export const allTrends: TrendEntity[] = activeSourceOrder.flatMap((source) => sourceTopTrends[source] ?? []);
 

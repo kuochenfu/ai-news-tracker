@@ -100,10 +100,10 @@ export interface DailyOptions {
   breadthSlots?: number;
 }
 
-/** Daily ranking: percentile within source, nudged toward fresh items and cross-source confirmation. */
+/** Daily ranking: percentile within source, nudged toward fresh items and independent confirmation (never same-origin echoes). */
 export function dailyScore(trend: TrendEntity, now: Date): number {
   const recency = freshness(trend.publishedAt, now, 1.5);
-  const confirmed = trend.alsoSeenIn.length > 0 ? 0.1 : 0;
+  const confirmed = trend.corroboration.independent.length > 0 ? 0.1 : 0;
   return 0.6 * trend.scores.percentile + 0.3 * recency + confirmed;
 }
 
@@ -111,7 +111,7 @@ export function dailyScore(trend: TrendEntity, now: Date): number {
  * Picks the Daily list with quotas so no source or tier can crowd out the rest:
  * at least `minPerTier` per tier when available, then one per source until
  * `breadthSlots`, then the best of the rest with at most `maxPerSource` per source.
- * One item per entity; no stale carry-overs.
+ * One item per linked cluster; no stale carry-overs.
  */
 export function selectDaily(trends: TrendEntity[], now: Date, options: DailyOptions = {}): TrendEntity[] {
   const { limit = DAILY_LIMIT, maxPerSource = 2, minPerTier = 3, breadthSlots = 10 } = options;
@@ -127,10 +127,10 @@ export function selectDaily(trends: TrendEntity[], now: Date, options: DailyOpti
   const tryPick = (entry: (typeof pool)[number], perSourceCap = maxPerSource, slotCap = limit) => {
     if (picked.length >= slotCap || picked.includes(entry)) return false;
     if ((perSource.get(entry.trend.source) ?? 0) >= perSourceCap) return false;
-    if (entities.has(entry.trend.entityKey)) return false;
+    if (entities.has(entry.trend.cluster)) return false;
     picked.push(entry);
     perSource.set(entry.trend.source, (perSource.get(entry.trend.source) ?? 0) + 1);
-    entities.add(entry.trend.entityKey);
+    entities.add(entry.trend.cluster);
     return true;
   };
 

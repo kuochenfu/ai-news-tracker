@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { aiRelevance, isAiRelevant } from "../src/pipeline/relevance";
-import { relevanceLabels } from "./fixtures/relevance-labels";
+import { multilingualRelevanceLabels, relevanceLabels } from "./fixtures/relevance-labels";
 
 test("short English terms match whole words only", () => {
   assert.equal(aiRelevance("He said the train was late").score, 0);
@@ -23,12 +23,12 @@ test("body matches count at half weight", () => {
   assert.ok(isAiRelevant("Quarterly earnings", "Revenue from AI and LLM products doubled."));
 });
 
-test("labelled snapshot titles: precision and recall stay above the bar", () => {
+function scoreLabels(labels: Array<{ title: string; ai: boolean }>) {
   let truePositive = 0;
   let falsePositive = 0;
   let falseNegative = 0;
   const misses: string[] = [];
-  for (const { title, ai } of relevanceLabels) {
+  for (const { title, ai } of labels) {
     const predicted = isAiRelevant(title);
     if (predicted && ai) truePositive += 1;
     if (predicted && !ai) {
@@ -40,9 +40,22 @@ test("labelled snapshot titles: precision and recall stay above the bar", () => 
       misses.push(`false negative: ${title}`);
     }
   }
-  const precision = truePositive / (truePositive + falsePositive);
-  const recall = truePositive / (truePositive + falseNegative);
+  return {
+    precision: truePositive / (truePositive + falsePositive),
+    recall: truePositive / (truePositive + falseNegative),
+    misses: misses.join("\n")
+  };
+}
+
+test("labelled snapshot titles: precision and recall stay above the bar", () => {
   assert.ok(relevanceLabels.length >= 40, "keep at least 40 labelled examples");
-  assert.ok(precision >= 0.95, `precision ${precision.toFixed(2)}\n${misses.join("\n")}`);
-  assert.ok(recall >= 0.9, `recall ${recall.toFixed(2)}\n${misses.join("\n")}`);
+  const { precision, recall, misses } = scoreLabels(relevanceLabels);
+  assert.ok(precision >= 0.95, `precision ${precision.toFixed(2)}\n${misses}`);
+  assert.ok(recall >= 0.9, `recall ${recall.toFixed(2)}\n${misses}`);
+});
+
+test("labelled Japanese, Korean, Chinese, and government titles stay above the bar", () => {
+  const { precision, recall, misses } = scoreLabels(multilingualRelevanceLabels);
+  assert.ok(precision >= 0.95, `precision ${precision.toFixed(2)}\n${misses}`);
+  assert.ok(recall >= 0.9, `recall ${recall.toFixed(2)}\n${misses}`);
 });
