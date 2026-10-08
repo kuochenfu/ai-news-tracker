@@ -3,7 +3,6 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - codex-restart-typescript-baseline
       - main
   workflow_dispatch:
   schedule:
@@ -11,7 +10,10 @@ on:
     - cron: "0 0,8 * * *"
 
 permissions:
-  contents: read
+  # contents: write pushes refresh history to the `data` branch.
+  contents: write
+  # actions: write re-enables this workflow so GitHub's 60-day inactivity rule never pauses the schedule.
+  actions: write
   pages: write
   id-token: write
 
@@ -24,18 +26,33 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAGES: "true"
+      DATA_DIR: .data
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Keep the schedule alive
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/pages.yml/enable"
+
+      - name: Load refresh history
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth=1 origin data
+            git worktree add --detach "$DATA_DIR" FETCH_HEAD
+          else
+            echo "No data branch yet; this refresh starts history."
+            mkdir -p "$DATA_DIR"
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Setup Pages
@@ -56,6 +73,19 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Save refresh history
+        # Only after a successful build, so a broken refresh never becomes the baseline.
+        # The branch holds one squashed commit: history lives in observations.json, not in git history.
+        run: |
+          tmp="$(mktemp -d)"
+          cp "$DATA_DIR"/*.json "$tmp"/
+          cd "$tmp"
+          git init -q -b data
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "data: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" data
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -71,4 +101,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
