@@ -142,9 +142,9 @@ components:
 
 **Creative North Star: "The Issued Bulletin"**
 
-Every refresh is a weather bulletin issued at a fixed time. A navy bulletin bar carries the issue time, the next issue, the station count and the intensity legend. Under it, sources are observation stations grouped by tier, and every signal is read off one rainfall-intensity scale borrowed from the Central Weather Administration's accumulated-rainfall legend. The page is dense, quiet and tabular: one reader, scanning twice a day.
+Every refresh is a weather bulletin issued at a fixed time. A navy bulletin bar carries the issue time, the next issue, the station count and the intensity legend. Under it, sources are observation stations grouped by tier, and every signal is read off one rainfall-intensity scale borrowed from the Central Weather Administration's accumulated-rainfall legend. The value it encodes is the item's percentile within its own source, so a colour means the same thing at every station. The page is dense, quiet and tabular: one reader, scanning twice a day.
 
-Color does exactly one job. The paper, ink and navy shell are nearly monochrome so the nine-step intensity progression (pale blue through blue, green, yellow, orange, red, magenta, purple) is the only chroma on the screen, and it always means signal strength. Rank, status and emphasis are carried by weight, case, underline and icon, never by hue.
+Color does exactly one job. The paper, ink and navy shell are nearly monochrome so the nine-step intensity progression (pale blue through blue, green, yellow, orange, red, magenta, purple) is the only chroma on the screen, and it always means within-source percentile. Rank, status and emphasis are carried by weight, case, underline and icon, never by hue.
 
 Night mode is a deep night-blue ground with the navy shell held above it as a lighter band, so the bulletin bar keeps its identity after dark.
 
@@ -164,7 +164,7 @@ A near-monochrome navy-and-paper frame that hands all of its chroma to a single 
 - **Bulletin Navy** (navy-shell): the bulletin bar, the active filter tab, the strip readout and the primary button. In light mode it is also the link color (link-navy), so links read as part of the bulletin, not as a separate accent.
 
 ### Secondary
-- **The CWA Intensity Scale** (intensity-0 through intensity-8): nine bands with lower thresholds at <20, 20, 30, 40, 50, 60, 70, 80, 90 on the 0-100 signal value. It colors the intensity chip in each signal row, the cells of each station strip, and the legend in the bulletin bar. Only band 0 changes in dark mode (intensity-0-night), so the faintest band stays visible on the night sheet; bands 1-8 are identical in both modes.
+- **The CWA Intensity Scale** (intensity-0 through intensity-8): nine bands with lower thresholds at <20, 20, 30, 40, 50, 60, 70, 80, 90 on the 0-100 within-source percentile. It colors the intensity chip in each signal row, the cells of each station strip, and the legend in the bulletin bar. Only band 0 changes in dark mode (intensity-0-night), so the faintest band stays visible on the night sheet; bands 1-8 are identical in both modes.
 
 ### Neutral
 - **Cool Paper** (paper-ground): the page ground in light mode; sheets sit on it.
@@ -249,13 +249,13 @@ Small, nearly square corners on a strict four-step scale: 1px for strip cells, 2
 - Plain links inherit ink and underline on hover (1px, 3px offset). Standalone action links (`link`) are link-navy (night-link in dark) and always underlined. Links never take an intensity color.
 
 ### Signal Row
-The core observation line: optional tabular rank, the intensity chip (12px swatch with a 10% inset ring, then the tabular value), the title as a two-line-clamped semibold link to the original, and a label-size metadata line of station name, tier tag and publish time. Hover washes the row.
+The core observation line: optional tabular rank, the intensity chip (12px swatch with a 10% inset ring, then the tabular value), the title as a two-line-clamped semibold link to the original, and a label-size metadata line of station name, tier tag, the source's real metric with its measured change (only when an earlier observation exists), and publish time ("日期不明" when the source gave none). History flags close the line: 首次觀測 is an inverted shell chip; 另見 (other sources carrying the same entity) and 舊資料 (carried over from the last good refresh) are dashed-outline chips. Hover washes the row.
 
 ### Tier Tag
 A 3px-cornered outline in strong rule: "T1" in semibold followed by the short tier name at 400, 11px, ink-secondary. It is the only tier marker; tiers never get color.
 
 ### Station Intensity Strip (signature)
-Ten 8 by 14px cells with 2px gaps, one per rank in a station's Top 10, filled by intensity band; missing ranks are dashed strong-rule outlines. Hovering, tapping or arrowing through the focused strip dims the other cells to 55% and lifts the active cell (scaleY 1.45 from the bottom, 160ms, `cubic-bezier(0.16, 1, 0.3, 1)`, disabled under reduced motion), and a navy readout floats above it with "#rank · 強度 value" and the item title. The strip is a labeled group announcing count and strongest value.
+Ten 8 by 14px cells with 2px gaps, one per rank in a station's Top 10, filled by intensity band; missing ranks are dashed strong-rule outlines. Hovering, tapping or arrowing through the focused strip dims the other cells to 55% and lifts the active cell (scaleY 1.45 from the bottom, 160ms, `cubic-bezier(0.16, 1, 0.3, 1)`, disabled under reduced motion), and a navy readout floats above it with "#rank · 百分位 value" and the item title. The strip is a labeled group announcing its ranked count.
 
 ### Intensity Legend
 Nine 10px-high swatches with the lower threshold printed below in 10px tabular shell-ink-muted, bracketed by 弱 and 強. It lives in the bulletin bar's issue line on every page.

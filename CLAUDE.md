@@ -6,58 +6,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm install
-npm run refresh      # hit live sources, rewrite src/generated/snapshot.json
+npm run refresh      # run the pipeline against live sources; writes src/generated/snapshot.json and .data/
 npm run dev          # Next.js dev server
 npm run build        # static export to out/
 npm run typecheck    # tsc --noEmit
-npm test             # typecheck + node:test on test/trendScoring.test.ts
+npm test             # typecheck + node:test on test/**/*.test.ts
 ```
 
-Run a single TS test: `node --import tsx --test --test-name-pattern "<name>" test/trendScoring.test.ts`
+Run a single test file: `node --import tsx --test test/build.test.ts`. Filter by name: add `--test-name-pattern "<name>"`.
 
-Python ingestion tests have no pytest dependency; they are plain `test_*` functions. Run them **from the repo root** (they open `sql/*.sql` by relative path):
+`npm run refresh` reads and writes history in `DATA_DIR` (default `.data/`, gitignored). Set `GITHUB_TOKEN` locally to avoid GitHub API rate limits (`GITHUB_TOKEN=$(gh auth token) npm run refresh`). 36Kr serves an anti-bot page to some networks; locally it may fail and fall back to stale data.
 
-```bash
-python3 -B -c "import importlib, inspect, sys; sys.path.insert(0,'.'); mods=['tests.test_ingestion_idempotency','tests.test_trend_engine']; total=0
-for m in mods:
-    mod=importlib.import_module(m)
-    for name, fn in inspect.getmembers(mod, inspect.isfunction):
-        if name.startswith('test_'):
-            fn(); total += 1
-print(f'ran {total} test functions')"
-```
-
-Single Python test: `python3 -B -c "import sys; sys.path.insert(0,'.'); from tests.test_trend_engine import test_x; test_x()"`
-
-CI (`.github/workflows/pages.yml`) runs: `npm run refresh` → `npm test` → `npx prisma validate` → `npm audit --omit=dev` → `npm run build`, then deploys `out/` to GitHub Pages. It runs on push to `main`, manually, and on cron at 08:00/16:00 Asia/Taipei.
+CI (`.github/workflows/pages.yml`) runs at 00:00 and 08:00 UTC and on push to `main`. It re-enables its own workflow (GitHub pauses schedules after 60 days of inactivity), checks out the `data` branch into `.data`, refreshes, tests, runs `prisma validate` and `npm audit --omit=dev`, builds, force-pushes history to `data`, and deploys `out/` to GitHub Pages.
 
 ## Architecture
 
-The deployed site is a **fully static** Next.js App Router export (`output: "export"`). There is no runtime backend or DB access in the deployed site.
+The deployed site is a fully static Next.js export with no runtime backend. UI copy is Traditional Chinese.
 
-Data flow:
+**Pipeline** (`src/pipeline/`, orchestrated by `scripts/refresh-data.ts`):
+1. `collectors.ts`: one collector per source. Each returns uniform `Candidate`s and errors and never throws. All network calls go through `http.ts` (timeout plus bounded retries).
+2. `build.ts` (`buildSnapshot`, pure and unit-tested): per-source dedupe, then the AI relevance gate (`relevance.ts`, only for `RELEVANCE_FILTERED` sources), then `sourceScore`, percentile, and Top 10 (`ranking.ts`). Next it links entities across sources (`entity.ts`), carries a failed source's last good items forward as stale (up to 3 days), enriches items from history (`history.ts`: firstSeen, seenBefore, metric change), and selects the Daily with quotas.
+3. If fewer than `MIN_FRESH_SOURCES` sources returned fresh data, the refresh exits 1 and nothing is published.
 
-1. `scripts/refresh-data.ts` is the real collector. It fetches each source (HN Firebase, GitHub Search, RSS media feeds, official blogs, arXiv, GitHub releases, Hugging Face, npm, PyPI), scores items per source (formulas in `docs/ranking-metrics.md`), and writes one JSON snapshot: `src/generated/snapshot.json` (trends, per-source top lists, source statuses, daily report).
-2. `src/mockData.ts` (despite the name) imports that snapshot and exposes `trends`, `sourceTopTrends`, `sourceStatuses`, `dailyReport` to pages.
-3. Pages in `app/` (`/`, `/trends/`, `/daily/`, `/sources/`) render from that data at build time.
+**Score semantics matter.** `scores.source` is only comparable within one source. Anything that mixes sources (home feed, Daily, intensity colours) must use `scores.percentile` and `compareAcrossSources`. Never reintroduce a blended cross-source score.
 
-Ranking is **per source**: each source has its own top-N list. There is no global cross-source ranking in the UI yet. HN/GitHub also feed `computeTrendScore` in `src/trendScoring.ts` (`0.55 * HN + 0.45 * GitHub`).
+**Honesty rules.** No inferred history: growth (`metric.change`) and `seenBefore` are `null` when there is no stored observation, and the UI hides them. Missing dates stay `null` and are never replaced with "now". Media and community sources show fewer than 10 items rather than off-topic ones.
 
-Base path: when `GITHUB_PAGES=true`, the site is served under `/ai-news-tracker`. Internal links must go through `sitePath()` in `src/paths.ts`. `next.config.mjs` handles the asset prefix.
+**Rendering.** `src/snapshot.ts` exposes the generated snapshot to pages; `src/bulletin.ts` holds zh-TW labels and formatting. When `GITHUB_PAGES=true` the site is served under `/ai-news-tracker`; internal links go through `next/link` or `sitePath()` (`src/paths.ts`).
 
-### Two parallel source models (important)
+**Sources.** `src/sources.ts` (metadata, tier, role, feed URL) and `src/domain.ts` (`SourceName`) define them. Adding a source means updating both, adding a collector to `collectAll`, and deciding whether it belongs in `RELEVANCE_FILTERED`. Every source in `activeSourceOrder` must render on all four pages, with an explicit empty state when it has no items.
 
-- **TypeScript / UI**: `src/domain.ts` (`SourceName` union), `src/sources.ts` (`sourceMetadata`, `activeSourceOrder`, tiers/roles/feed URLs). This is the source of truth for what the site shows.
-- **Python / ingestion**: `ingestion/` (`source_registry.py`, parsers in `sources.py`, entity clustering, idempotency keys/dedup, tier-aware `trend_scoring.py`, SQLite `writer.py`) plus `sql/` migrations. This layer is **not invoked** by `npm run refresh` or CI. It is a separate library that is tested on its own.
-- `prisma/schema.prisma` is a PostgreSQL schema (`DATABASE_URL`) that CI only validates. The app does not use it at runtime.
+**Relevance fixture.** `test/fixtures/relevance-labels.ts` holds hand-labelled titles. Changing `relevance.ts` must keep precision ≥ 0.95 and recall ≥ 0.90; add a labelled example for every misjudgement you fix.
 
-Adding or changing a source therefore means updating `src/domain.ts`, `src/sources.ts`, the collector in `scripts/refresh-data.ts`, and `ingestion/source_registry.py`. See `docs/retrospectives/` for why. Acceptance checks for source changes:
-- Every source in `activeSourceOrder` shows on `/`, `/trends/`, `/daily/`, and `/sources/`. Sources with no observations get an explicit empty state (`components/SourceCoverage.tsx`) and are not filtered out.
-- After a refresh, no source is disabled or paused unless that is intentional, and every source has fresh `lastSync`/`nextSync`.
-- Prefer a few reliable official feeds over many brittle ones. Feeds that return anti-bot challenges are excluded.
+`prisma/schema.prisma` is validated in CI but unused at runtime.
 
-Source tiers: Tier 1 = first-party origin (official blogs, arXiv, GitHub releases), Tier 2 = community/adoption (HN, X, GitHub, HF, npm, PyPI), Tier 3 = media validation (tech RSS). Media is treated as validation, not as a primary signal.
+## Design
 
-## Env
-
-`.env.example`: `DATABASE_URL`, `GITHUB_TOKEN` (optional, raises GitHub API rate limits), `OPENAI_API_KEY` (not used yet). CI also passes `X_BEARER_TOKEN`.
+`PRODUCT.md` and `DESIGN.md` (with `.impeccable/design.json`) are the product and visual-system records, and are binding for UI work. The CWA intensity colours (`--i0`…`--i8`) encode within-source percentile and nothing else. Status, links, and warnings use ink tones plus icon, weight, or underline.

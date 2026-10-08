@@ -32,7 +32,10 @@ Media coverage confirms a signal but does not originate it. Every source is rank
 ## Capabilities and Constraints
 
 - 15 sources (`src/sources.ts`), each with a tier, a type (first_party / community / platform / media), and a signal role (origin / early_discussion / adoption / validation).
-- Each trend has a title, a summary, an original link, a source, and a score breakdown with a verdict (high-confidence / watchlist / emerging / likely-hype).
+- Each item has a title, a summary, an original link, a source, and three separate scores: AI relevance, the source's own ranking score, and its percentile within that source. There is no cross-source "trend score" and no verdict.
+- Real metrics only: HN points, GitHub stars, Hugging Face likes, npm and PyPI weekly downloads. Growth and "first seen" come from stored history (the `data` branch). Without history they are shown as unknown, never estimated.
+- Media and community sources must pass an AI relevance threshold. A source shows fewer than 10 items rather than padding with off-topic ones.
+- A failed source shows its last good items for up to 3 days, marked stale. Publishing requires at least 10 sources with fresh data.
 - Every source must appear on every page. A source with no data gets an explicit empty state and is never hidden.
 - Must support system dark mode.
 - Detail links can go stale between snapshots. The 404 page redirects to `/trends/`.

@@ -8,3 +8,4 @@ coverage/
 *.log
 .impeccable/review/
 .impeccable/questions/
+.data/
