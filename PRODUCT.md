@@ -31,7 +31,9 @@ Media coverage confirms a signal but does not originate it. Every source is rank
 
 ## Capabilities and Constraints
 
-- 15 sources (`src/sources.ts`), each with a tier, a type (first_party / community / platform / media), and a signal role (origin / early_discussion / adoption / validation).
+- 21 sources (`src/sources.ts`), each with a tier, a publisher region, a data role (official / research / media / community / platform), and a signal role.
+- Regional balance means not missing events when a source fails, not equal counts. There are no regional quotas. Coverage and single points of failure are shown per region on `/sources/`.
+- Corroboration counts only independent voices. A lab's own release and package are echoes.
 - Each item has a title, a summary, an original link, a source, and three separate scores: AI relevance, the source's own ranking score, and its percentile within that source. There is no cross-source "trend score" and no verdict.
 - Real metrics only: HN points, GitHub stars, Hugging Face likes, npm and PyPI weekly downloads. Growth and "first seen" come from stored history (the `data` branch). Without history they are shown as unknown, never estimated.
 - Media and community sources must pass an AI relevance threshold. A source shows fewer than 10 items rather than padding with off-topic ones.

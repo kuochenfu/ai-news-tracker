@@ -257,6 +257,9 @@ A 3px-cornered outline in strong rule: "T1" in semibold followed by the short ti
 ### Station Intensity Strip (signature)
 Ten 8 by 14px cells with 2px gaps, one per rank in a station's Top 10, filled by intensity band; missing ranks are dashed strong-rule outlines. Hovering, tapping or arrowing through the focused strip dims the other cells to 55% and lifts the active cell (scaleY 1.45 from the bottom, 160ms, `cubic-bezier(0.16, 1, 0.3, 1)`, disabled under reduced motion), and a navy readout floats above it with "#rank · 百分位 value" and the item title. The strip is a labeled group announcing its ranked count.
 
+### Region Coverage Table
+The first section of `/sources/` has one row per region. It shows regional publishers per role as `healthy/total`, 7-day picks by role, 7- and 30-day totals, and a dependency cell. The dependency cell reads "單點：<roles>" in bold ink with a dotted underline, "無在地來源" in bold, or "有備援" in ink-3. On mobile it collapses to a two-column grid with inline labels. Like status, it uses no intensity colours.
+
 ### Intensity Legend
 Nine 10px-high swatches with the lower threshold printed below in 10px tabular shell-ink-muted, bracketed by 弱 and 強. It lives in the bulletin bar's issue line on every page.
 

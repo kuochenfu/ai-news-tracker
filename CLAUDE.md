@@ -26,7 +26,9 @@ The deployed site is a fully static Next.js export with no runtime backend. UI c
 **Pipeline** (`src/pipeline/`, orchestrated by `scripts/refresh-data.ts`):
 1. `collectors.ts`: one collector per source. Each returns uniform `Candidate`s and errors and never throws. All network calls go through `http.ts` (timeout plus bounded retries).
 2. `build.ts` (`buildSnapshot`, pure and unit-tested): per-source dedupe, then the AI relevance gate (`relevance.ts`, only for `RELEVANCE_FILTERED` sources), then `sourceScore`, percentile, and Top 10 (`ranking.ts`). Next it links entities across sources (`entity.ts`), carries a failed source's last good items forward as stale (up to 3 days), enriches items from history (`history.ts`: firstSeen, seenBefore, metric change), and selects the Daily with quotas.
-3. If fewer than `MIN_FRESH_SOURCES` sources returned fresh data, the refresh exits 1 and nothing is published.
+3. If fewer than `MIN_FRESH_SOURCES` (two thirds) of sources returned fresh data, the refresh exits 1 and nothing is published.
+
+**Origin, regions, coverage.** Same-origin items (a lab's post, release, and package) are echoes and must never count as confirmation; extend the alias table in `origin.ts` when adding first-party sources. `regions.ts` infers event regions from names. It is separate from publisher region (`sources.ts` `region`, or the lab's region for lab feeds). `coverage.ts` reports per-region availability, picks, and single points for `/sources/`.
 
 **Score semantics matter.** `scores.source` is only comparable within one source. Anything that mixes sources (home feed, Daily, intensity colours) must use `scores.percentile` and `compareAcrossSources`. Never reintroduce a blended cross-source score.
 
@@ -34,7 +36,7 @@ The deployed site is a fully static Next.js export with no runtime backend. UI c
 
 **Rendering.** `src/snapshot.ts` exposes the generated snapshot to pages; `src/bulletin.ts` holds zh-TW labels and formatting. When `GITHUB_PAGES=true` the site is served under `/ai-news-tracker`; internal links go through `next/link` or `sitePath()` (`src/paths.ts`).
 
-**Sources.** `src/sources.ts` (metadata, tier, role, feed URL) and `src/domain.ts` (`SourceName`) define them. Adding a source means updating both, adding a collector to `collectAll`, and deciding whether it belongs in `RELEVANCE_FILTERED`. Every source in `activeSourceOrder` must render on all four pages, with an explicit empty state when it has no items.
+**Sources.** `src/sources.ts` (metadata, tier, role, feed URL) and `src/domain.ts` (`SourceName`) define them. Adding a source means updating both, giving it a `region` and `dataRole`, adding a collector (RSS sources are collected automatically from `feedUrl`), deciding whether it belongs in `RELEVANCE_FILTERED` or `TITLE_ONLY_RELEVANCE`, and adding labelled titles to the relevance fixture if it is in a new language. Anthropic's news page is scraped by `parseAnthropicNews`; a layout change yields zero items, which reads as a failed feed. Every source in `activeSourceOrder` must render on all four pages, with an explicit empty state when it has no items.
 
 **Relevance fixture.** `test/fixtures/relevance-labels.ts` holds hand-labelled titles. Changing `relevance.ts` must keep precision ≥ 0.95 and recall ≥ 0.90; add a labelled example for every misjudgement you fix.
 
