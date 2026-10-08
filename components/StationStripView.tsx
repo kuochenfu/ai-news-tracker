@@ -22,7 +22,6 @@ interface Readout {
  */
 export function StationStripView({ items, label }: { items: StripItem[]; label: string }) {
   const [readout, setReadout] = useState<Readout | null>(null);
-  const strongest = items[0] ? intensityValue(items[0].score) : null;
 
   function show(index: number, element: Element | null) {
     if (!element || !items[index]) return;
@@ -49,7 +48,7 @@ export function StationStripView({ items, label }: { items: StripItem[]; label: 
       className="strip relative flex h-3.5 shrink-0 items-end gap-[2px] rounded-[2px]"
       tabIndex={items.length > 0 ? 0 : undefined}
       role="group"
-      aria-label={strongest === null ? `${label}：無觀測` : `${label}：${items.length} 筆觀測，最強 ${strongest}。左右鍵逐格讀取`}
+      aria-label={items.length === 0 ? `${label}：無觀測` : `${label}：${items.length} 筆排名。左右鍵逐格讀取`}
       onKeyDown={onKeyDown}
       onFocus={(event) => {
         if (event.target === event.currentTarget && items.length > 0) show(0, event.currentTarget.children[0] ?? null);
@@ -79,7 +78,7 @@ export function StationStripView({ items, label }: { items: StripItem[]; label: 
           style={{ left: Math.min(Math.max(readout.left, 136), window.innerWidth - 136), top: readout.top - 6 }}
         >
           <span className="num font-semibold">
-            #{readout.index + 1} · 強度 {intensityValue(active.score)}
+            #{readout.index + 1} · 百分位 {intensityValue(active.score)}
           </span>
           <span className="mt-0.5 line-clamp-2 block">{active.title}</span>
         </span>

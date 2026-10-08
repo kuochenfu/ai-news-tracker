@@ -1,5 +1,5 @@
-import type { SourceName, TrendEntity } from "./domain";
-import { generatedAt, sourceStatuses, sourceTopTrends } from "./mockData";
+import type { SourceName, SourceStatus, TrendEntity, TrendMetric } from "./domain";
+import { allTrends, generatedAt, sourceStatuses } from "./snapshot";
 import { activeSourceOrder, sourceMetadata, type SourceMetadata } from "./sources";
 
 const NEW_WINDOW_MS = 24 * 60 * 60 * 1000;
@@ -76,27 +76,25 @@ export function formatTaipeiTime(iso: string): string {
   return `${p.hour}:${p.minute}`;
 }
 
-export function publishedAt(trend: TrendEntity): string | undefined {
-  return trend.mentions[0]?.publishedAt ?? trend.sources[0]?.lastSeen;
-}
-
-export function trendSource(trend: TrendEntity): SourceName {
-  return trend.sources[0]?.source ?? trend.mentions[0]?.source;
-}
-
 export function isNew(trend: TrendEntity): boolean {
-  const published = publishedAt(trend);
-  if (!published) return false;
-  const age = new Date(generatedAt).getTime() - new Date(published).getTime();
+  if (!trend.publishedAt || trend.stale) return false;
+  const age = new Date(generatedAt).getTime() - new Date(trend.publishedAt).getTime();
   return age >= -NEW_WINDOW_MS && age <= NEW_WINDOW_MS;
 }
+
+export const statusLabel: Record<SourceStatus["status"], string> = {
+  healthy: "正常",
+  degraded: "部分失敗",
+  stale: "沿用舊資料",
+  failed: "失敗"
+};
 
 export interface Bulletin {
   issuedAt: string;
   nextIssueAt: string | null;
   stationCount: number;
   observationCount: number;
-  degradedCount: number;
+  troubledCount: number;
 }
 
 export function currentBulletin(): Bulletin {
@@ -105,16 +103,9 @@ export function currentBulletin(): Bulletin {
     issuedAt: generatedAt,
     nextIssueAt,
     stationCount: activeSourceOrder.length,
-    observationCount: activeSourceOrder.reduce((total, source) => total + (sourceTopTrends[source]?.length ?? 0), 0),
-    degradedCount: sourceStatuses.filter((status) => status.status !== "healthy").length
+    observationCount: allTrends.length,
+    troubledCount: sourceStatuses.filter((status) => status.status !== "healthy").length
   };
-}
-
-/** Every ranked observation across stations, one row per source item. */
-export function allObservations(): Array<{ trend: TrendEntity; source: SourceName; rank: number }> {
-  return activeSourceOrder.flatMap((source) =>
-    (sourceTopTrends[source] ?? []).map((trend, index) => ({ trend, source, rank: index + 1 }))
-  );
 }
 
 export function stationsByTier(): Array<{ tier: SourceMetadata["tier"]; sources: SourceName[] }> {
@@ -122,4 +113,22 @@ export function stationsByTier(): Array<{ tier: SourceMetadata["tier"]; sources:
     tier,
     sources: activeSourceOrder.filter((source) => sourceMetadata[source].tier === tier)
   }));
+}
+
+const compact = new Intl.NumberFormat("zh-TW", { notation: "compact", maximumFractionDigits: 1 });
+
+const metricUnit: Record<string, string> = {
+  points: "分",
+  stars: "星",
+  likes: "讚",
+  weekly_downloads: "週下載"
+};
+
+/** "1.2萬 星 · +340（2 天）"; growth only when an earlier observation exists. */
+export function formatMetric(metric: TrendMetric): { value: string; change: string | null } {
+  const unit = metricUnit[metric.name] ?? metric.name;
+  const value = `${compact.format(metric.value)} ${unit}`;
+  if (!metric.change) return { value, change: null };
+  const sign = metric.change.value > 0 ? "+" : metric.change.value < 0 ? "−" : "±";
+  return { value, change: `${sign}${compact.format(Math.abs(metric.change.value))}（${metric.change.days} 天）` };
 }

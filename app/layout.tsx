@@ -46,9 +46,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                 <span className="font-semibold">{bulletin.stationCount}</span>
                 <span className="text-shell-ink-2"> 站 · </span>
                 <span className="font-semibold">{bulletin.observationCount}</span>
-                <span className="text-shell-ink-2"> 筆觀測</span>
-                {bulletin.degradedCount > 0 ? (
-                  <span className="ml-2 font-bold text-shell-ink underline decoration-dotted underline-offset-2">{bulletin.degradedCount} 站異常</span>
+                <span className="text-shell-ink-2"> 筆排名</span>
+                {bulletin.troubledCount > 0 ? (
+                  <span className="ml-2 font-bold text-shell-ink underline decoration-dotted underline-offset-2">{bulletin.troubledCount} 站異常</span>
                 ) : null}
               </p>
               <p className="hidden text-shell-ink-2 sm:block">台北時間</p>

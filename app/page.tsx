@@ -3,18 +3,19 @@ import Link from "next/link";
 import { SignalFeed } from "@/components/SignalFeed";
 import { SignalRow } from "@/components/SignalRow";
 import { StationRail } from "@/components/StationRail";
-import { allObservations, isNew } from "@/src/bulletin";
+import { isNew } from "@/src/bulletin";
+import { compareAcrossSources } from "@/src/pipeline/ranking";
+import { allTrends, hasHistory } from "@/src/snapshot";
 import { sourceMetadata } from "@/src/sources";
 
 export default function TodayPage() {
-  const fresh = allObservations()
-    .filter(({ trend }) => isNew(trend))
-    .sort((a, b) => b.trend.score.finalScore - a.trend.score.finalScore);
+  const fresh = allTrends.filter(isNew).sort(compareAcrossSources);
+  const firstSeen = fresh.filter((trend) => trend.seenBefore === false).length;
 
-  const rows = fresh.map(({ trend, source }) => ({
-    id: `${source}-${trend.id}`,
-    tier: sourceMetadata[source].tier,
-    node: <SignalRow trend={trend} source={source} />
+  const rows = fresh.map((trend) => ({
+    id: trend.id,
+    tier: sourceMetadata[trend.source].tier,
+    node: <SignalRow trend={trend} />
   }));
 
   return (
@@ -24,7 +25,9 @@ export default function TodayPage() {
           <h1 id="fresh-heading" className="text-xl font-bold tracking-tight">
             過去 24 小時新出現
           </h1>
-          <p className="text-meta text-ink-3">依訊號強度排序 · 點標題開啟原文</p>
+          <p className="num text-meta text-ink-3">
+            {hasHistory ? `${firstSeen} 則首次觀測 · ` : "歷史資料累積中 · "}依來源內百分位排序 · 點標題開啟原文
+          </p>
         </div>
         <div className="overflow-hidden rounded-[4px] border border-rule bg-surface">
           <SignalFeed
@@ -51,7 +54,7 @@ export default function TodayPage() {
         <div className="rounded-[4px] border border-rule bg-surface p-3">
           <StationRail />
         </div>
-        <p className="mt-2 text-meta text-ink-3">每格是該站排行 #1–#10 的強度。</p>
+        <p className="mt-2 text-meta text-ink-3">每格是該站排行 #1–#10 在來源內的百分位；只列通過 AI 相關性門檻的項目。</p>
       </aside>
     </div>
   );

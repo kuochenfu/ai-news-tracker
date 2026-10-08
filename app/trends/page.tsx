@@ -2,8 +2,8 @@ import { SignalRow } from "@/components/SignalRow";
 import { StationRail } from "@/components/StationRail";
 import { StationStrip } from "@/components/StationStrip";
 import { TierTag } from "@/components/TierTag";
-import { roleLabel } from "@/src/bulletin";
-import { sourceTopTrends } from "@/src/mockData";
+import { roleLabel, statusLabel } from "@/src/bulletin";
+import { sourceStatuses, sourceTopTrends } from "@/src/snapshot";
 import { activeSourceOrder, sourceMetadata } from "@/src/sources";
 
 export default function TrendsPage() {
@@ -18,7 +18,7 @@ export default function TrendsPage() {
       <div className="min-w-0 space-y-8">
         <div>
           <h1 className="text-xl font-bold tracking-tight">各站排行</h1>
-          <p className="mt-1 text-meta text-ink-3">每站獨立排名 Top 10，不做跨站總排名。</p>
+          <p className="mt-1 text-meta text-ink-3">每站獨立排名 Top 10，不做跨站總排名；媒體與社群來源只列通過 AI 相關性門檻的項目，不足 10 則不補。</p>
           <nav aria-label="跳到觀測站" className="mt-3 flex gap-1.5 overflow-x-auto pb-1 lg:hidden">
             {activeSourceOrder.map((source) => (
               <a
@@ -35,6 +35,7 @@ export default function TrendsPage() {
         {activeSourceOrder.map((source) => {
           const metadata = sourceMetadata[source];
           const trends = sourceTopTrends[source] ?? [];
+          const status = sourceStatuses.find((entry) => entry.source === source);
           return (
             <section key={source} id={source} aria-labelledby={`${source}-heading`} className="scroll-mt-4">
               <div className="mb-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
@@ -51,21 +52,18 @@ export default function TrendsPage() {
               {trends.length > 0 ? (
                 <ol className="divide-y divide-rule overflow-hidden rounded-[4px] border border-rule bg-surface">
                   {trends.map((trend, index) => (
-                    <SignalRow
-                      key={trend.id}
-                      trend={trend}
-                      source={source}
-                      rank={index + 1}
-                      showSource={false}
-                      showPreview
-                    />
+                    <SignalRow key={trend.id} trend={trend} rank={index + 1} showSource={false} showPreview />
                   ))}
                 </ol>
               ) : (
                 <div className="rounded-[4px] border border-dashed border-rule-strong bg-surface px-4 py-5 text-body text-ink-2">
                   <p className="font-semibold text-ink">這次發布沒有 {metadata.label} 的排名資料。</p>
                   <p className="mt-1 text-meta">
-                    觀測站仍在名單中；請到「觀測站」頁查看同步狀態與錯誤訊息。
+                    {status && status.status !== "healthy"
+                      ? `狀態：${statusLabel[status.status]}。錯誤訊息見「觀測站」頁。`
+                      : status && status.filteredOut > 0
+                        ? `${status.candidateCount} 則候選都未通過 AI 相關性門檻。`
+                        : "觀測站仍在名單中；請到「觀測站」頁查看同步狀態。"}
                   </p>
                 </div>
               )}

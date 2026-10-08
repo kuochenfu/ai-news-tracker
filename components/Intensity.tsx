@@ -1,6 +1,8 @@
 import { intensityBands, intensityColor, intensityValue } from "@/src/intensity";
 
-export function IntensityChip({ score }: { score: number }) {
+/** Percentile within the item's own source, as a colour and a number. */
+export function IntensityChip({ percentile }: { percentile: number }) {
+  const score = percentile;
   const value = intensityValue(score);
   return (
     <span className="inline-flex items-center gap-1.5">
@@ -10,7 +12,7 @@ export function IntensityChip({ score }: { score: number }) {
         aria-hidden="true"
       />
       <span className="num w-6 text-right text-meta font-semibold text-ink">
-        <span className="sr-only">強度 </span>
+        <span className="sr-only">來源內百分位 </span>
         {value}
       </span>
     </span>
@@ -20,8 +22,8 @@ export function IntensityChip({ score }: { score: number }) {
 /** The bulletin legend: one swatch per band with its lower threshold printed beneath. */
 export function IntensityLegend() {
   return (
-    <div className="flex items-end gap-2" role="img" aria-label="訊號強度色階：20 以下到 90 以上，由弱到強">
-      <span className="pb-3 text-meta text-shell-ink-2">弱</span>
+    <div className="flex items-end gap-2" role="img" aria-label="來源內百分位色階：20 以下到 90 以上">
+      <span className="pb-3 text-meta text-shell-ink-2">來源內百分位</span>
       <div className="flex">
         {intensityBands.map((band) => (
           <span key={band.label} className="flex w-6 flex-col items-center gap-0.5 sm:w-5">
@@ -30,7 +32,6 @@ export function IntensityLegend() {
           </span>
         ))}
       </div>
-      <span className="pb-3 text-meta text-shell-ink-2">強</span>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { STRIP_CELLS } from "@/src/intensity";
 export function StationStrip({ trends, label }: { trends: TrendEntity[]; label: string }) {
   const items = trends.slice(0, STRIP_CELLS).map((trend) => ({
     title: decodeNumericEntities(trend.canonicalName),
-    score: trend.score.finalScore
+    score: trend.scores.percentile
   }));
   return <StationStripView items={items} label={label} />;
 }

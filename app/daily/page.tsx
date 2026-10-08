@@ -3,20 +3,17 @@ import Link from "next/link";
 import { SignalRow } from "@/components/SignalRow";
 import { StationStrip } from "@/components/StationStrip";
 import { TierTag } from "@/components/TierTag";
-import { allObservations, formatTaipeiDate, roleLabel, trendSource } from "@/src/bulletin";
-import { dailyReport, generatedAt, getTrendById, sourceStatuses, sourceTopTrends } from "@/src/mockData";
+import { formatTaipeiDate, roleLabel, statusLabel } from "@/src/bulletin";
+import { allTrends, dailyReport, generatedAt, getTrendById, hasHistory, sourceStatuses, sourceTopTrends } from "@/src/snapshot";
 import { activeSourceOrder, sourceMetadata } from "@/src/sources";
-
-const DAILY_TREND_LIMIT = 15;
 
 export default function DailyPage() {
   const topTrends = dailyReport.topTrendIds
     .map((id) => getTrendById(id))
-    .filter((trend) => trend !== undefined)
-    .slice(0, DAILY_TREND_LIMIT);
+    .filter((trend) => trend !== undefined);
   const statusBySource = new Map(sourceStatuses.map((status) => [status.source, status]));
   const tierCounts = ([1, 2, 3] as const).map(
-    (tier) => topTrends.filter((trend) => sourceMetadata[trendSource(trend)].tier === tier).length
+    (tier) => topTrends.filter((trend) => sourceMetadata[trend.source].tier === tier).length
   );
 
   return (
@@ -27,12 +24,13 @@ export default function DailyPage() {
             日報 <span className="num">{formatTaipeiDate(generatedAt)}</span>
           </h1>
           <p className="num text-meta text-ink-3">
-            {topTrends.length} 則精選 · T1 {tierCounts[0]} · T2 {tierCounts[1]} · T3 {tierCounts[2]} · 共 {allObservations().length} 筆觀測
+            {topTrends.length} 則精選 · T1 {tierCounts[0]} · T2 {tierCounts[1]} · T3 {tierCounts[2]} · 每站最多 2 則 ·{" "}
+            {hasHistory ? `${dailyReport.newEntityIds.length} 則首次觀測` : "歷史資料累積中"} · 共 {allTrends.length} 筆排名
           </p>
         </div>
         <ol className="divide-y divide-rule overflow-hidden rounded-[4px] border border-rule bg-surface">
           {topTrends.map((trend, index) => (
-            <SignalRow key={trend.id} trend={trend} source={trendSource(trend)} rank={index + 1} showPreview />
+            <SignalRow key={trend.id} trend={trend} rank={index + 1} showPreview />
           ))}
         </ol>
       </section>
@@ -61,7 +59,9 @@ export default function DailyPage() {
                 >
                   <Link href={`/trends/#${source}`} className="truncate font-semibold">
                     {metadata.label}
-                    {status && status !== "healthy" ? <span className="ml-2 text-meta font-bold underline decoration-dotted underline-offset-2">異常</span> : null}
+                    {status && status !== "healthy" ? (
+                      <span className="ml-2 text-meta font-bold underline decoration-dotted underline-offset-2">{statusLabel[status]}</span>
+                    ) : null}
                   </Link>
                   <span className="justify-self-end md:justify-self-start">
                     <TierTag tier={metadata.tier} />

@@ -1,25 +1,26 @@
-import { AlertTriangle, CheckCircle2, CircleOff } from "lucide-react";
+import { AlertTriangle, CheckCircle2, CircleOff, History } from "lucide-react";
 
 import { StationStrip } from "@/components/StationStrip";
 import { TierTag } from "@/components/TierTag";
-import { formatTaipei, roleLabel, stationsByTier, tierLabel, typeLabel } from "@/src/bulletin";
+import { formatTaipei, roleLabel, stationsByTier, statusLabel, tierLabel, typeLabel } from "@/src/bulletin";
 import type { SourceStatus } from "@/src/domain";
-import { sourceStatuses, sourceTopTrends } from "@/src/mockData";
+import { sourceStatuses, sourceTopTrends } from "@/src/snapshot";
 import { sourceMetadata } from "@/src/sources";
 
-const statusDisplay: Record<SourceStatus["status"], { label: string; icon: typeof CheckCircle2; tone: string }> = {
-  healthy: { label: "正常", icon: CheckCircle2, tone: "font-medium text-ink-2" },
-  degraded: { label: "異常", icon: AlertTriangle, tone: "font-bold text-ink" },
-  disabled: { label: "未排程", icon: CircleOff, tone: "font-medium text-ink-3" }
+const statusDisplay: Record<SourceStatus["status"], { icon: typeof CheckCircle2; tone: string }> = {
+  healthy: { icon: CheckCircle2, tone: "font-medium text-ink-2" },
+  degraded: { icon: AlertTriangle, tone: "font-bold text-ink" },
+  stale: { icon: History, tone: "font-bold text-ink" },
+  failed: { icon: CircleOff, tone: "font-bold text-ink" }
 };
 
 const columns = "md:grid-cols-[minmax(0,1.3fr)_5.5rem_minmax(0,1fr)_6rem_6rem_7rem]";
 
 export default function SourcesPage() {
   const statusBySource = new Map(sourceStatuses.map((status) => [status.source, status]));
-  const counts = { healthy: 0, degraded: 0, disabled: 0 };
+  const counts: Record<SourceStatus["status"], number> = { healthy: 0, degraded: 0, stale: 0, failed: 0 };
   for (const { sources } of stationsByTier()) {
-    for (const source of sources) counts[statusBySource.get(source)?.status ?? "disabled"] += 1;
+    for (const source of sources) counts[statusBySource.get(source)?.status ?? "failed"] += 1;
   }
 
   return (
@@ -27,7 +28,10 @@ export default function SourcesPage() {
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h1 className="text-xl font-bold tracking-tight">觀測站狀態</h1>
         <p className="num text-meta text-ink-3">
-          正常 {counts.healthy} · 異常 {counts.degraded} · 未排程 {counts.disabled}
+          {(Object.keys(counts) as Array<SourceStatus["status"]>)
+            .filter((key) => key === "healthy" || counts[key] > 0)
+            .map((key) => `${statusLabel[key]} ${counts[key]}`)
+            .join(" · ")}
         </p>
       </div>
 
@@ -43,13 +47,13 @@ export default function SourcesPage() {
               <span>類型 · 角色</span>
               <span>上次同步</span>
               <span>下次同步</span>
-              <span>強度 #1–#10</span>
+              <span>百分位 #1–#10</span>
             </div>
             <ul className="divide-y divide-rule">
               {sources.map((source) => {
                 const metadata = sourceMetadata[source];
                 const status = statusBySource.get(source);
-                const display = statusDisplay[status?.status ?? "disabled"];
+                const display = statusDisplay[status?.status ?? "failed"];
                 const Icon = display.icon;
                 return (
                   <li key={source} className="px-4 py-3">
@@ -59,10 +63,16 @@ export default function SourcesPage() {
                           {metadata.label}
                         </a>
                         <p className="mt-0.5 text-meta text-ink-2">{metadata.description}</p>
+                        {status ? (
+                          <p className="num mt-0.5 text-meta text-ink-3">
+                            {status.candidateCount} 則候選 · 排名 {status.rankedCount}
+                            {status.filteredOut > 0 ? ` · ${status.filteredOut} 則非 AI 已排除` : ""}
+                          </p>
+                        ) : null}
                       </div>
                       <span className={`inline-flex items-center gap-1.5 text-meta ${display.tone}`}>
                         <Icon className="h-4 w-4" aria-hidden="true" />
-                        {display.label}
+                        {statusLabel[status?.status ?? "failed"]}
                       </span>
                       <span className="flex items-center gap-2 text-meta text-ink-2">
                         <TierTag tier={metadata.tier} />
@@ -74,7 +84,7 @@ export default function SourcesPage() {
                       </span>
                       <span className="num text-meta text-ink-2">
                         <span className="text-ink-3 md:hidden">下次 </span>
-                        {status?.nextSync ? formatTaipei(status.nextSync) : "已暫停"}
+                        {formatTaipei(status?.nextSync)}
                       </span>
                       <span className="col-span-2 md:col-span-1">
                         <StationStrip trends={sourceTopTrends[source] ?? []} label={metadata.label} />

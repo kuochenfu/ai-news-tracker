@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { StationStrip } from "@/components/StationStrip";
-import { stationsByTier, tierLabel } from "@/src/bulletin";
-import { sourceStatuses, sourceTopTrends } from "@/src/mockData";
+import { stationsByTier, statusLabel, tierLabel } from "@/src/bulletin";
+import { sourceStatuses, sourceTopTrends } from "@/src/snapshot";
 import { sourceMetadata } from "@/src/sources";
 
 /** Observation stations grouped by tier. `inPage` links to anchors on the current page. */
@@ -29,7 +29,7 @@ export function StationRail({ inPage = false }: { inPage?: boolean }) {
                   <Link href={href} className="flex min-w-0 items-center gap-1.5 text-body text-ink">
                     <span className="truncate">{sourceMetadata[source].label}</span>
                     {status && status !== "healthy" ? (
-                      <span className="text-meta font-bold underline decoration-dotted underline-offset-2">{status === "degraded" ? "異常" : "停用"}</span>
+                      <span className="text-meta font-bold underline decoration-dotted underline-offset-2">{statusLabel[status]}</span>
                     ) : null}
                   </Link>
                   <StationStrip trends={trends} label={sourceMetadata[source].label} />
