@@ -135,7 +135,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
     signalRole: "validation",
     tier: 3,
     homepageUrl: "https://36kr.com/",
-    feedUrl: "https://36kr.com/feed"
+    feedUrl: "https://www.36kr.com/feed"
   },
   ithome_tw: {
     label: "iThome",
