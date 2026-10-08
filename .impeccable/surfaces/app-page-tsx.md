@@ -7,7 +7,7 @@ related_targets: ["app/daily/page.tsx","app/trends/page.tsx","app/sources/page.t
 
 # Surface brief: dashboard (/, /daily, /trends, /sources)
 
-Scope: the whole static dashboard. Mode: Operate. The owner scans it alone twice a day, after the 08:00 and 16:00 Taipei refreshes. UI copy is in Traditional Chinese.
+Scope: the whole static dashboard. Mode: Operate. The owner scans it alone twice a day, after the 06:00 and 18:00 Taipei refreshes. UI copy is in Traditional Chinese.
 
 ## Direction contract
 

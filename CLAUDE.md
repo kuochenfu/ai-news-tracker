@@ -17,7 +17,7 @@ Run a single test file: `node --import tsx --test test/build.test.ts`. Filter by
 
 `npm run refresh` reads and writes history in `DATA_DIR` (default `.data/`, gitignored). Set `GITHUB_TOKEN` locally to avoid GitHub API rate limits (`GITHUB_TOKEN=$(gh auth token) npm run refresh`). 36Kr serves an anti-bot page to some networks; locally it may fail and fall back to stale data.
 
-CI (`.github/workflows/pages.yml`) runs at 00:00 and 08:00 UTC and on push to `main`. It re-enables its own workflow (GitHub pauses schedules after 60 days of inactivity), checks out the `data` branch into `.data`, refreshes, tests, runs `prisma validate` and `npm audit --omit=dev`, builds, force-pushes history to `data`, and deploys `out/` to GitHub Pages.
+CI (`.github/workflows/pages.yml`) runs at 06:00 and 18:00 Asia/Taipei (22:00 and 10:00 UTC) and on push to `main`. It re-enables its own workflow (GitHub pauses schedules after 60 days of inactivity), checks out the `data` branch into `.data`, refreshes, tests, runs `prisma validate` and `npm audit --omit=dev`, builds, force-pushes history to `data`, and deploys `out/` to GitHub Pages.
 
 ## Architecture
 

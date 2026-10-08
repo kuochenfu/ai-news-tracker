@@ -6,8 +6,8 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    # Runs at 08:00 and 16:00 Asia/Taipei every day.
-    - cron: "0 0,8 * * *"
+    # Runs at 06:00 and 18:00 Asia/Taipei (22:00 and 10:00 UTC) every day.
+    - cron: "0 10,22 * * *"
 
 permissions:
   # contents: write pushes refresh history to the `data` branch.

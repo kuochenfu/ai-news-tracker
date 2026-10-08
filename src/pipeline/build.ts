@@ -60,11 +60,13 @@ export interface BuildOutput {
 }
 
 export function nextScheduledRun(now: Date): Date {
-  // .github/workflows/pages.yml runs at 00:00 and 08:00 UTC.
+  // .github/workflows/pages.yml runs at 10:00 and 22:00 UTC (18:00 and 06:00 Asia/Taipei).
   const next = new Date(now);
   next.setUTCMinutes(0, 0, 0);
-  if (now.getUTCHours() < 8) next.setUTCHours(8);
-  else next.setUTCHours(24);
+  const hour = now.getUTCHours();
+  if (hour < 10) next.setUTCHours(10);
+  else if (hour < 22) next.setUTCHours(22);
+  else next.setUTCHours(24 + 10);
   return next;
 }
 

@@ -8,7 +8,7 @@ web
 
 ## Users
 
-The owner, reading alone. They open the site about twice a day, after the 08:00 and 16:00 Asia/Taipei refreshes, to quickly scan what is new in AI. It is a personal intelligence dashboard and is not meant for a team or the public. The UI is in Traditional Chinese. Content titles mix English and Chinese.
+The owner, reading alone. They open the site about twice a day, after the 06:00 and 18:00 Asia/Taipei refreshes, to quickly scan what is new in AI. It is a personal intelligence dashboard and is not meant for a team or the public. The UI is in Traditional Chinese. Content titles mix English and Chinese.
 
 ## Product Purpose
 

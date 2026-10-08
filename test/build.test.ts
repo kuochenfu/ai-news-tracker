@@ -102,9 +102,10 @@ test("history: first issue knows nothing; the next one knows what is new and how
   assert.deepEqual(second.snapshot.dailyReport.newEntityIds, [fresh.id]);
 });
 
-test("next issue time follows the 00:00 and 08:00 UTC schedule", () => {
-  assert.equal(nextScheduledRun(new Date("2026-10-09T00:20:00Z")).toISOString(), "2026-10-09T08:00:00.000Z");
-  assert.equal(nextScheduledRun(new Date("2026-10-09T08:15:00Z")).toISOString(), "2026-10-10T00:00:00.000Z");
+test("next issue time follows the 06:00 and 18:00 Taipei schedule (22:00 and 10:00 UTC)", () => {
+  assert.equal(nextScheduledRun(new Date("2026-10-09T00:20:00Z")).toISOString(), "2026-10-09T10:00:00.000Z");
+  assert.equal(nextScheduledRun(new Date("2026-10-09T10:15:00Z")).toISOString(), "2026-10-09T22:00:00.000Z");
+  assert.equal(nextScheduledRun(new Date("2026-10-09T22:20:00Z")).toISOString(), "2026-10-10T10:00:00.000Z");
 });
 
 test("government sources are judged on the title alone", () => {

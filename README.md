@@ -53,7 +53,7 @@ The repository includes a GitHub Actions workflow at `.github/workflows/pages.ym
 
 - Deploys on pushes to `main`.
 - Can be run manually with `workflow_dispatch`.
-- Refreshes trend data and deploys every day at 08:00 and 16:00 Asia/Taipei.
+- Refreshes trend data and deploys every day at 06:00 and 18:00 Asia/Taipei.
 - Uses `GITHUB_PAGES=true` to export the app under `/ai-news-tracker`.
 - Saves refresh history to the `data` branch after a successful build.
 - Re-enables itself on every run, so GitHub's 60-day inactivity rule cannot pause the schedule.
