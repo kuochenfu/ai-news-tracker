@@ -1,61 +1,58 @@
-import { Gauge } from "lucide-react";
+import Link from "next/link";
 
-import { EmptySourceState } from "@/components/SourceCoverage";
-import { SourceSidebar } from "@/components/SourceSidebar";
-import { previewText, trendUrl } from "@/src/display";
-import { sourceTopTrends, trends } from "@/src/mockData";
-import { activeSourceOrder, sourceMetadata } from "@/src/sources";
+import { SignalFeed } from "@/components/SignalFeed";
+import { SignalRow } from "@/components/SignalRow";
+import { StationRail } from "@/components/StationRail";
+import { allObservations, isNew } from "@/src/bulletin";
+import { sourceMetadata } from "@/src/sources";
 
-export default function DashboardPage() {
-  const ranked = [...trends].sort((a, b) => b.score.finalScore - a.score.finalScore);
-  const sources = activeSourceOrder;
+export default function TodayPage() {
+  const fresh = allObservations()
+    .filter(({ trend }) => isNew(trend))
+    .sort((a, b) => b.trend.score.finalScore - a.trend.score.finalScore);
+
+  const rows = fresh.map(({ trend, source }) => ({
+    id: `${source}-${trend.id}`,
+    tier: sourceMetadata[source].tier,
+    node: <SignalRow trend={trend} source={source} />
+  }));
 
   return (
-    <div className="space-y-6">
-      <section className="flex flex-col gap-3 border-b border-border pb-5 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="text-sm font-medium text-primary">Today</p>
-          <h1 className="mt-1 text-3xl font-semibold tracking-normal">AI trend signals by source</h1>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Each source has its own Top 10 list with direct links and short previews.
-          </p>
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-8">
+      <section aria-labelledby="fresh-heading" className="min-w-0">
+        <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-2">
+          <h1 id="fresh-heading" className="text-xl font-bold tracking-tight">
+            過去 24 小時新出現
+          </h1>
+          <p className="text-meta text-ink-3">依訊號強度排序 · 點標題開啟原文</p>
         </div>
-        <div className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-          <Gauge className="h-4 w-4 text-primary" aria-hidden="true" />
-          {ranked.length} tracked entities
+        <div className="overflow-hidden rounded-[4px] border border-rule bg-surface">
+          <SignalFeed
+            rows={rows}
+            emptyMessage={
+              <>
+                這次發布沒有 24 小時內的新觀測。
+                <Link href="/daily/" className="link ml-1 font-semibold">
+                  查看日報
+                </Link>
+              </>
+            }
+          />
         </div>
       </section>
 
-      <div className="grid gap-4 lg:grid-cols-[220px_1fr]">
-        <SourceSidebar sources={sources} />
-        <section className="space-y-8">
-          {sources.map((source) => (
-            <div key={source} id={source} className="scroll-mt-6 space-y-4">
-              <div>
-                <h2 className="text-2xl font-semibold">{sourceMetadata[source].label} Top 10</h2>
-                <p className="mt-1 text-sm text-muted-foreground">{sourceMetadata[source].description}</p>
-              </div>
-              {(sourceTopTrends[source]?.length ?? 0) > 0 ? (
-                <ol className="divide-y divide-border rounded-md border border-border bg-card">
-                  {(sourceTopTrends[source] ?? []).map((trend, index) => (
-                    <li key={trend.id} className="grid gap-1 p-4 sm:grid-cols-[3rem_1fr]">
-                      <span className="text-sm font-semibold text-muted-foreground">#{index + 1}</span>
-                      <div className="min-w-0">
-                        <a href={trendUrl(trend)} className="text-base font-semibold text-primary hover:underline">
-                          {trend.canonicalName}
-                        </a>
-                        <p className="mt-1 text-sm text-muted-foreground">{previewText(trend.summary)}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              ) : (
-                <EmptySourceState source={source} />
-              )}
-            </div>
-          ))}
-        </section>
-      </div>
+      <aside className="lg:sticky lg:top-6 lg:self-start">
+        <div className="mb-3 flex items-baseline justify-between">
+          <h2 className="text-head font-bold">觀測站</h2>
+          <Link href="/sources/" className="link text-meta font-semibold">
+            狀態
+          </Link>
+        </div>
+        <div className="rounded-[4px] border border-rule bg-surface p-3">
+          <StationRail />
+        </div>
+        <p className="mt-2 text-meta text-ink-3">每格是該站排行 #1–#10 的強度。</p>
+      </aside>
     </div>
   );
 }

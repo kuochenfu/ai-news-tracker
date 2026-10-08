@@ -1,91 +1,101 @@
 import { AlertTriangle, CheckCircle2, CircleOff } from "lucide-react";
 
-import { sourceStatuses } from "@/src/mockData";
-import { activeSourceOrder, sourceMetadata } from "@/src/sources";
+import { StationStrip } from "@/components/StationStrip";
+import { TierTag } from "@/components/TierTag";
+import { formatTaipei, roleLabel, stationsByTier, tierLabel, typeLabel } from "@/src/bulletin";
 import type { SourceStatus } from "@/src/domain";
+import { sourceStatuses, sourceTopTrends } from "@/src/mockData";
+import { sourceMetadata } from "@/src/sources";
 
-const statusIcon = {
-  healthy: CheckCircle2,
-  degraded: AlertTriangle,
-  disabled: CircleOff
+const statusDisplay: Record<SourceStatus["status"], { label: string; icon: typeof CheckCircle2; tone: string }> = {
+  healthy: { label: "正常", icon: CheckCircle2, tone: "font-medium text-ink-2" },
+  degraded: { label: "異常", icon: AlertTriangle, tone: "font-bold text-ink" },
+  disabled: { label: "未排程", icon: CircleOff, tone: "font-medium text-ink-3" }
 };
 
+const columns = "md:grid-cols-[minmax(0,1.3fr)_5.5rem_minmax(0,1fr)_6rem_6rem_7rem]";
+
 export default function SourcesPage() {
-  const statusesBySource = new Map(sourceStatuses.map((source) => [source.source, source]));
-  const completeSourceStatuses: SourceStatus[] = activeSourceOrder.map((source) => {
-    const metadata = sourceMetadata[source];
-    return (
-      statusesBySource.get(source) ?? {
-        source,
-        label: metadata.label,
-        status: "disabled",
-        lastSync: null,
-        nextSync: null,
-        errors: [],
-        notes: "Connector planned. Source is defined in the intelligence model but not yet included in scheduled refresh output."
-      }
-    );
-  });
+  const statusBySource = new Map(sourceStatuses.map((status) => [status.source, status]));
+  const counts = { healthy: 0, degraded: 0, disabled: 0 };
+  for (const { sources } of stationsByTier()) {
+    for (const source of sources) counts[statusBySource.get(source)?.status ?? "disabled"] += 1;
+  }
 
   return (
     <div className="space-y-6">
-      <section className="border-b border-border pb-5">
-        <h1 className="text-3xl font-semibold tracking-normal">Ingestion sources</h1>
-        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Operational status for primary sources, community signals, developer adoption platforms, and media validation feeds.
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h1 className="text-xl font-bold tracking-tight">觀測站狀態</h1>
+        <p className="num text-meta text-ink-3">
+          正常 {counts.healthy} · 異常 {counts.degraded} · 未排程 {counts.disabled}
         </p>
-      </section>
+      </div>
 
-      <section className="grid gap-4">
-        {completeSourceStatuses.map((source) => {
-          const metadata = sourceMetadata[source.source];
-          const Icon = statusIcon[source.status];
-          return (
-            <article key={source.source} className="rounded-md border border-border bg-card p-4">
-              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                    <h2 className="text-lg font-semibold">{source.label}</h2>
-                    <span className="rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground">
-                      {source.status}
-                    </span>
-                    <span className="rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground">
-                      Tier {metadata.tier}
-                    </span>
-                    <span className="rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground">
-                      {metadata.signalRole.replace("_", " ")}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{source.notes}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{metadata.description}</p>
-                  {source.errors.length > 0 ? (
-                    <ul className="mt-3 space-y-1 text-sm text-rose-700">
-                      {source.errors.map((error) => (
-                        <li key={error}>{error}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </div>
-                <dl className="grid gap-2 text-sm md:min-w-64">
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted-foreground">Type</dt>
-                    <dd>{metadata.sourceType.replace("_", " ")}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted-foreground">Last sync</dt>
-                    <dd>{source.lastSync ?? "Not configured"}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted-foreground">Next sync</dt>
-                    <dd>{source.nextSync ?? "Paused"}</dd>
-                  </div>
-                </dl>
-              </div>
-            </article>
-          );
-        })}
-      </section>
+      {stationsByTier().map(({ tier, sources }) => (
+        <section key={tier} aria-labelledby={`tier-${tier}`}>
+          <h2 id={`tier-${tier}`} className="mb-2 text-head font-bold">
+            Tier {tier} · {tierLabel[tier]}
+          </h2>
+          <div className="overflow-hidden rounded-[4px] border border-rule bg-surface">
+            <div className={`hidden gap-3 border-b border-rule bg-surface-2 px-4 py-2 text-meta font-semibold text-ink-2 md:grid ${columns}`}>
+              <span>觀測站</span>
+              <span>狀態</span>
+              <span>類型 · 角色</span>
+              <span>上次同步</span>
+              <span>下次同步</span>
+              <span>強度 #1–#10</span>
+            </div>
+            <ul className="divide-y divide-rule">
+              {sources.map((source) => {
+                const metadata = sourceMetadata[source];
+                const status = statusBySource.get(source);
+                const display = statusDisplay[status?.status ?? "disabled"];
+                const Icon = display.icon;
+                return (
+                  <li key={source} className="px-4 py-3">
+                    <div className={`grid grid-cols-2 items-center gap-x-3 gap-y-1.5 ${columns}`}>
+                      <div className="col-span-2 min-w-0 md:col-span-1">
+                        <a href={metadata.homepageUrl} target="_blank" rel="noreferrer" className="font-semibold">
+                          {metadata.label}
+                        </a>
+                        <p className="mt-0.5 text-meta text-ink-2">{metadata.description}</p>
+                      </div>
+                      <span className={`inline-flex items-center gap-1.5 text-meta ${display.tone}`}>
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                        {display.label}
+                      </span>
+                      <span className="flex items-center gap-2 text-meta text-ink-2">
+                        <TierTag tier={metadata.tier} />
+                        {typeLabel[metadata.sourceType]} · {roleLabel[metadata.signalRole]}
+                      </span>
+                      <span className="num text-meta text-ink-2">
+                        <span className="text-ink-3 md:hidden">上次 </span>
+                        {status?.lastSync ? formatTaipei(status.lastSync) : "尚未同步"}
+                      </span>
+                      <span className="num text-meta text-ink-2">
+                        <span className="text-ink-3 md:hidden">下次 </span>
+                        {status?.nextSync ? formatTaipei(status.nextSync) : "已暫停"}
+                      </span>
+                      <span className="col-span-2 md:col-span-1">
+                        <StationStrip trends={sourceTopTrends[source] ?? []} label={metadata.label} />
+                      </span>
+                    </div>
+                    {status && status.errors.length > 0 ? (
+                      <ul className="mt-2 space-y-0.5 rounded-[3px] border border-rule-strong bg-surface-2 px-3 py-2 text-meta text-ink">
+                        {status.errors.map((error) => (
+                          <li key={error} className="break-words">
+                            {error}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

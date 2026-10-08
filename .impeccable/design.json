@@ -1,0 +1,765 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T21:37:20.739Z",
+  "title": "Design System: AI 訊號觀測",
+  "extensions": {
+    "colorMeta": {
+      "navy-shell": {
+        "role": "primary",
+        "displayName": "Bulletin Navy",
+        "canonical": "#0b2a4a",
+        "oklch": "oklch(28.1% 0.069 252.3)",
+        "tonalRamp": [
+          "#000927",
+          "#052544",
+          "#234163",
+          "#406084",
+          "#6283a9",
+          "#85a8cf",
+          "#abcef7",
+          "#cef2ff"
+        ]
+      },
+      "shell-ink": {
+        "role": "neutral",
+        "displayName": "Shell Ink",
+        "canonical": "#f2f6fa",
+        "oklch": "oklch(97.1% 0.007 247.9)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212427",
+          "#3d4043",
+          "#5b5e61",
+          "#7d8184",
+          "#a1a5a9",
+          "#c7cbcf",
+          "#ebeff3"
+        ]
+      },
+      "shell-ink-muted": {
+        "role": "neutral",
+        "displayName": "Shell Ink Muted",
+        "canonical": "#a9bdd3",
+        "oklch": "oklch(79.0% 0.038 250.8)",
+        "tonalRamp": [
+          "#010c1b",
+          "#152536",
+          "#304154",
+          "#4e5f73",
+          "#708297",
+          "#93a7bc",
+          "#b9cde3",
+          "#dcf1ff"
+        ]
+      },
+      "shell-rule": {
+        "role": "neutral",
+        "displayName": "Shell Rule",
+        "canonical": "#1f4268",
+        "oklch": "oklch(37.3% 0.077 252.3)",
+        "tonalRamp": [
+          "#00082a",
+          "#012448",
+          "#1e4167",
+          "#3c6088",
+          "#5e83ad",
+          "#82a8d4",
+          "#a7cefc",
+          "#caf3ff"
+        ]
+      },
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#eef2f6",
+        "oklch": "oklch(95.9% 0.007 247.9)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212427",
+          "#3d4043",
+          "#5b5e61",
+          "#7d8184",
+          "#a1a5a9",
+          "#c7cbcf",
+          "#ebeff3"
+        ]
+      },
+      "sheet-white": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "row-wash": {
+        "role": "neutral",
+        "displayName": "Row Wash",
+        "canonical": "#f6f8fb",
+        "oklch": "oklch(97.8% 0.005 258.3)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232426",
+          "#3e4042",
+          "#5c5e60",
+          "#7e8083",
+          "#a3a5a7",
+          "#c9cbcd",
+          "#edeff1"
+        ]
+      },
+      "bulletin-ink": {
+        "role": "neutral",
+        "displayName": "Bulletin Ink",
+        "canonical": "#0f1c2b",
+        "oklch": "oklch(22.3% 0.035 252.8)",
+        "tonalRamp": [
+          "#020c19",
+          "#182535",
+          "#334152",
+          "#505f71",
+          "#728295",
+          "#96a6ba",
+          "#bbcce1",
+          "#dff1ff"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#41526a",
+        "oklch": "oklch(43.4% 0.045 257.0)",
+        "tonalRamp": [
+          "#010b1e",
+          "#15243a",
+          "#304158",
+          "#4d5f77",
+          "#6f829c",
+          "#93a6c1",
+          "#b8cce9",
+          "#dcf0ff"
+        ]
+      },
+      "ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Ink Tertiary",
+        "canonical": "#66768c",
+        "oklch": "oklch(56.1% 0.039 256.4)",
+        "tonalRamp": [
+          "#020b1b",
+          "#172537",
+          "#324155",
+          "#4f5f74",
+          "#718298",
+          "#95a6be",
+          "#bacce4",
+          "#def0ff"
+        ]
+      },
+      "hairline-rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#d9e0e8",
+        "oklch": "oklch(90.4% 0.013 251.6)",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252a",
+          "#3b4047",
+          "#585e65",
+          "#7b8188",
+          "#9fa5ad",
+          "#c4cbd3",
+          "#e8eff7"
+        ]
+      },
+      "strong-rule": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#b9c4d1",
+        "oklch": "oklch(81.6% 0.022 252.5)",
+        "tonalRamp": [
+          "#050c14",
+          "#1c252f",
+          "#38414b",
+          "#555f6a",
+          "#77818d",
+          "#9ba6b2",
+          "#c1ccd9",
+          "#e4f0fd"
+        ]
+      },
+      "link-navy": {
+        "role": "primary",
+        "displayName": "Link Navy",
+        "canonical": "#0b2a4a",
+        "oklch": "oklch(28.1% 0.069 252.3)",
+        "tonalRamp": [
+          "#000927",
+          "#052544",
+          "#234163",
+          "#406084",
+          "#6283a9",
+          "#85a8cf",
+          "#abcef7",
+          "#cef2ff"
+        ]
+      },
+      "selection-blue": {
+        "role": "neutral",
+        "displayName": "Selection Blue",
+        "canonical": "#cfe2fb",
+        "oklch": "oklch(90.6% 0.040 255.3)",
+        "tonalRamp": [
+          "#020b1b",
+          "#172537",
+          "#324155",
+          "#4f5f74",
+          "#718298",
+          "#94a6be",
+          "#bacce5",
+          "#ddf0ff"
+        ]
+      },
+      "night-ground": {
+        "role": "neutral",
+        "displayName": "Night Ground",
+        "canonical": "#07111c",
+        "oklch": "oklch(17.4% 0.028 251.1)",
+        "tonalRamp": [
+          "#040c16",
+          "#1a2531",
+          "#35414e",
+          "#525f6d",
+          "#748291",
+          "#98a6b6",
+          "#beccdc",
+          "#e1f0ff"
+        ]
+      },
+      "night-sheet": {
+        "role": "neutral",
+        "displayName": "Night Sheet",
+        "canonical": "#0d1a28",
+        "oklch": "oklch(21.3% 0.033 251.3)",
+        "tonalRamp": [
+          "#020c19",
+          "#182534",
+          "#334151",
+          "#505f70",
+          "#728294",
+          "#96a7b9",
+          "#bbcde0",
+          "#dff1ff"
+        ]
+      },
+      "night-row-wash": {
+        "role": "neutral",
+        "displayName": "Night Row Wash",
+        "canonical": "#112133",
+        "oklch": "oklch(24.3% 0.041 252.4)",
+        "tonalRamp": [
+          "#010b1c",
+          "#152537",
+          "#304155",
+          "#4d5f75",
+          "#6f8299",
+          "#93a7be",
+          "#b8cde5",
+          "#dcf1ff"
+        ]
+      },
+      "night-shell": {
+        "role": "primary",
+        "displayName": "Night Shell Navy",
+        "canonical": "#0e2b49",
+        "oklch": "oklch(28.4% 0.065 251.8)",
+        "tonalRamp": [
+          "#000a25",
+          "#072542",
+          "#244161",
+          "#426082",
+          "#6483a7",
+          "#87a8cd",
+          "#accef5",
+          "#cff2ff"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#e5edf5",
+        "oklch": "oklch(94.2% 0.014 248.0)",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252b",
+          "#3a4147",
+          "#585e65",
+          "#7a8188",
+          "#9ea6ad",
+          "#c4ccd3",
+          "#e8f0f8"
+        ]
+      },
+      "night-ink-secondary": {
+        "role": "neutral",
+        "displayName": "Night Ink Secondary",
+        "canonical": "#a8b8ca",
+        "oklch": "oklch(77.6% 0.031 251.3)",
+        "tonalRamp": [
+          "#030c18",
+          "#192533",
+          "#344150",
+          "#515f6f",
+          "#738293",
+          "#97a6b8",
+          "#bcccdf",
+          "#e0f1ff"
+        ]
+      },
+      "night-ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Night Ink Tertiary",
+        "canonical": "#8394a8",
+        "oklch": "oklch(66.0% 0.036 252.6)",
+        "tonalRamp": [
+          "#020c1a",
+          "#172535",
+          "#324152",
+          "#4f5f72",
+          "#718295",
+          "#95a6bb",
+          "#bbcde2",
+          "#def1ff"
+        ]
+      },
+      "night-hairline-rule": {
+        "role": "neutral",
+        "displayName": "Night Hairline Rule",
+        "canonical": "#1c2e42",
+        "oklch": "oklch(29.6% 0.044 251.9)",
+        "tonalRamp": [
+          "#000b1d",
+          "#132539",
+          "#2f4156",
+          "#4c6076",
+          "#6e829a",
+          "#91a7c0",
+          "#b7cde7",
+          "#daf1ff"
+        ]
+      },
+      "night-strong-rule": {
+        "role": "neutral",
+        "displayName": "Night Strong Rule",
+        "canonical": "#2b4360",
+        "oklch": "oklch(37.7% 0.058 253.8)",
+        "tonalRamp": [
+          "#000a23",
+          "#0e253f",
+          "#29415e",
+          "#465f7e",
+          "#6882a3",
+          "#8ca7c9",
+          "#b1cdf1",
+          "#d4f1ff"
+        ]
+      },
+      "night-link": {
+        "role": "primary",
+        "displayName": "Night Link",
+        "canonical": "#d6e4f3",
+        "oklch": "oklch(91.3% 0.025 250.0)",
+        "tonalRamp": [
+          "#040c15",
+          "#1b2530",
+          "#36414d",
+          "#535f6c",
+          "#75828f",
+          "#99a6b4",
+          "#bfccdb",
+          "#e2f0ff"
+        ]
+      },
+      "night-selection": {
+        "role": "neutral",
+        "displayName": "Night Selection",
+        "canonical": "#1d4a7a",
+        "oklch": "oklch(40.4% 0.095 252.5)",
+        "tonalRamp": [
+          "#000531",
+          "#002350",
+          "#134170",
+          "#336091",
+          "#5583b7",
+          "#79a8df",
+          "#9ecfff",
+          "#c1f3ff"
+        ]
+      },
+      "intensity-0-drizzle": {
+        "role": "secondary",
+        "displayName": "Intensity 0 Drizzle (<20)",
+        "canonical": "#c6e6fb",
+        "oklch": "oklch(90.8% 0.044 236.8)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-0-night": {
+        "role": "secondary",
+        "displayName": "Intensity 0 Night (<20, dark mode)",
+        "canonical": "#24435c",
+        "oklch": "oklch(37.1% 0.057 244.5)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-1-light-blue": {
+        "role": "secondary",
+        "displayName": "Intensity 1 Light Blue (20)",
+        "canonical": "#5fb2ee",
+        "oklch": "oklch(73.6% 0.119 242.2)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-2-blue": {
+        "role": "secondary",
+        "displayName": "Intensity 2 Blue (30)",
+        "canonical": "#1f8fd6",
+        "oklch": "oklch(62.5% 0.142 243.3)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-3-green": {
+        "role": "secondary",
+        "displayName": "Intensity 3 Green (40)",
+        "canonical": "#39a852",
+        "oklch": "oklch(64.9% 0.159 147.7)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-4-yellow": {
+        "role": "secondary",
+        "displayName": "Intensity 4 Yellow (50)",
+        "canonical": "#f0cf2e",
+        "oklch": "oklch(85.8% 0.166 96.5)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-5-orange": {
+        "role": "secondary",
+        "displayName": "Intensity 5 Orange (60)",
+        "canonical": "#f28c22",
+        "oklch": "oklch(73.5% 0.163 59.6)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-6-red": {
+        "role": "secondary",
+        "displayName": "Intensity 6 Red (70)",
+        "canonical": "#dc3a26",
+        "oklch": "oklch(59.2% 0.202 30.7)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-7-magenta": {
+        "role": "secondary",
+        "displayName": "Intensity 7 Magenta (80)",
+        "canonical": "#b02280",
+        "oklch": "oklch(51.8% 0.196 345.8)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      },
+      "intensity-8-purple": {
+        "role": "secondary",
+        "displayName": "Intensity 8 Purple (90)",
+        "canonical": "#6e2db8",
+        "oklch": "oklch(46.7% 0.203 299.6)",
+        "tonalRamp": [
+          "#c6e6fb",
+          "#5fb2ee",
+          "#1f8fd6",
+          "#39a852",
+          "#f0cf2e",
+          "#f28c22",
+          "#dc3a26",
+          "#b02280",
+          "#6e2db8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "title": {
+        "displayName": "Title",
+        "purpose": "One page heading per view; 700, tight tracking."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Product name in the bulletin bar, section and station headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Signal titles (600), station names, nav links (600), empty states."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Metadata lines, timestamps, issue line, filter tabs, table headers."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Tier tag only (T1 / T2 / T3 plus short name)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "readout-lift",
+        "value": "0 4px 12px rgba(4,12,21,0.25)",
+        "purpose": "Station-strip readout tooltip only; everything else is flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "strip-lift",
+        "value": "transform 160ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Active strip cell scales to 1.45 on Y from the bottom; others dim to 0.55. Disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "tab-color",
+        "value": "color, background-color 150ms",
+        "purpose": "Filter tab hover and active transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bulletin Bar",
+      "kind": "nav",
+      "refersTo": "bulletin-bar",
+      "description": "Full-width navy shell: product name, nav with current-page bar, and the issue line.",
+      "html": "<header class=\"ds-bar\"><div class=\"ds-bar-top\"><a class=\"ds-bar-name\" href=\"#\">AI 訊號觀測</a><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">今日</a><a href=\"#\">日報</a><a href=\"#\">各站排行</a><a href=\"#\">觀測站</a></nav></div><div class=\"ds-bar-issue\"><span><span class=\"ds-muted\">發布 </span><b>06/17 10:12</b></span><span><span class=\"ds-muted\">下次 </span><b>06/17 16:00</b></span><span><b>15</b><span class=\"ds-muted\"> 站 · </span><b>150</b><span class=\"ds-muted\"> 筆觀測</span></span></div></header>",
+      "css": ".ds-bar{background:var(--shell,#0b2a4a);color:var(--shell-ink,#f2f6fa);font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;font-variant-numeric:tabular-nums}.ds-bar-top{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 24px}.ds-bar-name{font-size:1rem;line-height:1.5rem;font-weight:700;letter-spacing:-0.025em;color:inherit;text-decoration:none;padding:10px 0}.ds-nav{display:flex}.ds-nav a{padding:10px 12px;font-size:.875rem;line-height:1.35rem;font-weight:600;color:var(--shell-ink-2,#a9bdd3);text-decoration:none;border-bottom:2px solid transparent}.ds-nav a:hover{color:var(--shell-ink,#f2f6fa)}.ds-nav a[aria-current=\"page\"]{color:var(--shell-ink,#f2f6fa);border-bottom-color:var(--shell-ink,#f2f6fa)}.ds-nav a:focus-visible{outline:2px solid var(--shell-ink,#f2f6fa);outline-offset:2px;border-radius:2px}.ds-bar-issue{display:flex;flex-wrap:wrap;gap:6px 20px;padding:8px 24px;border-top:1px solid var(--shell-rule,#1f4268);font-size:.75rem;line-height:1.1rem}.ds-bar-issue b{font-weight:600}.ds-muted{color:var(--shell-ink-2,#a9bdd3)}"
+    },
+    {
+      "name": "Filter Tabs",
+      "kind": "chip",
+      "refersTo": "filter-tab",
+      "description": "Tier filter; active tab inverts to navy shell, counts re-tally in place.",
+      "html": "<div class=\"ds-tabs\" role=\"group\"><button class=\"ds-tab\" aria-pressed=\"true\">全部<span class=\"ds-count\">78</span></button><button class=\"ds-tab\" aria-pressed=\"false\">T1 一手<span class=\"ds-count\">16</span></button><button class=\"ds-tab\" aria-pressed=\"false\">T2 社群<span class=\"ds-count\">9</span></button><button class=\"ds-tab\" aria-pressed=\"false\" disabled>T3 媒體<span class=\"ds-count\">0</span></button></div>",
+      "css": ".ds-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:8px 16px;background:var(--surface,#fff);border-bottom:1px solid var(--rule,#d9e0e8);font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif}.ds-tab{border:0;background:transparent;border-radius:3px;padding:4px 10px;font:inherit;font-size:.75rem;line-height:1.1rem;font-weight:600;color:var(--ink-2,#41526a);cursor:pointer;transition:color 150ms,background-color 150ms}.ds-tab:hover{background:var(--surface-2,#f6f8fb);color:var(--ink,#0f1c2b)}.ds-tab[aria-pressed=\"true\"]{background:var(--shell,#0b2a4a);color:var(--shell-ink,#f2f6fa)}.ds-tab:disabled{opacity:.4;cursor:not-allowed}.ds-tab:focus-visible{outline:2px solid var(--link,#0b2a4a);outline-offset:2px}.ds-count{margin-left:6px;font-weight:400;font-variant-numeric:tabular-nums;color:var(--ink-3,#66768c)}.ds-tab[aria-pressed=\"true\"] .ds-count{color:var(--shell-ink-2,#a9bdd3)}"
+    },
+    {
+      "name": "Signal Row",
+      "kind": "custom",
+      "refersTo": "signal-row",
+      "description": "One observation: intensity chip and value, title link, station, tier tag, publish time.",
+      "html": "<ol class=\"ds-feed\"><li class=\"ds-row\"><span class=\"ds-chip\"><span class=\"ds-swatch\" style=\"background:var(--i8,#6e2db8)\"></span><span class=\"ds-val\">94</span></span><div class=\"ds-body\"><a class=\"ds-title\" href=\"#\">Cadence 開啟 Level-5 全自主代理 AI 時代</a><p class=\"ds-meta\"><span class=\"ds-station\">TechNews</span><span class=\"ds-tier\">T3<span>媒體</span></span><time>06/17 09:00</time></p></div></li><li class=\"ds-row\"><span class=\"ds-chip\"><span class=\"ds-swatch\" style=\"background:var(--i4,#f0cf2e)\"></span><span class=\"ds-val\">56</span></span><div class=\"ds-body\"><a class=\"ds-title\" href=\"#\">Mobileye's US robotaxi launch will put it on both sides of the AV business</a><p class=\"ds-meta\"><span class=\"ds-station\">TechCrunch</span><span class=\"ds-tier\">T3<span>媒體</span></span><time>06/17 01:50</time></p></div></li></ol>",
+      "css": ".ds-feed{list-style:none;margin:0;padding:0;background:var(--surface,#fff);border:1px solid var(--rule,#d9e0e8);border-radius:4px;overflow:hidden;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif}.ds-row{display:grid;grid-template-columns:auto 1fr;column-gap:12px;padding:10px 16px}.ds-row+.ds-row{border-top:1px solid var(--rule,#d9e0e8)}.ds-row:hover{background:var(--surface-2,#f6f8fb)}.ds-chip{display:inline-flex;align-items:center;gap:6px;padding-top:2px;align-self:start}.ds-swatch{width:12px;height:12px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}.ds-val{width:24px;text-align:right;font-size:.75rem;line-height:1.1rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink,#0f1c2b)}.ds-title{font-size:.875rem;line-height:1.35rem;font-weight:600;color:var(--ink,#0f1c2b);text-decoration:none}.ds-title:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.ds-title:focus-visible{outline:2px solid var(--link,#0b2a4a);outline-offset:2px;border-radius:2px}.ds-meta{margin:4px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:.75rem;line-height:1.1rem;color:var(--ink-3,#66768c);font-variant-numeric:tabular-nums}.ds-station{font-weight:500;color:var(--ink-2,#41526a)}.ds-tier{display:inline-flex;align-items:center;border:1px solid var(--rule-strong,#b9c4d1);border-radius:3px;padding:0 4px;font-size:11px;line-height:1rem;font-weight:600;color:var(--ink-2,#41526a)}.ds-tier span{margin-left:4px;font-weight:400}"
+    },
+    {
+      "name": "Tier Tag",
+      "kind": "chip",
+      "refersTo": "tier-tag",
+      "description": "Outline-and-weight tier marker; tiers never take color.",
+      "html": "<span class=\"ds-tiertag\">T1<span>一手</span></span> <span class=\"ds-tiertag\">T2<span>社群</span></span> <span class=\"ds-tiertag\">T3<span>媒體</span></span>",
+      "css": ".ds-tiertag{display:inline-flex;align-items:center;border:1px solid var(--rule-strong,#b9c4d1);border-radius:3px;padding:0 4px;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;font-size:11px;line-height:1rem;font-weight:600;color:var(--ink-2,#41526a)}.ds-tiertag span{margin-left:4px;font-weight:400}"
+    },
+    {
+      "name": "Station Intensity Strip",
+      "kind": "custom",
+      "refersTo": "strip-cell",
+      "description": "Signature: ten cells per station colored by rank 1-10 intensity; hover dims siblings and lifts the active cell.",
+      "html": "<ul class=\"ds-rail\"><li><a href=\"#\">arXiv</a><div class=\"ds-strip\" tabindex=\"0\"><span style=\"background:var(--i8,#6e2db8)\"></span><span style=\"background:var(--i7,#b02280)\"></span><span style=\"background:var(--i7,#b02280)\"></span><span style=\"background:var(--i6,#dc3a26)\"></span><span style=\"background:var(--i6,#dc3a26)\"></span><span style=\"background:var(--i5,#f28c22)\"></span><span style=\"background:var(--i5,#f28c22)\"></span><span style=\"background:var(--i4,#f0cf2e)\"></span><span style=\"background:var(--i3,#39a852)\"></span><span style=\"background:var(--i3,#39a852)\"></span></div></li><li><a href=\"#\">npm <b class=\"ds-degraded\">異常</b></a><div class=\"ds-strip\" tabindex=\"0\"><span style=\"background:var(--i6,#dc3a26)\"></span><span style=\"background:var(--i4,#f0cf2e)\"></span><span style=\"background:var(--i2,#1f8fd6)\"></span><span style=\"background:var(--i1,#5fb2ee)\"></span><span class=\"ds-empty\"></span><span class=\"ds-empty\"></span><span class=\"ds-empty\"></span><span class=\"ds-empty\"></span><span class=\"ds-empty\"></span><span class=\"ds-empty\"></span></div></li></ul>",
+      "css": ".ds-rail{list-style:none;margin:0;padding:12px;width:276px;background:var(--surface,#fff);border:1px solid var(--rule,#d9e0e8);border-radius:4px;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif}.ds-rail li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0}.ds-rail a{font-size:.875rem;line-height:1.35rem;color:var(--ink,#0f1c2b);text-decoration:none}.ds-rail a:hover{text-decoration:underline;text-underline-offset:3px}.ds-degraded{font-size:.75rem;font-weight:700;text-decoration:underline dotted;text-underline-offset:2px}.ds-strip{display:flex;align-items:flex-end;gap:2px;height:14px;border-radius:2px}.ds-strip:focus-visible{outline:2px solid var(--link,#0b2a4a);outline-offset:2px}.ds-strip span{width:8px;height:100%;border-radius:1px;transform-origin:bottom;transition:transform 160ms cubic-bezier(0.16,1,0.3,1)}.ds-strip:hover span{opacity:.55}.ds-strip span:hover{opacity:1;transform:scaleY(1.45)}.ds-strip .ds-empty{border:1px dashed var(--rule-strong,#b9c4d1)}@media (prefers-reduced-motion:reduce){.ds-strip span{transition:none}}"
+    },
+    {
+      "name": "Strip Readout",
+      "kind": "custom",
+      "refersTo": "strip-readout",
+      "description": "Floating navy readout above the active strip cell; the system's only shadow.",
+      "html": "<span class=\"ds-readout\"><span class=\"ds-readout-head\">#1 · 強度 94</span><span>Cadence 開啟 Level-5 全自主代理 AI 時代</span></span>",
+      "css": ".ds-readout{display:inline-block;max-width:16rem;background:var(--shell,#0b2a4a);color:var(--shell-ink,#f2f6fa);border-radius:3px;padding:6px 8px;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;font-size:.75rem;line-height:1.1rem;box-shadow:0 4px 12px rgba(4,12,21,.25)}.ds-readout span{display:block}.ds-readout-head{font-weight:600;font-variant-numeric:tabular-nums;margin-bottom:2px}"
+    },
+    {
+      "name": "Intensity Legend",
+      "kind": "custom",
+      "refersTo": "intensity-chip",
+      "description": "Nine CWA bands with lower thresholds, bracketed by 弱 and 強, in the bulletin issue line.",
+      "html": "<div class=\"ds-legend-wrap\"><div class=\"ds-legend\"><span class=\"ds-end\">弱</span><div class=\"ds-bands\"><span><i style=\"background:var(--i0,#c6e6fb)\"></i><em></em></span><span><i style=\"background:var(--i1,#5fb2ee)\"></i><em>20</em></span><span><i style=\"background:var(--i2,#1f8fd6)\"></i><em>30</em></span><span><i style=\"background:var(--i3,#39a852)\"></i><em>40</em></span><span><i style=\"background:var(--i4,#f0cf2e)\"></i><em>50</em></span><span><i style=\"background:var(--i5,#f28c22)\"></i><em>60</em></span><span><i style=\"background:var(--i6,#dc3a26)\"></i><em>70</em></span><span><i style=\"background:var(--i7,#b02280)\"></i><em>80</em></span><span><i style=\"background:var(--i8,#6e2db8)\"></i><em>90</em></span></div><span class=\"ds-end\">強</span></div></div>",
+      "css": ".ds-legend-wrap{display:inline-block;background:var(--shell,#0b2a4a);padding:8px 12px;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif}.ds-legend{display:flex;align-items:flex-end;gap:8px}.ds-end{padding-bottom:12px;font-size:.75rem;line-height:1.1rem;color:var(--shell-ink-2,#a9bdd3)}.ds-bands{display:flex}.ds-bands span{display:flex;flex-direction:column;align-items:center;gap:2px;width:20px}.ds-bands i{display:block;width:100%;height:10px}.ds-bands em{font-style:normal;font-size:10px;line-height:12px;min-height:12px;font-variant-numeric:tabular-nums;color:var(--shell-ink-2,#a9bdd3)}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Single forward action in shell navy (not-found redirect).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">開啟各站排行</a>",
+      "css": ".ds-btn-primary{display:inline-block;background:var(--shell,#0b2a4a);color:var(--shell-ink,#f2f6fa);border-radius:3px;padding:8px 16px;font-family:var(--font-latin), var(--font-cjk), 'Public Sans', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;font-size:.875rem;line-height:1.35rem;font-weight:600;text-decoration:none}.ds-btn-primary:hover{text-decoration:none}.ds-btn-primary:focus-visible{outline:2px solid var(--link,#0b2a4a);outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Issued Bulletin",
+    "overview": "Every refresh is a weather bulletin issued at a fixed time. A navy bulletin bar carries the issue time, the next issue, the station count and the intensity legend. Under it, sources are observation stations grouped by tier, and every signal is read off one rainfall-intensity scale borrowed from the Central Weather Administration's accumulated-rainfall legend. The page is dense, quiet and tabular: one reader, scanning twice a day.\n\nColor does exactly one job. The paper, ink and navy shell are nearly monochrome so the nine-step intensity progression (pale blue through blue, green, yellow, orange, red, magenta, purple) is the only chroma on the screen, and it always means signal strength. Rank, status and emphasis are carried by weight, case, underline and icon, never by hue.\n\nNight mode is a deep night-blue ground with the navy shell held above it as a lighter band, so the bulletin bar keeps its identity after dark.",
+    "keyCharacteristics": [
+      "Navy bulletin bar over cool paper; navy shell above a night ground in dark mode.",
+      "One chromatic system, the CWA intensity scale, reserved for intensity.",
+      "Two faces only (Public Sans, Noto Sans TC), tabular numerals everywhere.",
+      "Rank by weight on a three-step size ramp, not by size jumps.",
+      "Fixed columns and the same scale across every station block.",
+      "Flat sheets with hairline rules; the only shadow belongs to the floating strip readout."
+    ],
+    "rules": [
+      {
+        "name": "The Intensity-Only Rule",
+        "body": "The CWA scale (`--i0` to `--i8`) is reserved for signal intensity. Status, links and warnings use ink or shell tones with an icon, a weight change or an underline. The status aliases (`--ok`, `--warn`, `--fault`) resolve to ink tones on purpose; never give them a hue. A degraded station is bold ink with a dotted underline; an overdue issue is a struck-through time plus an inverted shell-ink label.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shell Above Night Rule",
+        "body": "In dark mode the shell stays navy (night-shell) and sits visibly above the night ground (night-ground). Never flatten the bar into the ground or turn it black.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight Not Size Rule",
+        "body": "Rank is carried by weight (400 / 500 / 600 / 700) across the three working sizes (label, body, headline). Do not add a larger step to make something important; make it bolder.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number that can change between issues (times, counts, intensity values, ranks) is tabular so columns hold still across bulletins.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fixed Columns Rule",
+        "body": "Every station block uses identical columns and the same intensity scale. A new table defines its column string once and applies it to header and rows alike.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "Sheets, rows, tabs and buttons carry no shadow. Separation is a 1px rule or a tone step.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do reserve `--i0` to `--i8` for signal intensity: chips, strip cells, the legend.",
+      "Do mark status with ink weight, dotted underline, strike-through or an SVG icon (check, alert triangle, circle-off) in ink tones.",
+      "Do keep the dark shell navy (night-shell) and visibly lighter than the night ground.",
+      "Do use tabular numerals for every time, count, rank and value.",
+      "Do rank with weight across the label / body / headline sizes before reaching for a bigger size.",
+      "Do share one column template between a table's header band and its rows.",
+      "Do keep sheets flat: 1px hairline rule, 4px corners, no shadow."
+    ],
+    "donts": [
+      "Don't color a link, status, warning or error with any intensity band, red included.",
+      "Don't introduce a second accent hue or a semantic green/amber/red set.",
+      "Don't turn the dark-mode bulletin bar black or match it to the ground.",
+      "Don't add faces beyond Public Sans and Noto Sans TC.",
+      "Don't add shadows to sheets, rows or controls; the readout lift is the only one.",
+      "Don't give tiers their own colors; the tier tag is outline and weight only."
+    ]
+  }
+}

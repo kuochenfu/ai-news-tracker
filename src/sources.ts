@@ -16,7 +16,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   hn: {
     label: "Hacker News",
     shortLabel: "HN",
-    description: "Official Firebase API for top, new, and best stories.",
+    description: "官方 Firebase API 的熱門、最新與最佳文章。",
     region: "Platform",
     sourceType: "community",
     signalRole: "early_discussion",
@@ -26,7 +26,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   github: {
     label: "GitHub",
     shortLabel: "GitHub",
-    description: "GitHub Search API for AI and developer tooling repositories.",
+    description: "以 GitHub Search API 搜尋 AI 與開發工具專案。",
     region: "Platform",
     sourceType: "platform",
     signalRole: "adoption",
@@ -34,9 +34,9 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
     homepageUrl: "https://github.com/"
   },
   official_blog: {
-    label: "Official AI Blogs",
-    shortLabel: "Official",
-    description: "First-party company and product announcements from AI labs and developer tooling vendors.",
+    label: "AI 官方部落格",
+    shortLabel: "官方",
+    description: "AI 實驗室與開發工具廠商的一手產品公告。",
     region: "Global",
     sourceType: "first_party",
     signalRole: "origin",
@@ -46,7 +46,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   arxiv: {
     label: "arXiv",
     shortLabel: "arXiv",
-    description: "Research preprints from AI, machine learning, NLP, and computer vision categories.",
+    description: "AI、機器學習、NLP 與電腦視覺類別的研究預印本。",
     region: "Global",
     sourceType: "first_party",
     signalRole: "origin",
@@ -56,7 +56,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   github_releases: {
     label: "GitHub Releases",
     shortLabel: "Releases",
-    description: "Project-owned release notes and version announcements for developer tooling.",
+    description: "開發工具專案自行發布的版本說明。",
     region: "Platform",
     sourceType: "first_party",
     signalRole: "origin",
@@ -66,7 +66,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   hugging_face: {
     label: "Hugging Face",
     shortLabel: "HF",
-    description: "Model, dataset, and space adoption signals from the Hugging Face hub.",
+    description: "Hugging Face 上模型、資料集與 Space 的採用訊號。",
     region: "Platform",
     sourceType: "platform",
     signalRole: "adoption",
@@ -76,7 +76,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   npm: {
     label: "npm",
     shortLabel: "npm",
-    description: "JavaScript package release and adoption signals for AI SDKs and tooling.",
+    description: "AI SDK 與工具的 JavaScript 套件發布與採用訊號。",
     region: "Platform",
     sourceType: "platform",
     signalRole: "adoption",
@@ -86,7 +86,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   pypi: {
     label: "PyPI",
     shortLabel: "PyPI",
-    description: "Python package release and adoption signals for agents, inference, evals, and vector tooling.",
+    description: "Agent、推論、評測與向量工具的 Python 套件發布與採用訊號。",
     region: "Platform",
     sourceType: "platform",
     signalRole: "adoption",
@@ -96,7 +96,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   the_verge: {
     label: "The Verge",
     shortLabel: "Verge",
-    description: "US technology coverage with fast AI and product reporting.",
+    description: "美國科技媒體，AI 與產品報導快速。",
     region: "USA",
     sourceType: "media",
     signalRole: "validation",
@@ -107,7 +107,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   techcrunch: {
     label: "TechCrunch",
     shortLabel: "TC",
-    description: "Startup, funding, and AI company coverage.",
+    description: "新創、募資與 AI 公司報導。",
     region: "USA",
     sourceType: "media",
     signalRole: "validation",
@@ -118,7 +118,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   mit_tech_review: {
     label: "MIT Technology Review",
     shortLabel: "MIT TR",
-    description: "Research-oriented technology analysis and long-horizon AI coverage.",
+    description: "偏研究取向的科技分析與長期 AI 觀察。",
     region: "USA",
     sourceType: "media",
     signalRole: "validation",
@@ -129,7 +129,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   thirtysixkr: {
     label: "36Kr",
     shortLabel: "36Kr",
-    description: "China technology, startup, and commercialization coverage.",
+    description: "中國科技、新創與商業化報導。",
     region: "China",
     sourceType: "media",
     signalRole: "validation",
@@ -140,7 +140,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   ithome_tw: {
     label: "iThome",
     shortLabel: "iThome",
-    description: "Taiwan enterprise IT, security, and developer coverage.",
+    description: "台灣企業 IT、資安與開發者報導。",
     region: "Taiwan",
     sourceType: "media",
     signalRole: "validation",
@@ -151,7 +151,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   technews_tw: {
     label: "TechNews",
     shortLabel: "TechNews",
-    description: "Taiwan semiconductor, hardware supply chain, and technology news.",
+    description: "台灣半導體、硬體供應鏈與科技新聞。",
     region: "Taiwan",
     sourceType: "media",
     signalRole: "validation",
@@ -162,7 +162,7 @@ export const sourceMetadata: Record<SourceName, SourceMetadata> = {
   tnw: {
     label: "The Next Web",
     shortLabel: "TNW",
-    description: "European technology and startup coverage.",
+    description: "歐洲科技與新創報導。",
     region: "Europe",
     sourceType: "media",
     signalRole: "validation",

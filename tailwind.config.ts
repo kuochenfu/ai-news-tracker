@@ -5,17 +5,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        muted: "hsl(var(--muted))",
-        "muted-foreground": "hsl(var(--muted-foreground))",
-        primary: "hsl(var(--primary))",
-        "primary-foreground": "hsl(var(--primary-foreground))",
-        accent: "hsl(var(--accent))",
-        "accent-foreground": "hsl(var(--accent-foreground))",
-        card: "hsl(var(--card))",
-        "card-foreground": "hsl(var(--card-foreground))"
+        ground: "var(--ground)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        ink: "var(--ink)",
+        "ink-2": "var(--ink-2)",
+        "ink-3": "var(--ink-3)",
+        rule: "var(--rule)",
+        "rule-strong": "var(--rule-strong)",
+        shell: "var(--shell)",
+        "shell-ink": "var(--shell-ink)",
+        "shell-ink-2": "var(--shell-ink-2)",
+        "shell-rule": "var(--shell-rule)",
+        link: "var(--link)",
+        warn: "var(--warn)",
+        fault: "var(--fault)",
+        ok: "var(--ok)"
+      },
+      fontFamily: {
+        sans: ["var(--font-latin)", "var(--font-cjk)", "PingFang TC", "Microsoft JhengHei", "sans-serif"]
+      },
+      fontSize: {
+        meta: ["0.75rem", { lineHeight: "1.1rem" }],
+        body: ["0.875rem", { lineHeight: "1.35rem" }],
+        head: ["1rem", { lineHeight: "1.5rem" }]
       }
     }
   },
@@ -23,4 +36,3 @@ const config: Config = {
 };
 
 export default config;
-

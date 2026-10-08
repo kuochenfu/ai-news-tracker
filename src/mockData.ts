@@ -3,6 +3,8 @@ import type { DailyReport, SourceName, SourceStatus, TrendEntity, TrendSnapshot 
 
 const typedSnapshot = snapshot as TrendSnapshot;
 
+export const generatedAt = typedSnapshot.generatedAt ?? new Date(0).toISOString();
+
 export const trends = typedSnapshot.trends as TrendEntity[];
 export const sourceTopTrends = typedSnapshot.sourceTopTrends as Partial<Record<SourceName, TrendEntity[]>>;
 export const sourceStatuses = typedSnapshot.sourceStatuses as SourceStatus[];

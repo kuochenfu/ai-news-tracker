@@ -3,27 +3,97 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 20% 98%;
-  --foreground: 218 25% 12%;
-  --muted: 210 18% 92%;
-  --muted-foreground: 215 14% 38%;
-  --card: 0 0% 100%;
-  --card-foreground: 218 25% 12%;
-  --border: 214 18% 84%;
-  --primary: 174 72% 28%;
-  --primary-foreground: 0 0% 100%;
-  --accent: 38 86% 54%;
-  --accent-foreground: 218 25% 12%;
+  color-scheme: light;
+  --ground: #eef2f6;
+  --surface: #ffffff;
+  --surface-2: #f6f8fb;
+  --ink: #0f1c2b;
+  --ink-2: #41526a;
+  --ink-3: #66768c;
+  --rule: #d9e0e8;
+  --rule-strong: #b9c4d1;
+  --shell: #0b2a4a;
+  --shell-ink: #f2f6fa;
+  --shell-ink-2: #a9bdd3;
+  --shell-rule: #1f4268;
+  --link: #0b2a4a;
+  --warn: #0f1c2b;
+  --fault: #0f1c2b;
+  --ok: #41526a;
+  --select: #cfe2fb;
+
+  /* Signal intensity scale, after the CWA accumulated-rainfall legend. Used for intensity only. */
+  --i0: #c6e6fb;
+  --i1: #5fb2ee;
+  --i2: #1f8fd6;
+  --i3: #39a852;
+  --i4: #f0cf2e;
+  --i5: #f28c22;
+  --i6: #dc3a26;
+  --i7: #b02280;
+  --i8: #6e2db8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #07111c;
+    --surface: #0d1a28;
+    --surface-2: #112133;
+    --ink: #e5edf5;
+    --ink-2: #a8b8ca;
+    --ink-3: #8394a8;
+    --rule: #1c2e42;
+    --rule-strong: #2b4360;
+    --shell: #0e2b49;
+    --shell-ink: #eef4fa;
+    --shell-ink-2: #a3bad3;
+    --shell-rule: #1f4268;
+    --link: #d6e4f3;
+    --warn: #e5edf5;
+    --fault: #e5edf5;
+    --ok: #a8b8ca;
+    --select: #1d4a7a;
+    --i0: #24435c;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #07111c;
+  --surface: #0d1a28;
+  --surface-2: #112133;
+  --ink: #e5edf5;
+  --ink-2: #a8b8ca;
+  --ink-3: #8394a8;
+  --rule: #1c2e42;
+  --rule-strong: #2b4360;
+  --shell: #0e2b49;
+  --shell-ink: #eef4fa;
+  --shell-ink-2: #a3bad3;
+  --shell-rule: #1f4268;
+  --link: #d6e4f3;
+  --warn: #e5edf5;
+  --fault: #e5edf5;
+  --ok: #a8b8ca;
+  --select: #1d4a7a;
+  --i0: #24435c;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 1rem;
+}
+
 body {
   margin: 0;
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: var(--ground);
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -31,3 +101,58 @@ a {
   text-decoration: none;
 }
 
+a.link {
+  color: var(--link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+::selection {
+  background: var(--select);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Station strip: ten observation cells; the hovered cell lifts to read its value. */
+.strip-cell {
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom;
+}
+
+.strip:hover .strip-cell,
+.strip:focus-within .strip-cell {
+  opacity: 0.55;
+}
+
+.strip .strip-cell:hover,
+.strip .strip-cell[data-active] {
+  opacity: 1;
+  transform: scaleY(1.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip-cell {
+    transition: none;
+  }
+}
